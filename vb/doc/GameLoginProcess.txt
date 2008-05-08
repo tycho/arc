@@ -1,0 +1,26 @@
+AS = AServer
+C = Cobalt Server
+A = ARC
+
+01. A to AS - MSG_LOGIN		(1)
+02. AS to A - MSG_MAP		(34) (to new A, using UDP first. if it fails, it uses TCP)
+03. A to AS - MSG_GAMELOGIN 	(10)
+04. AS to A - MSG_GAMELOGIN 	(10) (to new A)
+05. A to AS - MSG_UPDATE 	(44)
+06. AS to A - MSG_PLAYERS 	(2)  (to everyone)
+07. AS to A - MSG_RACE 		(54) (to everyone, only if necessary)
+08. AS to A - MSG_SCORE 	(33) (to new A)
+09. AS to A - MSG_GAMESETTINGS 	(30) (to new A)
+10. AS to A - MSG_PSPEED 	(39) (to new A)
+11. AS to A - MSG_MINES 	(23) (to new A)
+12. AS to A - MSG_PLAYERS 	(2)  (to new A)
+13. AS to A - MSG_ARMORLO 	(36) (to new A)
+14. AS to A - MSG_RACE 		(54) (to new A)
+15. AS to A - MSG_CONNECTED 	(8)  (to new A)
+16. A to AS - MSG_GETSWITCH 	(38)
+17. AS to A - MSG_POWERUP 	(18) (to new A)
+18. AS to A - MSG_TIMELIMIT 	(51) (to new A)
+19. AS to A - MSG_PLAYING 	(28) (to new A)
+20. AS to C - SVR_JOINED
+
+The ARC game starts Timer2, which is the MoveCalls and such.

@@ -1,0 +1,56 @@
+/*
+ *                           ARC++
+ *
+ *    Copyright (c) 2007-2008 Steven Noonan. All rights reserved.
+ *
+ *    NO PART OF THIS PROGRAM OR PUBLICATION MAY BE REPRODUCED,
+ *    TRANSMITTED, TRANSCRIBED, STORED IN A RETRIEVAL SYSTEM, OR
+ *    TRANSLATED INTO ANY LANGUAGE OR COMPUTER LANGUAGE IN ANY
+ *    FORM OR BY ANY MEANS, ELECTRONIC, MECHANICAL, MAGNETIC,
+ *    OPTICAL, CHEMICAL, MANUAL, OR OTHERWISE, WITHOUT THE PRIOR
+ *    WRITTEN PERMISSION OF:
+ *
+ *                       STEVEN NOONAN
+ *                       4727 BLUFF DR.
+ *                 MOSES LAKE, WA 98837-9075
+ *
+ *    THIS SOURCE CODE IS NOT FOR PUBLIC INSPECTION.
+ *    The above copyright notice does not indicate any
+ *    actual or intended publication of this source code.
+ *
+ */
+
+#ifndef __included_net_crisscross_h
+#define __included_net_crisscross_h
+
+#include "Network/net.h"
+#include "Network/packet.h"
+
+#ifdef USE_CRISSCROSS_NET
+
+class Net_CrissCross : public Net
+{
+protected:
+    bool m_udpDisabled;
+
+    CrissCross::Network::TCPSocket *m_tcpSocket;
+    CrissCross::Network::UDPSocket *m_udpSocket_out;
+    CrissCross::Network::UDPSocket *m_udpSocket_in;
+
+    virtual int ReceiveTCP ( int *_packetCount );
+    virtual int ReceiveUDP ( int *_packetCount );
+
+public:
+    Net_CrissCross();
+    virtual ~Net_CrissCross();
+
+    virtual void                  DisableUDP();
+    virtual Errors                Connect ( const char *_hostname, unsigned short _port );
+    virtual int                   Receive ( int *_packetCount );
+    virtual int                   Send ( const Packet *_buffer, bool _criticalData );
+    virtual Network::socketState  State () const;
+};
+
+#endif
+
+#endif

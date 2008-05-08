@@ -1,0 +1,6 @@
+SDL:		1.2.13
+SDL_gfx:	2.0.13
+SDL_image:	1.2.6
+SDL_mixer:	1.2.8
+libpng:		1.2.25
+zlib:		1.2.3

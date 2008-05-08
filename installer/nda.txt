@@ -1,0 +1,43 @@
+ARC++ NON-DISCLOSURE AGREEMENT
+
+1. Uplink Laboratories, hereinafter referred to as (DISCLOSER), desires to disclose to the recipient (RECIPIENT), certain confidential information which RECIPIENT acknowledges to be of a confidential character, such information relating to "ARC++" developed by the DISCLOSER ("Confidential Information").
+
+2. DISCLOSER will disclose to RECIPIENT certain Confidential Information in connection with RECIPIENT's participation in DISCLOSER product(s) testing and development.
+
+3. RECIPIENT wishes to obtain the Confidential Information and participate in DISCLOSER's product(s) testing and development for RECIPIENT's own actual, potential or possible benefit, without any guarantee of benefit whatsoever by DISCLOSER.
+
+4. RECIPIENT agrees not to use any Confidential Information disclosed to it hereunder by DISCLOSER for any purpose except in furtherance of the testing and development.
+
+5. RECIPIENT shall not disclose Confidential Information to any third party individual, corporation, or other entity without the prior written consent of DISCLOSER, and shall limit its disclosure to its employees having a need to know such information. RECIPIENT shall protect the disclosed Confidential Information by using the same degree of care, but no less than a reasonable degree of care, and as RECIPIENT uses itself, to prevent the unauthorized dissemination or publication of its Confidential Information.
+
+6. RECIPIENT shall have a duty to protect all Confidential Information disclosed hereunder provided that (i) all Confidential Information which is disclosed in writing shall be marked as confidential, or with a similar legend (or a cover letter shall warn of confidentiality), at the time of disclosure, and (ii) all Confidential Information disclosed in any other manner shall be identified as confidential at the time of disclosure.
+
+7. The obligations herein will not apply to any Confidential Information which (i) is or becomes available to the public other than by breach of this Agreement by RECIPIENT, (ii) is rightfully received by RECIPIENT from a third party without confidentiality limitations, (iii) is independently developed by RECIPIENTs employees, or (iv) is known to RECIPIENT without any restriction as to use or disclosure prior to first receipt of same from DISCLOSER.
+
+8. DISCLOSER warrants that it has the right to make the disclosures under this Agreement.
+
+9. Neither party acquires any license under any intellectual property rights of the other party by virtue of this Agreement.
+
+10. Neither party has an obligation under this Agreement to purchase any service or item from the other party.
+
+11. DISCLOSER has no obligation under this Agreement to offer for sale products using or incorporating the Confidential Information.
+
+12. Upon the request of DISCLOSER, RECIPIENT shall return all Confidential Information in whatever form. All information which by virtue of its nature cannot be returned, or which can be deleted, must be destroyed or deleted and so certified by RECIPIENT.
+
+13. RECIPIENT agrees that its obligations herein are necessary and reasonable in order to protect DISCLOSER and its business, and RECIPIENT expressly agrees that monetary damages would be inadequate to compensate DISCLOSER for any breach by RECIPIENT of its covenants and agreements set forth herein. Accordingly, RECIPIENT agrees and acknowledges that any violation or threatened violation will cause irreparable injury to DISCLOSER and that, in addition to any other remedies that may be available, in law, equity or otherwise, DISCLOSER shall be entitled to obtain injunctive relief against the threatened breach of this Agreement or the continuation of any such breach by RECIPIENT, without the necessity of proving actual damages.
+
+14. This Agreement shall be binding upon and for the benefit of the parties, their successors and assigns, provided that Confidential Information of DISCLOSER may not be assigned without the prior written consent of DISCLOSER.
+
+15. Failure to enforce any provisions of this Agreement shall not constitute a waiver of any term hereof.
+
+16. The parties do not intend that any agency or partnership relationship be created between them by this Agreement.
+
+17. This document contains the entire agreement between the parties with respect to the subject matter contained herein and supersedes any previous understanding, commitments or agreements, oral or written.
+
+18. This Agreement shall be an ongoing contract between the parties covering each instance of DISCLOSER product testing by RECIPIENT, but shall not require DISCLOSER to provide products for testing or develoment, nor obligate RECIPIENT to participate in any particular product testing or development unless RECIPIENT specifically consents.
+
+19. This Agreement is made under and shall be construed according to the laws of the State of Washingon.
+
+20. RECIPIENT agrees to use only those data sets provided by the DISCLOSER or data purchased that is specifically authorized by the seller for use with DISCLOSER's Confidential Information.
+
+WRITTEN APRIL 25, 2007

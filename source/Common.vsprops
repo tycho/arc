@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="ARC Common"
+	IntermediateDirectory="$(SolutionDir)\obj\$(ProjectName)\$(ConfigurationName)"
+	>
+	<Tool
+		Name="VCCLCompilerTool"
+		AdditionalIncludeDirectories=".;../contrib/OpenAL/include;../contrib/unrar;../contrib/crisscross/source;../contrib/SDL_image;../contrib/SDL_mixer;../contrib/glSDL;../contrib/SDL/include;../contrib/zlib;../contrib/OpenGL/include"
+	/>
+	<Tool
+		Name="VCLinkerTool"
+		AdditionalLibraryDirectories="C:\SDKs\DirectX\Lib\x86"
+		AdditionalDependencies="d3d9.lib d3dx9.lib"
+		GenerateDebugInformation="true"
+	/>
+</VisualStudioPropertySheet>

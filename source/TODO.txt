@@ -1,0 +1,46 @@
+
+* Networking code
+    + Rewrite client-side TCP code (DONE)
+    + Rewrite server-side TCP/UDP code (DONE)
+    + Implement map transfers (DONE)
+    + Logins are excessively long (FIXED)
+    - Find fixes for cases like a lack of UDP accessibility in either direction
+    - Implement crucial things like MSG_MAPTRANSFER and MSG_PLAYERHOME
+
+* Graphics
+    + Map surface splitter (ADDED)
+    + Underscore in rendered text looks funky (FIXED)
+    - Blinking flags (when dropped)
+    + Can still shoot in observation mode (FXED)
+    + Can shoot while dead (FIXED)
+    - Weapons can hit dead targets
+    - Smoking ships (armor critical)
+    - Powerups
+    + MeX and MeY have caused weird issues throughout (not currently, but possibly in the future)
+      Use the following code for MeX and MeY
+            short CenterSX = g_graphics->GetCenterX() - 16,
+                  CenterSY = g_graphics->GetCenterY() - 16;
+            short MeX = (short)(g_game->m_me->GetX() - CenterSX),
+                  MeY = (short)(g_game->m_me->GetY() - CenterSY);
+
+* Other ideas
+    - Maybe an in-game server list and lobby?
+
+* MSG_WEPSYNC seems to force laser energy up when it shouldn't (i.e. after firing a missile)
+
+* UI
+	+ Radar background and health/laser bars are fully opaque in OpenGL mode (FIXED)
+	  glTexEnv was being passed GL_REPLACE rather than GL_MODULATE.
+    - Preferences interface
+    - Team switcher
+    - Current game statistics (F1)
+    - Team scores
+    - Holding pen timeout
+    - Radar
+    - Clickable sidebar buttons
+    - Sidebar menus (top right, radar area)
+    - Help menus
+
+* Do performance analysis and optimize slow points.
+
+* Do memory leak/error detection.

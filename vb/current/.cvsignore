@@ -1,0 +1,6 @@
+settings.ini
+DebugLog.txt
+*.exe
+*.pdb
+*.exp
+*.lib

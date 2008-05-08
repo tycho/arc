@@ -1,0 +1,3 @@
+VBGROUP 5.0
+StartupProject=DEV_DEBUG_OpenARC.vbp
+Project=DEV_DEBUG_OpenARCServer.vbp
