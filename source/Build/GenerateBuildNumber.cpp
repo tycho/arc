@@ -4,18 +4,22 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <windows.h>
+
+#define CYGWIN_PATH "c:\\cygwin\\bin\\"
+#define GIT_PATH "git.exe"
+#define WC_PATH  "wc.exe"
 
 using namespace std;
 
 #include "crc.h"
 
-int GetSubversionRevisionNumber ( const char *_fromFile );
+int GetGitRevisionNumber ( const char *_rootPath );
 
 int main ( int argc, char **argv )
 {
 	char currentPath[2048];
 	char buildNumberPath[2048];
-	char inputEntriesFile[2048];
 	char fileBuffer[8192];
 	char temp[256];
 
@@ -35,7 +39,6 @@ int main ( int argc, char **argv )
 	}
 
 	sprintf ( buildNumberPath, "%s/build_number.h", currentPath );
-	sprintf ( inputEntriesFile, "%s/.svn/entries", currentPath );
 
 	sprintf ( fileBuffer, "#ifndef __included_build_number_h\n" );
 
@@ -43,7 +46,7 @@ int main ( int argc, char **argv )
 	strcat ( fileBuffer, temp );
 
 	sprintf ( temp, "\n#define BUILD_NUMBER %d\n\n",
-		GetSubversionRevisionNumber ( inputEntriesFile ) );
+		GetGitRevisionNumber ( currentPath ) );
 	strcat ( fileBuffer, temp );
 
 	sprintf ( temp, "#endif\n" );
@@ -71,21 +74,26 @@ int main ( int argc, char **argv )
 	return 0;
 }
 
-int GetSubversionRevisionNumber ( const char *_fromFile )
+int GetGitRevisionNumber ( const char *_rootPath )
 {
-	string line;
-	ifstream file;
-	file.open ( _fromFile, ios::in );
-	if ( file.is_open() )
+	char command[2048];
+	sprintf ( command, "%s rev-list --all | %s -l > .rev-temp",
+		CYGWIN_PATH GIT_PATH, CYGWIN_PATH WC_PATH );
+	int ret = system ( command );
+	if ( ret != 0 )
 	{
-		getline ( file, line );
-		getline ( file, line );
-		getline ( file, line );
-		getline ( file, line );
-		file.close();
-		int retval = atoi ( line.c_str() );
-		return retval;
-	} else {
+		printf ( "Command didn't work.\n" );
 		return 0;
 	}
+	FILE *rev = fopen ( ".rev-temp", "r" );
+	if ( !rev )
+	{
+		printf ( "Output didn't show up as expected.\n" );
+		return 0;
+	}
+	char buffer[64];
+	fgets ( buffer, 63, rev );
+	fclose ( rev );
+	remove ( ".rev-temp" );
+	return atoi(buffer);
 }
