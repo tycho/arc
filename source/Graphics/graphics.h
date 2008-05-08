@@ -90,7 +90,7 @@ public:
     virtual int    Blit ( Uint32 _sourceSurfaceID, SDL_Rect const *_sourceRect,
                           Uint32 _destSurfaceID,   SDL_Rect const *_destRect ) = 0;
     virtual int    SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _height, Uint8 _colorDepth ) = 0;
-    virtual inline bool Flip() = 0;
+    virtual bool Flip() = 0;
 
 	friend class Texture;
 	friend class DirectXTexture;

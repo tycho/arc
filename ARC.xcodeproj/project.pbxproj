@@ -95,6 +95,9 @@
 		B0A2FFFB0DB0B0A100C9BD5C /* int64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FF980DB0B0A100C9BD5C /* int64.cpp */; };
 		B0A2FFFC0DB0B0A100C9BD5C /* isnt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FF9A0DB0B0A100C9BD5C /* isnt.cpp */; };
 		B0A2FFFE0DB0B0A100C9BD5C /* list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FF9D0DB0B0A100C9BD5C /* list.cpp */; };
+		B0AC6D1F0DD2EE5100976666 /* graphics_directx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0AC6D190DD2EE5100976666 /* graphics_directx.cpp */; };
+		B0AC6D200DD2EE5100976666 /* texture_directx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0AC6D1B0DD2EE5100976666 /* texture_directx.cpp */; };
+		B0AC6D210DD2EE5100976666 /* texture_opengl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0AC6D1D0DD2EE5100976666 /* texture_opengl.cpp */; };
 		B0B8E92C0BDB4F3A007C1576 /* app.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0B8E8CF0BDB4DDF007C1576 /* app.cpp */; };
 		B0B8E92D0BDB4F59007C1576 /* arc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0B8E9190BDB4E51007C1576 /* arc.cpp */; };
 		B0B8E92F0BDB4F5B007C1576 /* bounce.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0B8E8EB0BDB4E00007C1576 /* bounce.cpp */; };
@@ -346,6 +349,12 @@
 		B0A2FFE20DB0B0A100C9BD5C /* version.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = version.hpp; path = contrib/unrar/version.hpp; sourceTree = "<group>"; };
 		B0A2FFE30DB0B0A100C9BD5C /* volume.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = volume.cpp; path = contrib/unrar/volume.cpp; sourceTree = "<group>"; };
 		B0A2FFE40DB0B0A100C9BD5C /* volume.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = volume.hpp; path = contrib/unrar/volume.hpp; sourceTree = "<group>"; };
+		B0AC6D190DD2EE5100976666 /* graphics_directx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = graphics_directx.cpp; path = source/Graphics/graphics_directx.cpp; sourceTree = "<group>"; };
+		B0AC6D1A0DD2EE5100976666 /* graphics_directx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = graphics_directx.h; path = source/Graphics/graphics_directx.h; sourceTree = "<group>"; };
+		B0AC6D1B0DD2EE5100976666 /* texture_directx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = texture_directx.cpp; path = source/Graphics/texture_directx.cpp; sourceTree = "<group>"; };
+		B0AC6D1C0DD2EE5100976666 /* texture_directx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = texture_directx.h; path = source/Graphics/texture_directx.h; sourceTree = "<group>"; };
+		B0AC6D1D0DD2EE5100976666 /* texture_opengl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = texture_opengl.cpp; path = source/Graphics/texture_opengl.cpp; sourceTree = "<group>"; };
+		B0AC6D1E0DD2EE5100976666 /* texture_opengl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = texture_opengl.h; path = source/Graphics/texture_opengl.h; sourceTree = "<group>"; };
 		B0B8E8CF0BDB4DDF007C1576 /* app.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = app.cpp; path = source/App/app.cpp; sourceTree = "<group>"; };
 		B0B8E8D00BDB4DDF007C1576 /* app.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = app.h; path = source/App/app.h; sourceTree = "<group>"; };
 		B0B8E8D10BDB4DDF007C1576 /* file_utils.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = file_utils.cpp; path = source/App/file_utils.cpp; sourceTree = "<group>"; };
@@ -640,6 +649,12 @@
 		B0B8E8C90BDB4D64007C1576 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				B0AC6D190DD2EE5100976666 /* graphics_directx.cpp */,
+				B0AC6D1A0DD2EE5100976666 /* graphics_directx.h */,
+				B0AC6D1B0DD2EE5100976666 /* texture_directx.cpp */,
+				B0AC6D1C0DD2EE5100976666 /* texture_directx.h */,
+				B0AC6D1D0DD2EE5100976666 /* texture_opengl.cpp */,
+				B0AC6D1E0DD2EE5100976666 /* texture_opengl.h */,
 				B04A58150DBDDA9F00A2F292 /* opengl.cpp */,
 				B04A58160DBDDA9F00A2F292 /* opengl.h */,
 				B04A58170DBDDA9F00A2F292 /* texture.cpp */,
@@ -976,6 +991,9 @@
 				B087F3140DB98F08007568B9 /* surface.cpp in Sources */,
 				B04A58190DBDDA9F00A2F292 /* opengl.cpp in Sources */,
 				B04A581A0DBDDA9F00A2F292 /* texture.cpp in Sources */,
+				B0AC6D1F0DD2EE5100976666 /* graphics_directx.cpp in Sources */,
+				B0AC6D200DD2EE5100976666 /* texture_directx.cpp in Sources */,
+				B0AC6D210DD2EE5100976666 /* texture_opengl.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -114,8 +114,8 @@ void OpenGLGraphics::SetPixel ( Uint32 _surfaceID, int x, int y, Uint32 _color )
 #ifndef TARGET_OS_WINDOWS
         m_vertexArray[0] = x;
         m_vertexArray[1] = y;
-        color |= FULL_ALPHA;
-        g_openGL->ActivateColour ( color );
+        _color |= FULL_ALPHA;
+        g_openGL->ActivateColour ( _color );
         glDrawArrays ( GL_POINTS, 0, 1 );
 #else
         glRasterPos2i ( x, y );
