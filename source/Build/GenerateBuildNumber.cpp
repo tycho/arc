@@ -4,11 +4,20 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <windows.h>
 
-#define CYGWIN_PATH "c:\\cygwin\\bin\\"
-#define GIT_PATH "git.exe"
-#define WC_PATH  "wc.exe"
+#ifdef _MSC_VER
+# define CYGWIN_PATH "c:\\cygwin\\bin\\"
+# define GIT_PATH "git.exe"
+# define WC_PATH "wc.exe"
+#elif defined __MACH__
+# define CYGWIN_PATH ""
+# define GIT_PATH "/opt/local/bin/git"
+# define WC_PATH  "/usr/bin/wc"
+#else
+# define CYGWIN_PATH ""
+# define GIT_PATH "/usr/bin/git"
+# define WC_PATH  "/usr/bin/wc"
+#endif
 
 using namespace std;
 
