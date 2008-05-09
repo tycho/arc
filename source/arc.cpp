@@ -216,7 +216,11 @@ void Init_Graphics()
 			// Direct3D
 			g_console->WriteLine ( "Attempting to use DirectXGraphics..." );
 #ifdef TARGET_OS_WINDOWS
+#ifdef ENABLE_DIRECT3D
 			g_graphics = new DirectXGraphics ();
+#else
+			g_console->WriteLine ( "Direct3D support not built in (ENABLE_DIRECT3D not defined)." );
+#endif
 #else
 			g_console->WriteLine ( "Wrong platform. Attempting to use OpenGL..." );
 #endif

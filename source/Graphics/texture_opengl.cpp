@@ -88,11 +88,6 @@ bool OpenGLTexture::Create ( Uint16 _width, Uint16 _height, bool _isColorKeyed )
     m_sdlSurface = SDL_CreateRGBSurface ( SDL_SWSURFACE, _width, _height, 32, rmask, gmask, bmask, amask );
     ARCReleaseAssert ( m_sdlSurface != NULL );
 
-    /*if ( _isColorKeyed && g_graphics->m_colorKeySet )
-    {
-		SDL_FillRect ( m_sdlSurface, NULL, g_graphics->m_colorKey );
-        SDL_SetColorKey ( m_sdlSurface, SDL_SRCCOLORKEY | SDL_RLEACCEL, g_graphics->m_colorKey );
-    }*/
     SDL_SetAlpha ( m_sdlSurface, 0, SDL_ALPHA_OPAQUE );
         
     m_textureID = g_openGL->GetFreeTexture();
@@ -130,8 +125,6 @@ bool OpenGLTexture::Upload()
     ARCReleaseAssert ( m_sdlSurface != NULL );
     ARCReleaseAssert ( m_textureID != 0 );
 
-	//g_console->WriteLine ( "Uploading texture %d bpp, %d x %d", m_sdlSurface->format->BitsPerPixel, m_sdlSurface->w, m_sdlSurface->h );
-    
 	if ( !g_openGL->GetSetting ( OPENGL_TEX_ALLOW_NPOT ) )
     {
         if ( !isPowerOfTwo ( m_sdlSurface->w ) ) {

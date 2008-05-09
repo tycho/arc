@@ -783,6 +783,7 @@ int OpenGLGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heigh
     // Alpha blending setup code
     glEnable ( GL_BLEND );
     glBlendFunc ( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
+    ASSERT_OPENGL_ERRORS;
     glEnable ( GL_ALPHA_TEST );
     glAlphaFunc ( GL_GREATER, 0.1f );
 

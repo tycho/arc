@@ -23,8 +23,7 @@
 #ifndef __included_opengl_h
 #define __included_opengl_h
 
-//#define ALLOW_VERTEX_BUFFER_OBJECTS
-//#define CATCH_OPENGL_ERRORS
+#define CATCH_OPENGL_ERRORS
 
 #ifdef CATCH_OPENGL_ERRORS
 #define ASSERT_OPENGL_ERRORS { \

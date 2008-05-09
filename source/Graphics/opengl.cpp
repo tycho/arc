@@ -54,16 +54,6 @@ OpenGL::~OpenGL()
         GLuint texid = m_freeTextures.pop();
         glDeleteTextures ( 1, &texid );
     }
-#ifdef ALLOW_VERTEX_BUFFER_OBJECTS
-	if ( glDeleteBuffersARB )
-	{
-		while ( m_freeTextures.count() )
-		{
-			GLuint texid = m_freeTextures.pop();
-			glDeleteBuffersARB ( 1, &texid );
-		}
-	}
-#endif
     free ( m_vendorString );     m_vendorString     = NULL;
     free ( m_rendererString );   m_rendererString   = NULL;
     free ( m_versionString );    m_versionString    = NULL;
