@@ -36,10 +36,10 @@ Texture::Texture ()
 
 Texture::Texture ( SDL_Surface *_surface )
  : m_sdlSurface(_surface),
-   m_alpha(0xFF),
    m_originalWidth(0),
    m_originalHeight(0),
-   m_damaged(true)
+   m_damaged(true),
+   m_alpha(0xFF)
 {
 }
 

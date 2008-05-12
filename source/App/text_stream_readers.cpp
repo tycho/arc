@@ -41,10 +41,10 @@ static unsigned int s_offsets[] = {
 
 
 TextReader::TextReader()
-:    m_maxLineLen(INITIAL_LINE_LEN),
-    m_lineNum(0),
-    m_offsetIndex(0),
-    m_fileEncrypted(-1)
+:   m_offsetIndex(0),
+    m_fileEncrypted(-1),
+    m_maxLineLen(INITIAL_LINE_LEN),
+    m_lineNum(0)
 {
     m_filename[0] = '\0';
     m_line = new char[INITIAL_LINE_LEN + 1];    // Don't forget space for the null terminator

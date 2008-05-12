@@ -30,8 +30,6 @@
 
 Preferences *g_prefsManager = NULL;
 
-static bool s_overwrite = false;
-
 PrefsItem::PrefsItem()
 :   m_key(NULL),
     m_str(NULL),
@@ -98,24 +96,24 @@ PrefsItem::PrefsItem(char *_line)
 }
 
 PrefsItem::PrefsItem(char const *_key, char const *_str)
-:    m_type(TypeString)
+:   m_type(TypeString)
 {
     m_key = newStr(_key);
     m_str = newStr(_str);
 }
 
 PrefsItem::PrefsItem(char const *_key, float _float)
-:    m_type(TypeFloat),
-    m_float(_float),
-    m_str(NULL)
+:   m_type(TypeFloat),
+    m_str(NULL),
+    m_float(_float)
 {
     m_key = newStr(_key);
 }
 
 PrefsItem::PrefsItem(char const *_key, int _int)
 :    m_type(TypeInt),
-    m_int(_int),
-    m_str(NULL)
+    m_str(NULL),
+    m_int(_int)
 {
     m_key = newStr(_key);
 }
@@ -328,7 +326,7 @@ void Preferences::Save()
         {
             char const *c = line;
             char const *keyStart = NULL;
-            char const *keyEnd;
+            char const *keyEnd = NULL;
             while (*c != '=') 
             {
                 if (keyStart)
@@ -405,7 +403,7 @@ int Preferences::GetInt(char const *_key, int _default) const
     return item->m_int;
 }
 
-char *Preferences::GetString(char const *_key, char *_default) const
+const char *Preferences::GetString(char const *_key, const char *_default) const
 {
     if ( !m_items.exists ( _key ) ) return _default;
     PrefsItem *item = m_items.find ( _key );

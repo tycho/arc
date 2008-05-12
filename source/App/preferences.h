@@ -90,7 +90,7 @@ public:
 		\param _default The default value to return if the preference isn't found.
 		\return If a matching preference is found, the value is returned. Otherwise, _default is returned.
 	 */
-    char *GetString      ( char const *_key, char *_default = NULL ) const;
+    const char *GetString( char const *_key, const char *_default = NULL ) const;
 
 	//! Retrieves the contents of a preference item with the specified name.
 	/*!

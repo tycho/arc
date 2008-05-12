@@ -26,14 +26,14 @@
 #include "Graphics/texture_opengl.h"
 
 OpenGLTexture::OpenGLTexture ()
- : m_textureID(INVALID_SURFACE_ID),
-   Texture()
+ : Texture(),
+   m_textureID(INVALID_SURFACE_ID)
 {
 }
 
 OpenGLTexture::OpenGLTexture ( SDL_Surface *_surface )
- : m_textureID(INVALID_SURFACE_ID),
-   Texture(_surface)
+ : Texture(_surface),
+   m_textureID(INVALID_SURFACE_ID)
 {
 }
 

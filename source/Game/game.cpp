@@ -1115,7 +1115,7 @@ void Game::ProcessEvents ()
                     }
                     if ( chatting && event.key.keysym.unicode < 0x80 && event.key.keysym.unicode > 0 )
                     {
-                        if ( chatBufPtr - chatBuffer >= sizeof ( chatBuffer ) - 1 )
+                        if ( (unsigned long)(chatBufPtr - chatBuffer) >= sizeof ( chatBuffer ) - 1 )
                             break;
                         *chatBufPtr++ = (char)event.key.keysym.unicode;
                         *chatBufPtr = '\0';

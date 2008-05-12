@@ -4,8 +4,10 @@ all:
 	$(MAKE) -f source/Makefile
 
 clean:
-	$(MAKE) -C contrib/CrissCross clean
 	$(MAKE) -f source/Makefile clean
+
+distclean: clean
+	$(MAKE) -C contrib/CrissCross clean
 
 contrib:
 	$(MAKE) -C contrib/CrissCross
