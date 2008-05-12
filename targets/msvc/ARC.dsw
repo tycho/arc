@@ -3,7 +3,7 @@ Microsoft Developer Studio Workspace File, Format Version 6.00
 
 ###############################################################################
 
-Project: "ARC"=.\source\ARC.dsp - Package Owner=<4>
+Project: "ARC"=.\ARC.dsp - Package Owner=<4>
 
 Package=<5>
 {{{
@@ -18,7 +18,7 @@ Package=<4>
 
 ###############################################################################
 
-Project: "CrissCross"=.\contrib\CrissCross\source\CrissCross.dsp - Package Owner=<4>
+Project: "CrissCross"=..\..\contrib\CrissCross\source\CrissCross.dsp - Package Owner=<4>
 
 Package=<5>
 {{{

@@ -16,7 +16,7 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			OutputDirectory="$(SolutionDir)\bin\"
+			OutputDirectory="$(SolutionDir)\..\..\bin\"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
 			InheritedPropertySheets="..\..\contrib\Debug.vsprops;..\..\contrib\Common.vsprops;.\Common.vsprops;.\Debug.vsprops"
@@ -111,7 +111,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="$(SolutionDir)\bin\"
+			OutputDirectory="$(SolutionDir)\..\..\bin\"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
 			InheritedPropertySheets="..\..\contrib\Release.vsprops;..\..\contrib\Common.vsprops;.\Common.vsprops;.\Release.vsprops"
@@ -204,7 +204,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release Stripped|Win32"
-			OutputDirectory="$(SolutionDir)\bin\"
+			OutputDirectory="$(SolutionDir)\..\..\bin\"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
 			InheritedPropertySheets="..\..\contrib\Release.vsprops;..\..\contrib\Common.vsprops;.\Common.vsprops;.\Release.vsprops"
@@ -297,7 +297,7 @@
 			<Tool
 				Name="VCPostBuildEventTool"
 				Description="Compressing output binary..."
-				CommandLine="$(SolutionDir)\contrib\upx.exe --best --no-progress &quot;$(TargetPath)&quot;"
+				CommandLine="$(SolutionDir)\..\..\contrib\upx.exe --best --no-progress &quot;$(TargetPath)&quot;"
 			/>
 		</Configuration>
 	</Configurations>

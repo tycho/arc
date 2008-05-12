@@ -16,7 +16,7 @@
 			Name="Debug|Win32">
 			<Tool 
 				Name="GeneralTool"
-				OutputDirectory="$(SolutionDir)\bin\"
+				OutputDirectory="$(SolutionDir)\..\..\bin\"
 				IntermediateDirectory="$(ConfigurationName)"
 				ConfigurationType="1"
 				InheritedPropertySheets="..\..\contrib\Debug.vsprops;..\..\contrib\Common.vsprops;.\Common.vsprops;.\Debug.vsprops"
@@ -97,7 +97,7 @@
 			Name="Release|Win32">
 			<Tool 
 				Name="GeneralTool"
-				OutputDirectory="$(SolutionDir)\bin\"
+				OutputDirectory="$(SolutionDir)\..\..\bin\"
 				IntermediateDirectory="$(ConfigurationName)"
 				ConfigurationType="1"
 				InheritedPropertySheets="..\..\contrib\Release.vsprops;..\..\contrib\Common.vsprops;.\Common.vsprops;.\Release.vsprops"
@@ -180,7 +180,7 @@
 			Name="Release Stripped|Win32">
 			<Tool 
 				Name="GeneralTool"
-				OutputDirectory="$(SolutionDir)\bin\"
+				OutputDirectory="$(SolutionDir)\..\..\bin\"
 				IntermediateDirectory="$(ConfigurationName)"
 				ConfigurationType="1"
 				InheritedPropertySheets="..\..\contrib\Release.vsprops;..\..\contrib\Common.vsprops;.\Common.vsprops;.\Release.vsprops"
@@ -262,14 +262,14 @@
 			<Tool 
 				Name="PostBuildEventTool"
 				Description="Compressing output binary..."
-				CommandLine="$(SolutionDir)\contrib\upx.exe --best --no-progress &quot;$(TargetPath)&quot;"/>
+				CommandLine="$(SolutionDir)\..\..\contrib\upx.exe --best --no-progress &quot;$(TargetPath)&quot;"/>
 		</Configuration>
 	</Configurations>
 	<Files>
 		<Filter 
 			Name="App">
 			<File 
-				RelativePath="App\app.cpp">
+				RelativePath="..\..\source\App\app.cpp">
 				<FileConfiguration 
 					Name="Debug|Win32">
 					<Tool 
@@ -293,7 +293,7 @@
 				</FileConfiguration>
 			</File>
 			<File 
-				RelativePath="App\app.h">
+				RelativePath="..\..\source\App\app.h">
 			</File>
 			<File 
 				RelativePath="..\..\source\App\binary_stream_readers.cpp">
@@ -353,7 +353,7 @@
 				RelativePath="..\..\source\Game\collide.h">
 			</File>
 			<File 
-				RelativePath="Game\game.cpp">
+				RelativePath="..\..\source\Game\game.cpp">
 				<FileConfiguration 
 					Name="Debug|Win32">
 					<Tool 
@@ -377,7 +377,7 @@
 				</FileConfiguration>
 			</File>
 			<File 
-				RelativePath="Game\game.h">
+				RelativePath="..\..\source\Game\game.h">
 			</File>
 			<File 
 				RelativePath="..\..\source\Game\grenade_explosion.cpp">
@@ -596,7 +596,7 @@
 		<Filter 
 			Name="Resources">
 			<File 
-				RelativePath="Resources\green_bmp.ico">
+				RelativePath="..\..\source\Resources\green_bmp.ico">
 			</File>
 			<File 
 				RelativePath="resources.rc">
@@ -702,10 +702,10 @@
 			RelativePath="..\..\source\resource.h">
 		</File>
 		<File 
-			RelativePath="TODO.txt">
+			RelativePath="..\..\source\TODO.txt">
 		</File>
 		<File 
-			RelativePath="universal_include.cpp">
+			RelativePath="..\..\source\universal_include.cpp">
 			<FileConfiguration 
 				Name="Debug|Win32">
 				<Tool 
@@ -732,7 +732,7 @@
 			</FileConfiguration>
 		</File>
 		<File 
-			RelativePath="universal_include.h">
+			RelativePath="..\..\source\universal_include.h">
 		</File>
 	</Files>
 </VisualStudioProject>
