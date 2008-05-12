@@ -11,7 +11,7 @@ CPPFLAGS=-D_DEBUG
 STRIP=:strip
 NM=:nm
 
-INCLUDE=-Isource -Icontrib/unrar -Icontrib/CrissCross/source -I/opt/local/include -I/opt/local/include/SDL
+INCLUDE=-Isource -Icontrib/OpenGL/include -Icontrib/unrar -Icontrib/CrissCross/source -I/opt/local/include -I/opt/local/include/SDL
 
 # find . -name '*.cpp' | sed 's%^\./\(.*\)%\1 \\%'
 
@@ -45,6 +45,8 @@ source/Graphics/graphics_sdl.cpp \
 source/Graphics/opengl.cpp \
 source/Graphics/surface.cpp \
 source/Graphics/texture.cpp \
+source/Graphics/texture_directx.cpp \
+source/Graphics/texture_opengl.cpp \
 source/Interface/bouncing_window.cpp \
 source/Interface/button.cpp \
 source/Interface/chat_overlay.cpp \
