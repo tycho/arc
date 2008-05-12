@@ -38,12 +38,12 @@ RSC=rc.exe
 # PROP BASE Target_Dir ""
 # PROP Use_MFC 0
 # PROP Use_Debug_Libraries 0
-# PROP Output_Dir "..\bin"
-# PROP Intermediate_Dir "..\obj\Release\ARC"
+# PROP Output_Dir "..\..\bin"
+# PROP Intermediate_Dir "..\..\obj\Release\ARC"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /YX /FD /c
-# ADD CPP /nologo /MT /W3 /GR /GX /O2 /I "." /I "..\contrib\unrar" /I "..\contrib\SDL\include" /I "..\contrib\SDL_image" /I "..\contrib\SDL_mixer" /I "..\contrib\CrissCross\source" /I "..\contrib\zlib" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Yu"universal_include.h" /FD /c
+# ADD CPP /nologo /MT /W3 /GR /GX /O2 /I "." /I "..\..\contrib\unrar" /I "..\..\contrib\SDL\include" /I "..\..\contrib\SDL_image" /I "..\..\contrib\SDL_mixer" /I "..\..\contrib\CrissCross\source" /I "..\..\contrib\zlib" /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Yu"universal_include.h" /FD /c
 # ADD BASE MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "NDEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x409 /d "NDEBUG"
@@ -53,7 +53,7 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /machine:I386
-# ADD LINK32 msvcprt.lib /nologo /subsystem:windows /machine:I386 /libpath:"../contrib/bin/8.0/"
+# ADD LINK32 msvcprt.lib /nologo /subsystem:windows /machine:I386 /libpath:"../../contrib/bin/8.0/"
 # SUBTRACT LINK32 /debug
 
 !ELSEIF  "$(CFG)" == "ARC - Win32 Debug"
@@ -65,12 +65,12 @@ LINK32=link.exe
 # PROP BASE Target_Dir ""
 # PROP Use_MFC 0
 # PROP Use_Debug_Libraries 1
-# PROP Output_Dir "..\bin"
-# PROP Intermediate_Dir "..\obj\Debug\ARC"
+# PROP Output_Dir "..\..\bin"
+# PROP Intermediate_Dir "..\..\obj\Debug\ARC"
 # PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /YX /FD /GZ /c
-# ADD CPP /nologo /MTd /W3 /Gm /Gi- /vd1 /GR /GX /ZI /Od /I "." /I "..\contrib\unrar" /I "..\contrib\SDL\include" /I "..\contrib\SDL_image" /I "..\contrib\SDL_mixer" /I "..\contrib\CrissCross\source" /I "..\contrib\zlib" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR /Yu"universal_include.h" /FD /c
+# ADD CPP /nologo /MTd /W3 /Gm /Gi- /vd1 /GR /GX /ZI /Od /I "." /I "..\..\contrib\unrar" /I "..\..\contrib\SDL\include" /I "..\..\contrib\SDL_image" /I "..\..\contrib\SDL_mixer" /I "..\..\contrib\CrissCross\source" /I "..\..\contrib\zlib" /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_MBCS" /FR /Yu"universal_include.h" /FD /c
 # ADD BASE MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD MTL /nologo /D "_DEBUG" /mktyplib203 /win32
 # ADD BASE RSC /l 0x409 /d "_DEBUG"
@@ -80,7 +80,7 @@ BSC32=bscmake.exe
 # ADD BSC32 /nologo
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /debug /machine:I386 /pdbtype:sept
-# ADD LINK32 /nologo /subsystem:windows /debug /machine:I386 /nodefaultlib:"libcmt" /libpath:"../contrib/bin/8.0/"
+# ADD LINK32 /nologo /subsystem:windows /debug /machine:I386 /nodefaultlib:"libcmt" /libpath:"../../contrib/bin/8.0/"
 
 !ENDIF 
 
@@ -93,75 +93,75 @@ LINK32=link.exe
 # PROP Default_Filter ""
 # Begin Source File
 
-SOURCE=.\App\app.cpp
+SOURCE=..\..\source\App\app.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\App\app.h
+SOURCE=..\..\source\App\app.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\App\binary_stream_readers.cpp
+SOURCE=..\..\source\App\binary_stream_readers.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\App\binary_stream_readers.h
+SOURCE=..\..\source\App\binary_stream_readers.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\App\databuffer.cpp
+SOURCE=..\..\source\App\databuffer.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\App\databuffer.h
+SOURCE=..\..\source\App\databuffer.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\App\debug_utils.cpp
+SOURCE=..\..\source\App\debug_utils.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\App\debug_utils.h
+SOURCE=..\..\source\App\debug_utils.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\App\file_utils.cpp
+SOURCE=..\..\source\App\file_utils.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\App\file_utils.h
+SOURCE=..\..\source\App\file_utils.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\App\preferences.cpp
+SOURCE=..\..\source\App\preferences.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\App\preferences.h
+SOURCE=..\..\source\App\preferences.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\App\resource.cpp
+SOURCE=..\..\source\App\resource.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\App\resource.h
+SOURCE=..\..\source\App\resource.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\App\string_utils.cpp
+SOURCE=..\..\source\App\string_utils.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\App\string_utils.h
+SOURCE=..\..\source\App\string_utils.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\App\text_stream_readers.cpp
+SOURCE=..\..\source\App\text_stream_readers.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\App\text_stream_readers.h
+SOURCE=..\..\source\App\text_stream_readers.h
 # End Source File
 # End Group
 # Begin Group "Game"
@@ -169,107 +169,107 @@ SOURCE=.\App\text_stream_readers.h
 # PROP Default_Filter ""
 # Begin Source File
 
-SOURCE=.\Game\bounce.cpp
+SOURCE=..\..\source\Game\bounce.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\bounce.h
+SOURCE=..\..\source\Game\bounce.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\collide.cpp
+SOURCE=..\..\source\Game\collide.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\collide.h
+SOURCE=..\..\source\Game\collide.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\game.cpp
+SOURCE=..\..\source\Game\game.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\game.h
+SOURCE=..\..\source\Game\game.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\grenade.cpp
+SOURCE=..\..\source\Game\grenade.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\grenade.h
+SOURCE=..\..\source\Game\grenade.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\grenade_explosion.cpp
+SOURCE=..\..\source\Game\grenade_explosion.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\grenade_explosion.h
+SOURCE=..\..\source\Game\grenade_explosion.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\grenade_smoke.cpp
+SOURCE=..\..\source\Game\grenade_smoke.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\grenade_smoke.h
+SOURCE=..\..\source\Game\grenade_smoke.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\laser.cpp
+SOURCE=..\..\source\Game\laser.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\laser.h
+SOURCE=..\..\source\Game\laser.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\missile.cpp
+SOURCE=..\..\source\Game\missile.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\missile.h
+SOURCE=..\..\source\Game\missile.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\missile_smoke.cpp
+SOURCE=..\..\source\Game\missile_smoke.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\missile_smoke.h
+SOURCE=..\..\source\Game\missile_smoke.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\player.cpp
+SOURCE=..\..\source\Game\player.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\player.h
+SOURCE=..\..\source\Game\player.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\shrapnel.cpp
+SOURCE=..\..\source\Game\shrapnel.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\shrapnel.h
+SOURCE=..\..\source\Game\shrapnel.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\spark.cpp
+SOURCE=..\..\source\Game\spark.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\spark.h
+SOURCE=..\..\source\Game\spark.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\weapon.cpp
+SOURCE=..\..\source\Game\weapon.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Game\weapon.h
+SOURCE=..\..\source\Game\weapon.h
 # End Source File
 # End Group
 # Begin Group "Graphics"
@@ -277,35 +277,35 @@ SOURCE=.\Game\weapon.h
 # PROP Default_Filter ""
 # Begin Source File
 
-SOURCE=.\Graphics\graphics.cpp
+SOURCE=..\..\source\Graphics\graphics.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Graphics\graphics.h
+SOURCE=..\..\source\Graphics\graphics.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Graphics\graphics_opengl.cpp
+SOURCE=..\..\source\Graphics\graphics_opengl.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Graphics\graphics_opengl.h
+SOURCE=..\..\source\Graphics\graphics_opengl.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Graphics\graphics_sdl.cpp
+SOURCE=..\..\source\Graphics\graphics_sdl.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Graphics\graphics_sdl.h
+SOURCE=..\..\source\Graphics\graphics_sdl.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Graphics\surface.cpp
+SOURCE=..\..\source\Graphics\surface.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Graphics\surface.h
+SOURCE=..\..\source\Graphics\surface.h
 # End Source File
 # End Group
 # Begin Group "Interface"
@@ -313,131 +313,131 @@ SOURCE=.\Graphics\surface.h
 # PROP Default_Filter ""
 # Begin Source File
 
-SOURCE=.\Interface\bouncing_window.cpp
+SOURCE=..\..\source\Interface\bouncing_window.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\bouncing_window.h
+SOURCE=..\..\source\Interface\bouncing_window.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\button.cpp
+SOURCE=..\..\source\Interface\button.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\button.h
+SOURCE=..\..\source\Interface\button.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\chat_overlay.cpp
+SOURCE=..\..\source\Interface\chat_overlay.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\chat_overlay.h
+SOURCE=..\..\source\Interface\chat_overlay.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\error_window.cpp
+SOURCE=..\..\source\Interface\error_window.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\error_window.h
+SOURCE=..\..\source\Interface\error_window.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\inputwidget.cpp
+SOURCE=..\..\source\Interface\inputwidget.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\inputwidget.h
+SOURCE=..\..\source\Interface\inputwidget.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\interface.cpp
+SOURCE=..\..\source\Interface\interface.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\interface.h
+SOURCE=..\..\source\Interface\interface.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\laser_zap.cpp
+SOURCE=..\..\source\Interface\laser_zap.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\laser_zap.h
+SOURCE=..\..\source\Interface\laser_zap.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\loading_window.cpp
+SOURCE=..\..\source\Interface\loading_window.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\loading_window.h
+SOURCE=..\..\source\Interface\loading_window.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\quit_window.cpp
+SOURCE=..\..\source\Interface\quit_window.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\quit_window.h
+SOURCE=..\..\source\Interface\quit_window.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\ship.cpp
+SOURCE=..\..\source\Interface\ship.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\ship.h
+SOURCE=..\..\source\Interface\ship.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\ship_explosion.cpp
+SOURCE=..\..\source\Interface\ship_explosion.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\ship_explosion.h
+SOURCE=..\..\source\Interface\ship_explosion.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\sidebar.cpp
+SOURCE=..\..\source\Interface\sidebar.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\sidebar.h
+SOURCE=..\..\source\Interface\sidebar.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\text.cpp
+SOURCE=..\..\source\Interface\text.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\text.h
+SOURCE=..\..\source\Interface\text.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\text_input.cpp
+SOURCE=..\..\source\Interface\text_input.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\text_input.h
+SOURCE=..\..\source\Interface\text_input.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\widget.cpp
+SOURCE=..\..\source\Interface\widget.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\widget.h
+SOURCE=..\..\source\Interface\widget.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\window.cpp
+SOURCE=..\..\source\Interface\window.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Interface\window.h
+SOURCE=..\..\source\Interface\window.h
 # End Source File
 # End Group
 # Begin Group "Network"
@@ -445,43 +445,43 @@ SOURCE=.\Interface\window.h
 # PROP Default_Filter ""
 # Begin Source File
 
-SOURCE=.\Network\connection.cpp
+SOURCE=..\..\source\Network\connection.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Network\connection.h
+SOURCE=..\..\source\Network\connection.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Network\net.cpp
+SOURCE=..\..\source\Network\net.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Network\net.h
+SOURCE=..\..\source\Network\net.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Network\net_crisscross.cpp
+SOURCE=..\..\source\Network\net_crisscross.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Network\net_crisscross.h
+SOURCE=..\..\source\Network\net_crisscross.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Network\net_raknet.cpp
+SOURCE=..\..\source\Network\net_raknet.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Network\net_raknet.h
+SOURCE=..\..\source\Network\net_raknet.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Network\packet.cpp
+SOURCE=..\..\source\Network\packet.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Network\packet.h
+SOURCE=..\..\source\Network\packet.h
 # End Source File
 # End Group
 # Begin Group "Resources"
@@ -489,11 +489,11 @@ SOURCE=.\Network\packet.h
 # PROP Default_Filter ""
 # Begin Source File
 
-SOURCE=.\Resources\green_bmp.ico
+SOURCE=..\..\source\Resources\green_bmp.ico
 # End Source File
 # Begin Source File
 
-SOURCE=.\resources.rc
+SOURCE=..\..\source\resources.rc
 
 !IF  "$(CFG)" == "ARC - Win32 Release"
 
@@ -510,27 +510,27 @@ SOURCE=.\resources.rc
 # PROP Default_Filter ""
 # Begin Source File
 
-SOURCE=.\Sound\soundsystem.cpp
+SOURCE=..\..\source\Sound\soundsystem.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Sound\soundsystem.h
+SOURCE=..\..\source\Sound\soundsystem.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Sound\soundsystem_openal.cpp
+SOURCE=..\..\source\Sound\soundsystem_openal.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Sound\soundsystem_openal.h
+SOURCE=..\..\source\Sound\soundsystem_openal.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\Sound\soundsystem_sdlmixer.cpp
+SOURCE=..\..\source\Sound\soundsystem_sdlmixer.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\Sound\soundsystem_sdlmixer.h
+SOURCE=..\..\source\Sound\soundsystem_sdlmixer.h
 # End Source File
 # End Group
 # Begin Group "World"
@@ -538,35 +538,35 @@ SOURCE=.\Sound\soundsystem_sdlmixer.h
 # PROP Default_Filter ""
 # Begin Source File
 
-SOURCE=.\World\map.cpp
+SOURCE=..\..\source\World\map.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\World\map.h
+SOURCE=..\..\source\World\map.h
 # End Source File
 # End Group
 # Begin Source File
 
-SOURCE=.\arc.cpp
+SOURCE=..\..\source\arc.cpp
 # End Source File
 # Begin Source File
 
-SOURCE=.\resource.h
+SOURCE=..\..\source\resource.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\universal_include.cpp
+SOURCE=..\..\source\universal_include.cpp
 # ADD CPP /Yc"universal_include.h"
 # End Source File
 # Begin Source File
 
-SOURCE=.\universal_include.h
+SOURCE=..\..\source\universal_include.h
 
 !IF  "$(CFG)" == "ARC - Win32 Release"
 
 # Begin Custom Build - Generating build number...
 ProjDir=.
-InputPath=.\universal_include.h
+InputPath=..\..\source\universal_include.h
 
 "build_number.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
 	$(ProjDir)\GenerateBuildNumber.exe $(ProjDir)\.
@@ -578,7 +578,7 @@ InputPath=.\universal_include.h
 # PROP Ignore_Default_Tool 1
 # Begin Custom Build - Generating build number...
 ProjDir=.
-InputPath=.\universal_include.h
+InputPath=..\..\source\universal_include.h
 
 "build_number.h" : $(SOURCE) "$(INTDIR)" "$(OUTDIR)"
 	$(ProjDir)\GenerateBuildNumber.exe $(ProjDir)\.

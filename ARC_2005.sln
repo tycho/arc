@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ARC", "source\ARC_2005.vcproj", "{222AA662-C3B2-411A-97EB-4267536DEEFF}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ARC", "targets\msvc\ARC_2005.vcproj", "{222AA662-C3B2-411A-97EB-4267536DEEFF}"
 	ProjectSection(ProjectDependencies) = postProject
 		{9520273D-42A8-4E63-A2DC-C209AAAC2B6A} = {9520273D-42A8-4E63-A2DC-C209AAAC2B6A}
 	EndProjectSection

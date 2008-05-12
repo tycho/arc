@@ -1,0 +1,2111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="39">
+  <logicalFolder name="root" displayName="root" projectFiles="true">
+    <logicalFolder name="source" displayName="source" projectFiles="true">
+      <logicalFolder name="App" displayName="App" projectFiles="true">
+        <itemPath>../../../source/App/app.cpp</itemPath>
+        <itemPath>../../../source/App/app.h</itemPath>
+        <itemPath>../../../source/App/binary_stream_readers.cpp</itemPath>
+        <itemPath>../../../source/App/binary_stream_readers.h</itemPath>
+        <itemPath>../../../source/App/databuffer.cpp</itemPath>
+        <itemPath>../../../source/App/databuffer.h</itemPath>
+        <itemPath>../../../source/App/debug_utils.cpp</itemPath>
+        <itemPath>../../../source/App/debug_utils.h</itemPath>
+        <itemPath>../../../source/App/file_utils.cpp</itemPath>
+        <itemPath>../../../source/App/file_utils.h</itemPath>
+        <itemPath>../../../source/App/preferences.cpp</itemPath>
+        <itemPath>../../../source/App/preferences.h</itemPath>
+        <itemPath>../../../source/App/resource.cpp</itemPath>
+        <itemPath>../../../source/App/resource.h</itemPath>
+        <itemPath>../../../source/App/string_utils.cpp</itemPath>
+        <itemPath>../../../source/App/string_utils.h</itemPath>
+        <itemPath>../../../source/App/text_stream_readers.cpp</itemPath>
+        <itemPath>../../../source/App/text_stream_readers.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="Build" displayName="Build" projectFiles="true">
+        <itemPath>../../../source/Build/crc.cpp</itemPath>
+        <itemPath>../../../source/Build/crc.h</itemPath>
+        <itemPath>../../../source/Build/GenerateBuildNumber.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="Game" displayName="Game" projectFiles="true">
+        <itemPath>../../../source/Game/bounce.cpp</itemPath>
+        <itemPath>../../../source/Game/bounce.h</itemPath>
+        <itemPath>../../../source/Game/collide.cpp</itemPath>
+        <itemPath>../../../source/Game/collide.h</itemPath>
+        <itemPath>../../../source/Game/game.cpp</itemPath>
+        <itemPath>../../../source/Game/game.h</itemPath>
+        <itemPath>../../../source/Game/grenade.cpp</itemPath>
+        <itemPath>../../../source/Game/grenade.h</itemPath>
+        <itemPath>../../../source/Game/grenade_explosion.cpp</itemPath>
+        <itemPath>../../../source/Game/grenade_explosion.h</itemPath>
+        <itemPath>../../../source/Game/grenade_smoke.cpp</itemPath>
+        <itemPath>../../../source/Game/grenade_smoke.h</itemPath>
+        <itemPath>../../../source/Game/laser.cpp</itemPath>
+        <itemPath>../../../source/Game/laser.h</itemPath>
+        <itemPath>../../../source/Game/missile.cpp</itemPath>
+        <itemPath>../../../source/Game/missile.h</itemPath>
+        <itemPath>../../../source/Game/missile_smoke.cpp</itemPath>
+        <itemPath>../../../source/Game/missile_smoke.h</itemPath>
+        <itemPath>../../../source/Game/player.cpp</itemPath>
+        <itemPath>../../../source/Game/player.h</itemPath>
+        <itemPath>../../../source/Game/shrapnel.cpp</itemPath>
+        <itemPath>../../../source/Game/shrapnel.h</itemPath>
+        <itemPath>../../../source/Game/spark.cpp</itemPath>
+        <itemPath>../../../source/Game/spark.h</itemPath>
+        <itemPath>../../../source/Game/weapon.cpp</itemPath>
+        <itemPath>../../../source/Game/weapon.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="Graphics" displayName="Graphics" projectFiles="true">
+        <itemPath>../../../source/Graphics/graphics.cpp</itemPath>
+        <itemPath>../../../source/Graphics/graphics.h</itemPath>
+        <itemPath>../../../source/Graphics/graphics_directx.cpp</itemPath>
+        <itemPath>../../../source/Graphics/graphics_directx.h</itemPath>
+        <itemPath>../../../source/Graphics/graphics_opengl.cpp</itemPath>
+        <itemPath>../../../source/Graphics/graphics_opengl.h</itemPath>
+        <itemPath>../../../source/Graphics/graphics_sdl.cpp</itemPath>
+        <itemPath>../../../source/Graphics/graphics_sdl.h</itemPath>
+        <itemPath>../../../source/Graphics/opengl.cpp</itemPath>
+        <itemPath>../../../source/Graphics/opengl.h</itemPath>
+        <itemPath>../../../source/Graphics/surface.cpp</itemPath>
+        <itemPath>../../../source/Graphics/surface.h</itemPath>
+        <itemPath>../../../source/Graphics/texture.cpp</itemPath>
+        <itemPath>../../../source/Graphics/texture.h</itemPath>
+        <itemPath>../../../source/Graphics/texture_directx.cpp</itemPath>
+        <itemPath>../../../source/Graphics/texture_directx.h</itemPath>
+        <itemPath>../../../source/Graphics/texture_opengl.cpp</itemPath>
+        <itemPath>../../../source/Graphics/texture_opengl.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="Interface" displayName="Interface" projectFiles="true">
+        <itemPath>../../../source/Interface/bouncing_window.cpp</itemPath>
+        <itemPath>../../../source/Interface/bouncing_window.h</itemPath>
+        <itemPath>../../../source/Interface/button.cpp</itemPath>
+        <itemPath>../../../source/Interface/button.h</itemPath>
+        <itemPath>../../../source/Interface/chat_overlay.cpp</itemPath>
+        <itemPath>../../../source/Interface/chat_overlay.h</itemPath>
+        <itemPath>../../../source/Interface/error_window.cpp</itemPath>
+        <itemPath>../../../source/Interface/error_window.h</itemPath>
+        <itemPath>../../../source/Interface/inputwidget.cpp</itemPath>
+        <itemPath>../../../source/Interface/inputwidget.h</itemPath>
+        <itemPath>../../../source/Interface/interface.cpp</itemPath>
+        <itemPath>../../../source/Interface/interface.h</itemPath>
+        <itemPath>../../../source/Interface/laser_zap.cpp</itemPath>
+        <itemPath>../../../source/Interface/laser_zap.h</itemPath>
+        <itemPath>../../../source/Interface/loading_window.cpp</itemPath>
+        <itemPath>../../../source/Interface/loading_window.h</itemPath>
+        <itemPath>../../../source/Interface/quit_window.cpp</itemPath>
+        <itemPath>../../../source/Interface/quit_window.h</itemPath>
+        <itemPath>../../../source/Interface/ship.cpp</itemPath>
+        <itemPath>../../../source/Interface/ship.h</itemPath>
+        <itemPath>../../../source/Interface/ship_explosion.cpp</itemPath>
+        <itemPath>../../../source/Interface/ship_explosion.h</itemPath>
+        <itemPath>../../../source/Interface/sidebar.cpp</itemPath>
+        <itemPath>../../../source/Interface/sidebar.h</itemPath>
+        <itemPath>../../../source/Interface/text.cpp</itemPath>
+        <itemPath>../../../source/Interface/text.h</itemPath>
+        <itemPath>../../../source/Interface/text_input.cpp</itemPath>
+        <itemPath>../../../source/Interface/text_input.h</itemPath>
+        <itemPath>../../../source/Interface/widget.cpp</itemPath>
+        <itemPath>../../../source/Interface/widget.h</itemPath>
+        <itemPath>../../../source/Interface/window.cpp</itemPath>
+        <itemPath>../../../source/Interface/window.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="Network" displayName="Network" projectFiles="true">
+        <itemPath>../../../source/Network/connection.cpp</itemPath>
+        <itemPath>../../../source/Network/connection.h</itemPath>
+        <itemPath>../../../source/Network/net.cpp</itemPath>
+        <itemPath>../../../source/Network/net.h</itemPath>
+        <itemPath>../../../source/Network/net_crisscross.cpp</itemPath>
+        <itemPath>../../../source/Network/net_crisscross.h</itemPath>
+        <itemPath>../../../source/Network/net_raknet.cpp</itemPath>
+        <itemPath>../../../source/Network/net_raknet.h</itemPath>
+        <itemPath>../../../source/Network/packet.cpp</itemPath>
+        <itemPath>../../../source/Network/packet.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="Sound" displayName="Sound" projectFiles="true">
+        <itemPath>../../../source/Sound/soundsystem.cpp</itemPath>
+        <itemPath>../../../source/Sound/soundsystem.h</itemPath>
+        <itemPath>../../../source/Sound/soundsystem_openal.cpp</itemPath>
+        <itemPath>../../../source/Sound/soundsystem_openal.h</itemPath>
+        <itemPath>../../../source/Sound/soundsystem_sdlmixer.cpp</itemPath>
+        <itemPath>../../../source/Sound/soundsystem_sdlmixer.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="World" displayName="World" projectFiles="true">
+        <itemPath>../../../source/World/map.cpp</itemPath>
+        <itemPath>../../../source/World/map.h</itemPath>
+      </logicalFolder>
+      <itemPath>../../../source/arc.cpp</itemPath>
+      <itemPath>../../../source/build_number.h</itemPath>
+      <itemPath>../../../source/resource.h</itemPath>
+      <itemPath>../../../source/SDLMain.h</itemPath>
+      <itemPath>../../../source/SDLMain.m</itemPath>
+      <itemPath>../../../source/universal_include.cpp</itemPath>
+      <itemPath>../../../source/universal_include.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="contrib" displayName="contrib" projectFiles="true">
+      <logicalFolder name="CrissCross" displayName="CrissCross" projectFiles="true">
+        <logicalFolder name="source" displayName="source" projectFiles="true">
+          <itemPath>../../../contrib/CrissCross/source/console.cpp</itemPath>
+          <itemPath>../../../contrib/CrissCross/source/core_io_reader.cpp</itemPath>
+          <itemPath>../../../contrib/CrissCross/source/core_io_writer.cpp</itemPath>
+          <itemPath>../../../contrib/CrissCross/source/debug.cpp</itemPath>
+          <itemPath>../../../contrib/CrissCross/source/stopwatch.cpp</itemPath>
+          <itemPath>../../../contrib/CrissCross/source/system.cpp</itemPath>
+          <itemPath>../../../contrib/CrissCross/source/universal_include.cpp</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="unrar" displayName="unrar" projectFiles="true">
+        <itemPath>../../../contrib/unrar/arccmt.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/archive.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/archive.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/arcread.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/array.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/cmddata.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/cmddata.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/coder.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/coder.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/compress.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/consio.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/consio.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/crc.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/crypt.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/crypt.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/encname.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/encname.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/errhnd.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/errhnd.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/extinfo.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/extract.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/extract.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/filcreat.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/file.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/file.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/filefn.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/filefn.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/filestr.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/find.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/find.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/getbits.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/getbits.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/global.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/global.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/headers.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/int64.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/int64.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/isnt.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/list.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/log.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/match.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/match.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/model.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/model.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/options.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/options.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/os.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/pathfn.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/rarresource.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/rartypes.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/rarvm.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/rarvm.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/rarvmtbl.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/rawread.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/rawread.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/rdwrfn.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/rdwrfn.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/recvol.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/recvol.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/rijndael.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/rijndael.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/rs.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/rs.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/savepos.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/savepos.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/scantree.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/scantree.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/sha1.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/sha1.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/smallfn.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/strfn.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/strlist.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/strlist.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/suballoc.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/suballoc.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/system.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/timefn.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/timefn.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/ulinks.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/unicode.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/unpack.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/unpack.hpp</itemPath>
+        <itemPath>../../../contrib/unrar/unpack15.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/unpack20.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/unrar.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/unrar.h</itemPath>
+        <itemPath>../../../contrib/unrar/uowners.cpp</itemPath>
+        <itemPath>../../../contrib/unrar/volume.cpp</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="crisscross" displayName="crisscross" projectFiles="true">
+      <itemPath>../../../contrib/CrissCross/source/crisscross/avltree.cpp</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/avltree.h</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/compare.h</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/console.h</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/core_io.h</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/core_io_reader.h</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/core_io_writer.h</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/core_socket.h</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/darray.cpp</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/darray.h</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/datatypes.h</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/debug.h</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/dstack.cpp</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/dstack.h</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/error.h</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/internal_mem.h</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/llist.cpp</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/llist.h</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/node.h</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/rbtree.cpp</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/rbtree.h</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/stopwatch.h</itemPath>
+      <itemPath>../../../contrib/CrissCross/source/crisscross/universal_include.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
+      <itemPath>arc-Makefile.mk</itemPath>
+      <itemPath>../../../Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>arc-Makefile.mk</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <compilerSet>GNU</compilerSet>
+        <cRequired>true</cRequired>
+        <cppRequired>true</cppRequired>
+        <fortranRequired>false</fortranRequired>
+        <platform>2</platform>
+      </toolsSet>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>../../..</buildCommandWorkingDir>
+          <buildCommand>make -f Makefile</buildCommand>
+          <cleanCommand>make -f Makefile clean</cleanCommand>
+          <executablePath>../../../bin/ARC</executablePath>
+        </makeTool>
+        <requiredProjects>
+        </requiredProjects>
+      </makefileType>
+      <item path="../../../contrib/CrissCross/source/console.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/core_io_reader.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/core_io_writer.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/avltree.cpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/avltree.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/compare.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/console.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/core_io.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/core_io_reader.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/core_io_writer.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/core_socket.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/darray.cpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/darray.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/datatypes.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/debug.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/dstack.cpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/dstack.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/error.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/internal_mem.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/llist.cpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/llist.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/node.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/rbtree.cpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/rbtree.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/stopwatch.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/crisscross/universal_include.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/debug.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/stopwatch.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/system.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/CrissCross/source/universal_include.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/arccmt.cpp">
+        <itemTool>1</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/archive.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/archive.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/arcread.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/array.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/cmddata.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/cmddata.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/coder.cpp">
+        <itemTool>1</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/coder.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/compress.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/consio.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/consio.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/crc.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/crypt.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/crypt.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/encname.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/encname.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/errhnd.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/errhnd.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/extinfo.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/extract.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/extract.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/filcreat.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/file.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/file.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/filefn.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/filefn.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/filestr.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/find.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/find.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/getbits.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/getbits.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/global.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/global.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/headers.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/int64.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/int64.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/isnt.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/list.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/log.cpp">
+        <itemTool>1</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/match.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/match.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/model.cpp">
+        <itemTool>1</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/model.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/options.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/options.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/os.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/pathfn.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/rarresource.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/rartypes.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/rarvm.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/rarvm.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/rarvmtbl.cpp">
+        <itemTool>1</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/rawread.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/rawread.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/rdwrfn.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/rdwrfn.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/recvol.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/recvol.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/rijndael.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/rijndael.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/rs.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/rs.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/savepos.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/savepos.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/scantree.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/scantree.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/sha1.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/sha1.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/smallfn.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/strfn.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/strlist.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/strlist.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/suballoc.cpp">
+        <itemTool>1</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/suballoc.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/system.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/timefn.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/timefn.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/ulinks.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/unicode.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/unpack.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/unpack.hpp">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/unpack15.cpp">
+        <itemTool>1</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/unpack20.cpp">
+        <itemTool>1</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/unrar.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../contrib/unrar/unrar.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/uowners.cpp">
+        <itemTool>1</itemTool>
+      </item>
+      <item path="../../../contrib/unrar/volume.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/App/app.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+            <directoryPath>../../../source/App</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/App/app.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/App/binary_stream_readers.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+            <directoryPath>../../../source/App</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/App/binary_stream_readers.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/App/databuffer.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+            <directoryPath>../../../source/App</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/App/databuffer.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/App/debug_utils.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+            <directoryPath>../../../source/App</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/App/debug_utils.h">
+        <itemExcluded>true</itemExcluded>
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/App/file_utils.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+            <directoryPath>../../../source/App</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/App/file_utils.h">
+        <itemExcluded>true</itemExcluded>
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/App/preferences.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+            <directoryPath>../../../source/App</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/App/preferences.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/App/resource.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../contrib/unrar</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+            <directoryPath>../../../source/App</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/App/resource.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/App/string_utils.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+            <directoryPath>../../../source/App</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/App/string_utils.h">
+        <itemExcluded>true</itemExcluded>
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/App/text_stream_readers.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+            <directoryPath>../../../source/App</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/App/text_stream_readers.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Build/GenerateBuildNumber.cpp">
+        <itemExcluded>true</itemExcluded>
+        <itemTool>1</itemTool>
+      </item>
+      <item path="../../../source/Build/crc.cpp">
+        <itemExcluded>true</itemExcluded>
+        <itemTool>1</itemTool>
+      </item>
+      <item path="../../../source/Build/crc.h">
+        <itemExcluded>true</itemExcluded>
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Game/bounce.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>../../../source/Sound</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Game/bounce.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Game/collide.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Game/collide.h">
+        <itemExcluded>true</itemExcluded>
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Game/game.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>../../../source/Sound</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+            <directoryPath>../../../source/App</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Game/game.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Game/grenade.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>../../../source/Sound</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Game/grenade.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Game/grenade_explosion.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>../../../source/Sound</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Game/grenade_explosion.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Game/grenade_smoke.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Game/grenade_smoke.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Game/laser.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>../../../source/Sound</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Game/laser.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Game/missile.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>../../../source/Sound</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Game/missile.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Game/missile_smoke.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Game/missile_smoke.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Game/player.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Game/player.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Game/shrapnel.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Game/shrapnel.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Game/spark.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Game/spark.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Game/weapon.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../source/World</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Game/weapon.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Graphics/graphics.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Graphics/graphics.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Graphics/graphics_directx.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Graphics/graphics_directx.h">
+        <itemExcluded>true</itemExcluded>
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Graphics/graphics_opengl.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+            <directoryPath>../../../source/App</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Graphics/graphics_opengl.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Graphics/graphics_sdl.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+            <directoryPath>../../../source/App</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Graphics/graphics_sdl.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Graphics/opengl.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+            <directoryPath>../../../source/App</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Graphics/opengl.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Graphics/surface.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Graphics/surface.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Graphics/texture.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Graphics/texture.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Graphics/texture_directx.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Graphics/texture_directx.h">
+        <itemExcluded>true</itemExcluded>
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Graphics/texture_opengl.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Graphics/texture_opengl.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Interface/bouncing_window.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Interface/bouncing_window.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Interface/button.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Interface/button.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Interface/chat_overlay.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Interface/chat_overlay.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Interface/error_window.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Interface/error_window.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Interface/inputwidget.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Interface/inputwidget.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Interface/interface.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+            <directoryPath>../../../source/App</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Interface/interface.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Interface/laser_zap.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Interface/laser_zap.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Interface/loading_window.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Interface/loading_window.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Interface/quit_window.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Interface/quit_window.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Interface/ship.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>../../../source/Sound</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Interface/ship.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Interface/ship_explosion.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Interface/ship_explosion.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Interface/sidebar.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Interface/sidebar.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Interface/text.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Interface/text.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Interface/text_input.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Interface/text_input.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Interface/widget.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Interface/widget.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Interface/window.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Interface/window.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Network/connection.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Network</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Network/connection.h">
+        <itemExcluded>true</itemExcluded>
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Network/net.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Network</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Network/net.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Network/net_crisscross.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Network</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Network/net_crisscross.h">
+        <itemExcluded>true</itemExcluded>
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Network/net_raknet.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Network</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Network/net_raknet.h">
+        <itemExcluded>true</itemExcluded>
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Network/packet.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Network</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Network/packet.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/SDLMain.h">
+        <itemExcluded>true</itemExcluded>
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/SDLMain.m">
+        <itemExcluded>true</itemExcluded>
+        <itemTool>0</itemTool>
+      </item>
+      <item path="../../../source/Sound/soundsystem.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Sound</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Sound/soundsystem.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Sound/soundsystem_openal.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Sound</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Sound/soundsystem_openal.h">
+        <itemExcluded>true</itemExcluded>
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/Sound/soundsystem_sdlmixer.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Sound</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+            <directoryPath>../../../source/App</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/Sound/soundsystem_sdlmixer.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/World/map.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../source/World</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+            <directoryPath>../../../source/App</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/World/map.h">
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/arc.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>../../../source/Game</directoryPath>
+            <directoryPath>../../../source/Sound</directoryPath>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source/Interface</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../source/Graphics</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+            <directoryPath>../../../source/App</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/build_number.h">
+        <itemExcluded>true</itemExcluded>
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/resource.h">
+        <itemExcluded>true</itemExcluded>
+        <itemTool>3</itemTool>
+      </item>
+      <item path="../../../source/universal_include.cpp">
+        <itemTool>1</itemTool>
+        <ccCompilerTool>
+          <includeDirectories>
+            <directoryPath>..</directoryPath>
+            <directoryPath>../../../source</directoryPath>
+            <directoryPath>../../../contrib/CrissCross/source/crisscross</directoryPath>
+          </includeDirectories>
+          <inheritIncValues>false</inheritIncValues>
+          <inheritPreValues>false</inheritPreValues>
+        </ccCompilerTool>
+      </item>
+      <item path="../../../source/universal_include.h">
+        <itemTool>3</itemTool>
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8.00"
+	Version="9.00"
 	Name="ARC"
 	ProjectGUID="{222AA662-C3B2-411A-97EB-4267536DEEFF}"
 	RootNamespace="ARC"
@@ -19,7 +19,7 @@
 			OutputDirectory="$(SolutionDir)\bin\"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\contrib\Debug.vsprops;..\contrib\Common.vsprops;.\Common.vsprops;.\Debug.vsprops"
+			InheritedPropertySheets="..\..\contrib\Debug.vsprops;..\..\contrib\Common.vsprops;.\Common.vsprops;.\Debug.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="0"
@@ -27,7 +27,7 @@
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Generating build number..."
-				CommandLine="&quot;$(ProjectDir)GenerateBuildNumber.exe&quot; $(ProjectDir)"
+				CommandLine="&quot;$(ProjectDir)\..\..\source\GenerateBuildNumber.exe&quot; $(ProjectDir)"
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
@@ -44,7 +44,7 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="1"
-				TypeLibraryName=".\..\bin/ARC.tlb"
+				TypeLibraryName="..\..\bin/ARC.tlb"
 				HeaderFileName=""
 			/>
 			<Tool
@@ -76,10 +76,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile=".\..\bin/ARC.exe"
+				OutputFile="..\..\bin/ARC.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="../contrib/bin/8.0;../contrib/OpenAL/libs/Win32/"
+				AdditionalLibraryDirectories="../../contrib/bin/8.0;../../contrib/OpenAL/libs/Win32/"
 				IgnoreDefaultLibraryNames=""
 				GenerateDebugInformation="true"
 				GenerateMapFile="false"
@@ -106,9 +106,6 @@
 				Name="VCAppVerifierTool"
 			/>
 			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
@@ -117,7 +114,7 @@
 			OutputDirectory="$(SolutionDir)\bin\"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\contrib\Release.vsprops;..\contrib\Common.vsprops;.\Common.vsprops;.\Release.vsprops"
+			InheritedPropertySheets="..\..\contrib\Release.vsprops;..\..\contrib\Common.vsprops;.\Common.vsprops;.\Release.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="0"
@@ -125,7 +122,7 @@
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Generating build number..."
-				CommandLine="&quot;$(ProjectDir)GenerateBuildNumber.exe&quot; $(ProjectDir)"
+				CommandLine="&quot;$(ProjectDir)\..\..\source\GenerateBuildNumber.exe&quot; $(ProjectDir)"
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
@@ -142,7 +139,7 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="1"
-				TypeLibraryName=".\..\bin/ARC.tlb"
+				TypeLibraryName="..\..\bin/ARC.tlb"
 				HeaderFileName=""
 			/>
 			<Tool
@@ -173,10 +170,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile=".\..\bin/ARC.exe"
+				OutputFile="..\..\bin/ARC.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="../contrib/bin/8.0;../contrib/OpenAL/libs/Win32/"
+				AdditionalLibraryDirectories="../../contrib/bin/8.0;../../contrib/OpenAL/libs/Win32/"
 				IgnoreDefaultLibraryNames=""
 				GenerateDebugInformation="true"
 				GenerateMapFile="false"
@@ -202,9 +199,6 @@
 				Name="VCAppVerifierTool"
 			/>
 			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
 			/>
 		</Configuration>
@@ -213,7 +207,7 @@
 			OutputDirectory="$(SolutionDir)\bin\"
 			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
-			InheritedPropertySheets="..\contrib\Release.vsprops;..\contrib\Common.vsprops;.\Common.vsprops;.\Release.vsprops"
+			InheritedPropertySheets="..\..\contrib\Release.vsprops;..\..\contrib\Common.vsprops;.\Common.vsprops;.\Release.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="0"
@@ -221,7 +215,7 @@
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Generating build number..."
-				CommandLine="&quot;$(ProjectDir)GenerateBuildNumber.exe&quot; $(ProjectDir)"
+				CommandLine="&quot;$(ProjectDir)\..\..\source\GenerateBuildNumber.exe&quot; $(ProjectDir)"
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
@@ -238,7 +232,7 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="1"
-				TypeLibraryName=".\..\bin/ARC.tlb"
+				TypeLibraryName="..\..\bin/ARC.tlb"
 				HeaderFileName=""
 			/>
 			<Tool
@@ -268,10 +262,10 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/ALIGN:4096"
-				OutputFile=".\..\bin/ARC.exe"
+				OutputFile="..\..\bin/ARC.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="../contrib/bin/8.0;../contrib/OpenAL/libs/Win32/"
+				AdditionalLibraryDirectories="../../contrib/bin/8.0;../../contrib/OpenAL/libs/Win32/"
 				IgnoreDefaultLibraryNames=""
 				GenerateDebugInformation="true"
 				GenerateMapFile="false"
@@ -301,9 +295,6 @@
 				Name="VCAppVerifierTool"
 			/>
 			<Tool
-				Name="VCWebDeploymentTool"
-			/>
-			<Tool
 				Name="VCPostBuildEventTool"
 				Description="Compressing output binary..."
 				CommandLine="$(SolutionDir)\contrib\upx.exe --best --no-progress &quot;$(TargetPath)&quot;"
@@ -317,102 +308,75 @@
 			Name="App"
 			>
 			<File
-				RelativePath="App\app.cpp"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Stripped|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="App\app.h"
+				RelativePath="..\..\source\App\app.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\App\binary_stream_readers.cpp"
+				RelativePath="..\..\source\App\app.h"
 				>
 			</File>
 			<File
-				RelativePath=".\App\binary_stream_readers.h"
+				RelativePath="..\..\source\App\binary_stream_readers.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\App\databuffer.cpp"
+				RelativePath="..\..\source\App\binary_stream_readers.h"
 				>
 			</File>
 			<File
-				RelativePath=".\App\databuffer.h"
+				RelativePath="..\..\source\App\databuffer.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\App\debug_utils.cpp"
+				RelativePath="..\..\source\App\databuffer.h"
 				>
 			</File>
 			<File
-				RelativePath=".\App\debug_utils.h"
+				RelativePath="..\..\source\App\debug_utils.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\App\file_utils.cpp"
+				RelativePath="..\..\source\App\debug_utils.h"
 				>
 			</File>
 			<File
-				RelativePath=".\App\file_utils.h"
+				RelativePath="..\..\source\App\file_utils.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\App\preferences.cpp"
+				RelativePath="..\..\source\App\file_utils.h"
 				>
 			</File>
 			<File
-				RelativePath=".\App\preferences.h"
+				RelativePath="..\..\source\App\preferences.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\App\resource.cpp"
+				RelativePath="..\..\source\App\preferences.h"
 				>
 			</File>
 			<File
-				RelativePath=".\App\resource.h"
+				RelativePath="..\..\source\App\resource.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\App\string_utils.cpp"
+				RelativePath="..\..\source\App\resource.h"
 				>
 			</File>
 			<File
-				RelativePath=".\App\string_utils.h"
+				RelativePath="..\..\source\App\string_utils.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\App\text_stream_readers.cpp"
+				RelativePath="..\..\source\App\string_utils.h"
 				>
 			</File>
 			<File
-				RelativePath=".\App\text_stream_readers.h"
+				RelativePath="..\..\source\App\text_stream_readers.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\source\App\text_stream_readers.h"
 				>
 			</File>
 		</Filter>
@@ -420,137 +384,110 @@
 			Name="Game"
 			>
 			<File
-				RelativePath=".\Game\collide.cpp"
+				RelativePath="..\..\source\Game\collide.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Game\collide.h"
+				RelativePath="..\..\source\Game\collide.h"
 				>
 			</File>
 			<File
-				RelativePath="Game\game.cpp"
-				>
-				<FileConfiguration
-					Name="Debug|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-				<FileConfiguration
-					Name="Release Stripped|Win32"
-					>
-					<Tool
-						Name="VCCLCompilerTool"
-						AdditionalIncludeDirectories=""
-						PreprocessorDefinitions=""
-					/>
-				</FileConfiguration>
-			</File>
-			<File
-				RelativePath="Game\game.h"
+				RelativePath="..\..\source\Game\game.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Game\grenade_explosion.cpp"
+				RelativePath="..\..\source\Game\game.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Game\grenade_explosion.h"
+				RelativePath="..\..\source\Game\grenade_explosion.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Game\grenade_smoke.cpp"
+				RelativePath="..\..\source\Game\grenade_explosion.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Game\grenade_smoke.h"
+				RelativePath="..\..\source\Game\grenade_smoke.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Game\missile_smoke.cpp"
+				RelativePath="..\..\source\Game\grenade_smoke.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Game\missile_smoke.h"
+				RelativePath="..\..\source\Game\missile_smoke.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Game\player.cpp"
+				RelativePath="..\..\source\Game\missile_smoke.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Game\player.h"
+				RelativePath="..\..\source\Game\player.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Game\spark.cpp"
+				RelativePath="..\..\source\Game\player.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Game\spark.h"
+				RelativePath="..\..\source\Game\spark.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\source\Game\spark.h"
 				>
 			</File>
 			<Filter
 				Name="Weapons"
 				>
 				<File
-					RelativePath=".\Game\bounce.cpp"
+					RelativePath="..\..\source\Game\bounce.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Game\bounce.h"
+					RelativePath="..\..\source\Game\bounce.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Game\grenade.cpp"
+					RelativePath="..\..\source\Game\grenade.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Game\grenade.h"
+					RelativePath="..\..\source\Game\grenade.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Game\laser.cpp"
+					RelativePath="..\..\source\Game\laser.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Game\laser.h"
+					RelativePath="..\..\source\Game\laser.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Game\missile.cpp"
+					RelativePath="..\..\source\Game\missile.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Game\missile.h"
+					RelativePath="..\..\source\Game\missile.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Game\shrapnel.cpp"
+					RelativePath="..\..\source\Game\shrapnel.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Game\shrapnel.h"
+					RelativePath="..\..\source\Game\shrapnel.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Game\weapon.cpp"
+					RelativePath="..\..\source\Game\weapon.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Game\weapon.h"
+					RelativePath="..\..\source\Game\weapon.h"
 					>
 				</File>
 			</Filter>
@@ -559,89 +496,89 @@
 			Name="Interface"
 			>
 			<File
-				RelativePath=".\Interface\interface.cpp"
+				RelativePath="..\..\source\Interface\interface.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Interface\interface.h"
+				RelativePath="..\..\source\Interface\interface.h"
 				>
 			</File>
 			<Filter
 				Name="Widgets"
 				>
 				<File
-					RelativePath=".\Interface\chat_overlay.cpp"
+					RelativePath="..\..\source\Interface\chat_overlay.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Interface\chat_overlay.h"
+					RelativePath="..\..\source\Interface\chat_overlay.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Interface\sidebar.cpp"
+					RelativePath="..\..\source\Interface\sidebar.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Interface\sidebar.h"
+					RelativePath="..\..\source\Interface\sidebar.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Interface\text.cpp"
+					RelativePath="..\..\source\Interface\text.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Interface\text.h"
+					RelativePath="..\..\source\Interface\text.h"
 					>
 				</File>
 				<File
-					RelativePath=".\Interface\widget.cpp"
+					RelativePath="..\..\source\Interface\widget.cpp"
 					>
 				</File>
 				<File
-					RelativePath=".\Interface\widget.h"
+					RelativePath="..\..\source\Interface\widget.h"
 					>
 				</File>
 				<Filter
 					Name="Windows"
 					>
 					<File
-						RelativePath=".\Interface\bouncing_window.cpp"
+						RelativePath="..\..\source\Interface\bouncing_window.cpp"
 						>
 					</File>
 					<File
-						RelativePath=".\Interface\bouncing_window.h"
+						RelativePath="..\..\source\Interface\bouncing_window.h"
 						>
 					</File>
 					<File
-						RelativePath=".\Interface\error_window.cpp"
+						RelativePath="..\..\source\Interface\error_window.cpp"
 						>
 					</File>
 					<File
-						RelativePath=".\Interface\error_window.h"
+						RelativePath="..\..\source\Interface\error_window.h"
 						>
 					</File>
 					<File
-						RelativePath=".\Interface\loading_window.cpp"
+						RelativePath="..\..\source\Interface\loading_window.cpp"
 						>
 					</File>
 					<File
-						RelativePath=".\Interface\loading_window.h"
+						RelativePath="..\..\source\Interface\loading_window.h"
 						>
 					</File>
 					<File
-						RelativePath=".\Interface\quit_window.cpp"
+						RelativePath="..\..\source\Interface\quit_window.cpp"
 						>
 					</File>
 					<File
-						RelativePath=".\Interface\quit_window.h"
+						RelativePath="..\..\source\Interface\quit_window.h"
 						>
 					</File>
 					<File
-						RelativePath=".\Interface\window.cpp"
+						RelativePath="..\..\source\Interface\window.cpp"
 						>
 					</File>
 					<File
-						RelativePath=".\Interface\window.h"
+						RelativePath="..\..\source\Interface\window.h"
 						>
 					</File>
 				</Filter>
@@ -649,27 +586,27 @@
 					Name="Inputs"
 					>
 					<File
-						RelativePath=".\Interface\button.cpp"
+						RelativePath="..\..\source\Interface\button.cpp"
 						>
 					</File>
 					<File
-						RelativePath=".\Interface\button.h"
+						RelativePath="..\..\source\Interface\button.h"
 						>
 					</File>
 					<File
-						RelativePath=".\Interface\inputwidget.cpp"
+						RelativePath="..\..\source\Interface\inputwidget.cpp"
 						>
 					</File>
 					<File
-						RelativePath=".\Interface\inputwidget.h"
+						RelativePath="..\..\source\Interface\inputwidget.h"
 						>
 					</File>
 					<File
-						RelativePath=".\Interface\text_input.cpp"
+						RelativePath="..\..\source\Interface\text_input.cpp"
 						>
 					</File>
 					<File
-						RelativePath=".\Interface\text_input.h"
+						RelativePath="..\..\source\Interface\text_input.h"
 						>
 					</File>
 				</Filter>
@@ -677,27 +614,27 @@
 					Name="Entities"
 					>
 					<File
-						RelativePath=".\Interface\laser_zap.cpp"
+						RelativePath="..\..\source\Interface\laser_zap.cpp"
 						>
 					</File>
 					<File
-						RelativePath=".\Interface\laser_zap.h"
+						RelativePath="..\..\source\Interface\laser_zap.h"
 						>
 					</File>
 					<File
-						RelativePath=".\Interface\ship.cpp"
+						RelativePath="..\..\source\Interface\ship.cpp"
 						>
 					</File>
 					<File
-						RelativePath=".\Interface\ship.h"
+						RelativePath="..\..\source\Interface\ship.h"
 						>
 					</File>
 					<File
-						RelativePath=".\Interface\ship_explosion.cpp"
+						RelativePath="..\..\source\Interface\ship_explosion.cpp"
 						>
 					</File>
 					<File
-						RelativePath=".\Interface\ship_explosion.h"
+						RelativePath="..\..\source\Interface\ship_explosion.h"
 						>
 					</File>
 				</Filter>
@@ -707,43 +644,43 @@
 			Name="Network"
 			>
 			<File
-				RelativePath=".\Network\connection.cpp"
+				RelativePath="..\..\source\Network\connection.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Network\connection.h"
+				RelativePath="..\..\source\Network\connection.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Network\net.cpp"
+				RelativePath="..\..\source\Network\net.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Network\net.h"
+				RelativePath="..\..\source\Network\net.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Network\net_crisscross.cpp"
+				RelativePath="..\..\source\Network\net_crisscross.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Network\net_crisscross.h"
+				RelativePath="..\..\source\Network\net_crisscross.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Network\net_raknet.cpp"
+				RelativePath="..\..\source\Network\net_raknet.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Network\net_raknet.h"
+				RelativePath="..\..\source\Network\net_raknet.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Network\packet.cpp"
+				RelativePath="..\..\source\Network\packet.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Network\packet.h"
+				RelativePath="..\..\source\Network\packet.h"
 				>
 			</File>
 		</Filter>
@@ -751,7 +688,7 @@
 			Name="Resources"
 			>
 			<File
-				RelativePath="Resources\green_bmp.ico"
+				RelativePath="..\..\source\Resources\green_bmp.ico"
 				>
 			</File>
 			<File
@@ -763,27 +700,27 @@
 			Name="Sound"
 			>
 			<File
-				RelativePath=".\Sound\soundsystem.cpp"
+				RelativePath="..\..\source\Sound\soundsystem.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Sound\soundsystem.h"
+				RelativePath="..\..\source\Sound\soundsystem.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Sound\soundsystem_openal.cpp"
+				RelativePath="..\..\source\Sound\soundsystem_openal.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Sound\soundsystem_openal.h"
+				RelativePath="..\..\source\Sound\soundsystem_openal.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Sound\soundsystem_sdlmixer.cpp"
+				RelativePath="..\..\source\Sound\soundsystem_sdlmixer.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Sound\soundsystem_sdlmixer.h"
+				RelativePath="..\..\source\Sound\soundsystem_sdlmixer.h"
 				>
 			</File>
 		</Filter>
@@ -791,11 +728,11 @@
 			Name="World"
 			>
 			<File
-				RelativePath=".\World\map.cpp"
+				RelativePath="..\..\source\World\map.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\World\map.h"
+				RelativePath="..\..\source\World\map.h"
 				>
 			</File>
 		</Filter>
@@ -803,123 +740,96 @@
 			Name="Graphics"
 			>
 			<File
-				RelativePath=".\Graphics\graphics.cpp"
+				RelativePath="..\..\source\Graphics\graphics.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Graphics\graphics.h"
+				RelativePath="..\..\source\Graphics\graphics.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Graphics\graphics_directx.cpp"
+				RelativePath="..\..\source\Graphics\graphics_directx.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Graphics\graphics_directx.h"
+				RelativePath="..\..\source\Graphics\graphics_directx.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Graphics\graphics_opengl.cpp"
+				RelativePath="..\..\source\Graphics\graphics_opengl.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Graphics\graphics_opengl.h"
+				RelativePath="..\..\source\Graphics\graphics_opengl.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Graphics\graphics_sdl.cpp"
+				RelativePath="..\..\source\Graphics\graphics_sdl.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Graphics\graphics_sdl.h"
+				RelativePath="..\..\source\Graphics\graphics_sdl.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Graphics\opengl.cpp"
+				RelativePath="..\..\source\Graphics\opengl.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Graphics\opengl.h"
+				RelativePath="..\..\source\Graphics\opengl.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Graphics\surface.cpp"
+				RelativePath="..\..\source\Graphics\surface.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Graphics\surface.h"
+				RelativePath="..\..\source\Graphics\surface.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Graphics\texture.cpp"
+				RelativePath="..\..\source\Graphics\texture.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Graphics\texture.h"
+				RelativePath="..\..\source\Graphics\texture.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Graphics\texture_directx.cpp"
+				RelativePath="..\..\source\Graphics\texture_directx.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Graphics\texture_directx.h"
+				RelativePath="..\..\source\Graphics\texture_directx.h"
 				>
 			</File>
 			<File
-				RelativePath=".\Graphics\texture_opengl.cpp"
+				RelativePath="..\..\source\Graphics\texture_opengl.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\Graphics\texture_opengl.h"
+				RelativePath="..\..\source\Graphics\texture_opengl.h"
 				>
 			</File>
 		</Filter>
 		<File
-			RelativePath="ARC.cpp"
-			>
-			<FileConfiguration
-				Name="Debug|Win32"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-					AdditionalIncludeDirectories=""
-					PreprocessorDefinitions=""
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Release|Win32"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-					AdditionalIncludeDirectories=""
-					PreprocessorDefinitions=""
-				/>
-			</FileConfiguration>
-			<FileConfiguration
-				Name="Release Stripped|Win32"
-				>
-				<Tool
-					Name="VCCLCompilerTool"
-					AdditionalIncludeDirectories=""
-					PreprocessorDefinitions=""
-				/>
-			</FileConfiguration>
-		</File>
-		<File
-			RelativePath=".\build_number.h"
+			RelativePath="..\..\source\ARC.cpp"
 			>
 		</File>
 		<File
-			RelativePath=".\resource.h"
+			RelativePath="..\..\source\build_number.h"
 			>
 		</File>
 		<File
-			RelativePath="TODO.txt"
+			RelativePath="..\..\source\resource.h"
 			>
 		</File>
 		<File
-			RelativePath="universal_include.cpp"
+			RelativePath="..\..\source\TODO.txt"
+			>
+		</File>
+		<File
+			RelativePath="..\..\source\universal_include.cpp"
 			>
 			<FileConfiguration
 				Name="Debug|Win32"
@@ -953,7 +863,7 @@
 			</FileConfiguration>
 		</File>
 		<File
-			RelativePath="universal_include.h"
+			RelativePath="..\..\source\universal_include.h"
 			>
 		</File>
 	</Files>

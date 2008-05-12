@@ -7,7 +7,7 @@
 	>
 	<Tool
 		Name="VCCLCompilerTool"
-		AdditionalIncludeDirectories=".;../contrib/OpenAL/include;../contrib/unrar;../contrib/crisscross/source;../contrib/SDL_image;../contrib/SDL_mixer;../contrib/glSDL;../contrib/SDL/include;../contrib/zlib;../contrib/OpenGL/include"
+		AdditionalIncludeDirectories="../../source;../../contrib/OpenAL/include;../../contrib/unrar;../../contrib/crisscross/source;../../contrib/SDL_image;../../contrib/SDL_mixer;../../contrib/glSDL;../../contrib/SDL/include;../../contrib/zlib;../../contrib/OpenGL/include"
 	/>
 	<Tool
 		Name="VCLinkerTool"
