@@ -78,10 +78,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="..\..\bin/ARC.exe"
+				OutputFile="$(OutDir)\$(ProjectName)_$(PlatformName).exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="../../contrib/bin/8.0/$(PlatformName)"
+				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames=""
 				GenerateDebugInformation="true"
 				GenerateMapFile="false"
@@ -175,10 +175,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="..\..\bin/ARC.exe"
+				OutputFile="$(OutDir)\$(ProjectName)_$(PlatformName).exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="../../contrib/bin/8.0/$(PlatformName)"
+				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames=""
 				GenerateDebugInformation="true"
 				GenerateMapFile="false"
@@ -271,10 +271,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="..\..\bin/ARC.exe"
+				OutputFile="$(OutDir)\$(ProjectName)_$(PlatformName).exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="../../contrib/bin/8.0/$(PlatformName)"
+				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames=""
 				GenerateDebugInformation="true"
 				GenerateMapFile="false"
@@ -366,10 +366,10 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				OutputFile="..\..\bin/ARC.exe"
+				OutputFile="$(OutDir)\$(ProjectName)_$(PlatformName).exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="../../contrib/bin/8.0/$(PlatformName)"
+				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames=""
 				GenerateDebugInformation="true"
 				GenerateMapFile="false"
@@ -460,10 +460,10 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/ALIGN:4096"
-				OutputFile="..\..\bin/ARC.exe"
+				OutputFile="$(OutDir)\$(ProjectName)_$(PlatformName).exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="../../contrib/bin/8.0/$(PlatformName)"
+				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames=""
 				GenerateDebugInformation="true"
 				GenerateMapFile="false"
@@ -560,10 +560,10 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalOptions="/ALIGN:4096"
-				OutputFile="..\..\bin/ARC.exe"
+				OutputFile="$(OutDir)\$(ProjectName)_$(PlatformName).exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				AdditionalLibraryDirectories="../../contrib/bin/8.0/$(PlatformName)"
+				AdditionalLibraryDirectories=""
 				IgnoreDefaultLibraryNames=""
 				GenerateDebugInformation="true"
 				GenerateMapFile="false"
