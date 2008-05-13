@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ARC", "ARC_2005.vcproj", "{222AA662-C3B2-411A-97EB-4267536DEEFF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9520273D-42A8-4E63-A2DC-C209AAAC2B6A} = {9520273D-42A8-4E63-A2DC-C209AAAC2B6A}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CrissCross", "..\..\contrib\crisscross\source\CrissCross_vs2005.vcproj", "{9520273D-42A8-4E63-A2DC-C209AAAC2B6A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release Stripped|Win32 = Release Stripped|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{222AA662-C3B2-411A-97EB-4267536DEEFF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{222AA662-C3B2-411A-97EB-4267536DEEFF}.Debug|Win32.Build.0 = Debug|Win32
+		{222AA662-C3B2-411A-97EB-4267536DEEFF}.Release Stripped|Win32.ActiveCfg = Release Stripped|Win32
+		{222AA662-C3B2-411A-97EB-4267536DEEFF}.Release Stripped|Win32.Build.0 = Release Stripped|Win32
+		{222AA662-C3B2-411A-97EB-4267536DEEFF}.Release|Win32.ActiveCfg = Release|Win32
+		{222AA662-C3B2-411A-97EB-4267536DEEFF}.Release|Win32.Build.0 = Release|Win32
+		{9520273D-42A8-4E63-A2DC-C209AAAC2B6A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9520273D-42A8-4E63-A2DC-C209AAAC2B6A}.Debug|Win32.Build.0 = Debug|Win32
+		{9520273D-42A8-4E63-A2DC-C209AAAC2B6A}.Release Stripped|Win32.ActiveCfg = Release|Win32
+		{9520273D-42A8-4E63-A2DC-C209AAAC2B6A}.Release Stripped|Win32.Build.0 = Release|Win32
+		{9520273D-42A8-4E63-A2DC-C209AAAC2B6A}.Release|Win32.ActiveCfg = Release|Win32
+		{9520273D-42A8-4E63-A2DC-C209AAAC2B6A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(DPCodeReviewSolutionGUID) = preSolution
+		DPCodeReviewSolutionGUID = {00000000-0000-0000-0000-000000000000}
+	EndGlobalSection
+EndGlobal
