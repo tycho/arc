@@ -3,7 +3,7 @@
 	ProjectType="Visual C++"
 	Version="8.00"
 	Name="Common"
-	OutputDirectory="$(SolutionDir)\bin\8.0\"
+	OutputDirectory="$(SolutionDir)\bin\8.0\$(PlatformName)"
 	IntermediateDirectory="$(SolutionDir)\obj\$(ProjectName)\$(ConfigurationName)"
 	>
 	<Tool
@@ -20,7 +20,7 @@
 	/>
 	<Tool
 		Name="VCLinkerTool"
-		AdditionalLibraryDirectories="C:\SDKs\DirectX\Lib\x86;C:\SDKs\Windows\v6.1\Lib;C:\SDKs\OpenAL\libs\Win32;C:\SDKs\OpenGL\lib"
+		AdditionalLibraryDirectories=""
 		GenerateDebugInformation="true"
 	/>
 </VisualStudioPropertySheet>

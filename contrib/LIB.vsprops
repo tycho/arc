@@ -4,8 +4,4 @@
 	Version="8.00"
 	Name="Static Library"
 	>
-	<Tool
-		Name="VCLibrarianTool"
-		OutputFile="$(SolutionDir)\bin\8.0\$(ProjectName).lib"
-	/>
 </VisualStudioPropertySheet>
