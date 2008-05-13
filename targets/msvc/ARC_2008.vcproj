@@ -5,6 +5,7 @@
 	Name="ARC"
 	ProjectGUID="{222AA662-C3B2-411A-97EB-4267536DEEFF}"
 	RootNamespace="ARC"
+	TargetFrameworkVersion="0"
 	>
 	<Platforms>
 		<Platform
@@ -27,7 +28,7 @@
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Generating build number..."
-				CommandLine="&quot;$(ProjectDir)\..\..\source\GenerateBuildNumber.exe&quot; $(ProjectDir)"
+				CommandLine="&quot;$(ProjectDir)\..\..\source\GenerateBuildNumber.exe&quot; $(ProjectDir)\..\..\source\"
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
@@ -84,8 +85,8 @@
 				GenerateDebugInformation="true"
 				GenerateMapFile="false"
 				SubSystem="2"
-				TargetMachine="1"
 				FixedBaseAddress="1"
+				TargetMachine="1"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -122,7 +123,7 @@
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Generating build number..."
-				CommandLine="&quot;$(ProjectDir)\..\..\source\GenerateBuildNumber.exe&quot; $(ProjectDir)"
+				CommandLine="&quot;$(ProjectDir)\..\..\source\GenerateBuildNumber.exe&quot; $(ProjectDir)\..\..\source\"
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
@@ -215,7 +216,7 @@
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Generating build number..."
-				CommandLine="&quot;$(ProjectDir)\..\..\source\GenerateBuildNumber.exe&quot; $(ProjectDir)"
+				CommandLine="&quot;$(ProjectDir)\..\..\source\GenerateBuildNumber.exe&quot; $(ProjectDir)\..\..\source\"
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
@@ -273,8 +274,8 @@
 				OptimizeReferences="2"
 				EnableCOMDATFolding="2"
 				OptimizeForWindows98="1"
-				TargetMachine="1"
 				FixedBaseAddress="1"
+				TargetMachine="1"
 			/>
 			<Tool
 				Name="VCALinkTool"
