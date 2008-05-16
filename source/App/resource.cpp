@@ -175,7 +175,7 @@ TextReader *Resource::GetTextReader(char const *_filename)
     TextReader *reader = NULL;
     char fullFilename[256];
 
-    fullFilename[0] = NULL;
+    fullFilename[0] = 0;
 
 #if 0
     if( m_modName )

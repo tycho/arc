@@ -4,7 +4,7 @@ CC=gcc
 CXX=g++
 LINK=$(CXX)
 
-CXXFLAGS=-Wall -Winvalid-pch -march=pentium2 -mtune=pentium2 -O3 -g -pipe
+CXXFLAGS=-Wall -Winvalid-pch -O3 -g -pipe
 CPPFLAGS=-D_DEBUG
 
 STRIP=:strip

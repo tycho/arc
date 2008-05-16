@@ -22,7 +22,6 @@
 
 #include "universal_include.h"
 
-#include "resource.h"
 #include "App/app.h"
 #include "App/preferences.h"
 #include "Game/game.h"

@@ -1,3 +1,4 @@
+.linux-objs
 build
 *.ncb
 *.suo
