@@ -45,7 +45,7 @@ public:
     virtual ~Texture();
 
     virtual bool Create ( Uint16 _width, Uint16 _height, bool _isColorKeyed ) = 0;
-    virtual void Dispose () = 0;
+    virtual void Dispose ();
 
     bool IsDamaged ();
     void Damage ();
