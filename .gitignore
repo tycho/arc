@@ -1,4 +1,5 @@
 .linux-objs
+.linux-objs.rar
 build
 *.ncb
 *.suo
