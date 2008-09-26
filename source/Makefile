@@ -138,8 +138,10 @@ source/ccdv: source/ccdv.c
 	@strip source/ccdv
 
 clean:
+	$(MAKE) -C source/Build clean
 	rm -f $(OUTFILE)
 	rm -f $(PCH_FILE).gch
+	rm -f source/ccdv
 	rm -rf $(OBJDIR)
 	rm -rf $(OBJDIR).rar
 
