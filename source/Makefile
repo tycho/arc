@@ -1,7 +1,9 @@
 OUTFILE=bin/ARC
 
-CC=gcc
-CXX=g++
+CC=source/ccdv gcc
+CXX=source/ccdv g++
+# CC=gcc
+# CXX=g++
 LINK=$(CXX)
 LIBS=-Wl,-Bstatic -Lcontrib/CrissCross/source -lCrissCross -lSDLmain -Wl,-Bdynamic -lz -lSDL -lSDL_mixer -lSDL_image -lGL -lX11 -rdynamic
 
@@ -14,6 +16,51 @@ NM=:nm
 INCLUDE=-Isource -Icontrib/OpenGL/include -Icontrib/unrar -Icontrib/CrissCross/source -I/opt/local/include -I/opt/local/include/SDL
 
 # find . -name '*.cpp' | sed 's%^\./\(.*\)%\1 \\%'
+
+UNRAR_SOURCES = \
+contrib/unrar/archive.cpp \
+contrib/unrar/arcread.cpp \
+contrib/unrar/cmddata.cpp \
+contrib/unrar/consio.cpp \
+contrib/unrar/crc.cpp \
+contrib/unrar/crypt.cpp \
+contrib/unrar/encname.cpp \
+contrib/unrar/errhnd.cpp \
+contrib/unrar/extinfo.cpp \
+contrib/unrar/extract.cpp \
+contrib/unrar/filcreat.cpp \
+contrib/unrar/file.cpp \
+contrib/unrar/filefn.cpp \
+contrib/unrar/filestr.cpp \
+contrib/unrar/find.cpp \
+contrib/unrar/getbits.cpp \
+contrib/unrar/global.cpp \
+contrib/unrar/int64.cpp \
+contrib/unrar/isnt.cpp \
+contrib/unrar/list.cpp \
+contrib/unrar/match.cpp \
+contrib/unrar/options.cpp \
+contrib/unrar/pathfn.cpp \
+contrib/unrar/rarresource.cpp \
+contrib/unrar/rarvm.cpp \
+contrib/unrar/rawread.cpp \
+contrib/unrar/rdwrfn.cpp \
+contrib/unrar/recvol.cpp \
+contrib/unrar/rijndael.cpp \
+contrib/unrar/rs.cpp \
+contrib/unrar/savepos.cpp \
+contrib/unrar/scantree.cpp \
+contrib/unrar/sha1.cpp \
+contrib/unrar/smallfn.cpp \
+contrib/unrar/strfn.cpp \
+contrib/unrar/strlist.cpp \
+contrib/unrar/system.cpp \
+contrib/unrar/timefn.cpp \
+contrib/unrar/ulinks.cpp \
+contrib/unrar/unicode.cpp \
+contrib/unrar/unpack.cpp \
+contrib/unrar/unrar.cpp \
+contrib/unrar/volume.cpp
 
 SOURCES = \
 source/App/app.cpp \
@@ -72,85 +119,51 @@ source/Sound/soundsystem.cpp \
 source/Sound/soundsystem_openal.cpp \
 source/Sound/soundsystem_sdlmixer.cpp \
 source/universal_include.cpp \
-source/World/map.cpp \
-contrib/unrar/archive.cpp \
-contrib/unrar/arcread.cpp \
-contrib/unrar/cmddata.cpp \
-contrib/unrar/consio.cpp \
-contrib/unrar/crc.cpp \
-contrib/unrar/crypt.cpp \
-contrib/unrar/encname.cpp \
-contrib/unrar/errhnd.cpp \
-contrib/unrar/extinfo.cpp \
-contrib/unrar/extract.cpp \
-contrib/unrar/filcreat.cpp \
-contrib/unrar/file.cpp \
-contrib/unrar/filefn.cpp \
-contrib/unrar/filestr.cpp \
-contrib/unrar/find.cpp \
-contrib/unrar/getbits.cpp \
-contrib/unrar/global.cpp \
-contrib/unrar/int64.cpp \
-contrib/unrar/isnt.cpp \
-contrib/unrar/list.cpp \
-contrib/unrar/match.cpp \
-contrib/unrar/options.cpp \
-contrib/unrar/pathfn.cpp \
-contrib/unrar/rarresource.cpp \
-contrib/unrar/rarvm.cpp \
-contrib/unrar/rawread.cpp \
-contrib/unrar/rdwrfn.cpp \
-contrib/unrar/recvol.cpp \
-contrib/unrar/rijndael.cpp \
-contrib/unrar/rs.cpp \
-contrib/unrar/savepos.cpp \
-contrib/unrar/scantree.cpp \
-contrib/unrar/sha1.cpp \
-contrib/unrar/smallfn.cpp \
-contrib/unrar/strfn.cpp \
-contrib/unrar/strlist.cpp \
-contrib/unrar/system.cpp \
-contrib/unrar/timefn.cpp \
-contrib/unrar/ulinks.cpp \
-contrib/unrar/unicode.cpp \
-contrib/unrar/unpack.cpp \
-contrib/unrar/unrar.cpp \
-contrib/unrar/volume.cpp
+source/World/map.cpp
 
 CXXFLAGS+=$(INCLUDE)
 
 OBJDIR=.linux-objs
-OBJECTS=$(SOURCES:%.cpp=$(OBJDIR)/%.o)
+OBJECTS=$(SOURCES:%.cpp=$(OBJDIR)/%.o) $(UNRAR_SOURCES:%.cpp=$(OBJDIR).rar/%.o)
 PCH_FILE=source/universal_include.h
 
-all:
+all: source/ccdv
 	$(MAKE) -f source/Makefile all-before
 	$(MAKE) -f source/Makefile $(OUTFILE)
 
 all-before: $(PCH_FILE).gch
 
+source/ccdv: source/ccdv.c
+	@gcc -O2 -o source/ccdv source/ccdv.c
+	@strip source/ccdv
+
 clean:
 	rm -f $(OUTFILE)
 	rm -f $(PCH_FILE).gch
 	rm -rf $(OBJDIR)
+	rm -rf $(OBJDIR).rar
 
 $(PCH_FILE).gch: $(PCH_FILE)
 	$(MAKE) -C source/Build
-	$(shell pwd)/source/GenerateBuildNumber $(shell pwd)/source
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(PCH_FILE) -o $(PCH_FILE).gch
+	@$(shell pwd)/source/GenerateBuildNumber $(shell pwd)/source
+	@$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(PCH_FILE) -o $(PCH_FILE).gch
 
 $(OUTFILE): $(OBJECTS)
-	@echo -n "Linking... "
 	@$(LINK) $+ $(LIBS) -o $@ 
-	@echo done.
 
-.linux-objs/%.o: %.cpp
+$(OBJDIR)/%.o: %.cpp
 	@mkdir -p $(dir $@)
 	@$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
-	@echo "Compiling $<..."
 
-.linux-objs/%.o: %.c
+$(OBJDIR)/%.o: %.c
 	@mkdir -p $(dir $@)
 	@$(CC) $(CPPFLAGS) $(CXXFLAGS) -c $< -o $@
-	@echo "Compiling $<..."
+
+$(OBJDIR).rar/%.o: %.cpp
+	@mkdir -p $(dir $@)
+	@$(CXX) $(CPPFLAGS) $(CXXFLAGS) -w -c $< -o $@
+
+$(OBJDIR).rar/%.o: %.c
+	@mkdir -p $(dir $@)
+	@$(CC) $(CPPFLAGS) $(CXXFLAGS) -w -c $< -o $@
 
