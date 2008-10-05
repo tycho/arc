@@ -5,7 +5,7 @@ CXX=source/ccdv g++
 # CC=gcc
 # CXX=g++
 LINK=$(CXX)
-LIBS=-Wl,-Bstatic -Lcontrib/CrissCross/source -lCrissCross -lSDLmain -Wl,-Bdynamic -lz -lSDL -lSDL_mixer -lSDL_image -lGL -lX11 -rdynamic
+LIBS=-Wl,-Bstatic -Lcontrib/crisscross/source -lCrissCross -lSDLmain -Wl,-Bdynamic -lz -lSDL -lSDL_mixer -lSDL_image -lGL -lX11 -rdynamic
 
 CXXFLAGS=-O3 -ggdb -pipe -Wall -Wno-long-long -rdynamic -std=c++98 -pedantic
 CPPFLAGS=-D_DEBUG
@@ -13,7 +13,7 @@ CPPFLAGS=-D_DEBUG
 STRIP=:strip
 NM=:nm
 
-INCLUDE=-Isource -Icontrib/OpenGL/include -Icontrib/unrar -Icontrib/CrissCross/source -I/opt/local/include -I/opt/local/include/SDL
+INCLUDE=-Isource -Icontrib/OpenGL/include -Icontrib/unrar -Icontrib/crisscross/source -I/opt/local/include -I/opt/local/include/SDL
 
 # find . -name '*.cpp' | sed 's%^\./\(.*\)%\1 \\%'
 
