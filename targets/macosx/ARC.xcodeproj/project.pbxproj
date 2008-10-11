@@ -19,6 +19,7 @@
 		B0150A240BE43DD900DE06BB /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0150A230BE43DD900DE06BB /* SDL_mixer.framework */; };
 		B0150A2B0BE43DEB00DE06BB /* SDL_mixer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B0150A230BE43DD900DE06BB /* SDL_mixer.framework */; };
 		B01C1DC30DAD47800049FE41 /* laser_zap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B01C1DC10DAD47800049FE41 /* laser_zap.cpp */; };
+		B03D6B790EA06E8000C9ADD9 /* libCrissCross Static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EA17C40EA06D58001DFFF4 /* libCrissCross Static.a */; };
 		B03E23050DAAD4250038265C /* ship_explosion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03E23030DAAD4250038265C /* ship_explosion.cpp */; };
 		B0426EAD0DA96BBB005A0E89 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0426EAB0DA96BBB005A0E89 /* AppKit.framework */; };
 		B0426EAE0DA96BBB005A0E89 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0426EAC0DA96BBB005A0E89 /* Carbon.framework */; };
@@ -130,23 +131,15 @@
 		B0B8ED0A0BDB63A5007C1576 /* SDL.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B0B8E9560BDB4FE5007C1576 /* SDL.framework */; };
 		B0BD2DA70BE26FE800F71A26 /* crc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0BD2DA40BE26FE800F71A26 /* crc.cpp */; };
 		B0BD2DA90BE26FE800F71A26 /* GenerateBuildNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0BD2DA60BE26FE800F71A26 /* GenerateBuildNumber.cpp */; };
-		B0BD2DBB0BE2713000F71A26 /* libCrissCross Static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD2D760BE26D2F00F71A26 /* libCrissCross Static.a */; };
 		B0BD2DC70BE271DC00F71A26 /* sidebar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0BD2DC50BE271DC00F71A26 /* sidebar.cpp */; };
 		B0BD2E160BE2745E00F71A26 /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = B0BD2E140BE2745E00F71A26 /* SDLMain.m */; };
 		B0CFCA6B0DAD61E500D1ABF1 /* text_input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0CFCA690DAD61E500D1ABF1 /* text_input.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B0BD2D750BE26D2F00F71A26 /* PBXContainerItemProxy */ = {
+		B03D6B6B0EA06D9100C9ADD9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B0BD2D6E0BE26D2F00F71A26 /* CrissCross.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B0BD2C480BE26BDC00F71A26;
-			remoteInfo = "CrissCross Static";
-		};
-		B0BD2D860BE26EDD00F71A26 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B0BD2D6E0BE26D2F00F71A26 /* CrissCross.xcodeproj */;
+			containerPortal = B0EA17BB0EA06D58001DFFF4 /* CrissCross.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = B0BD2C470BE26BDB00F71A26;
 			remoteInfo = "CrissCross Static";
@@ -157,6 +150,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = B0BD2D9D0BE26FBD00F71A26;
 			remoteInfo = GenerateBuildNumber;
+		};
+		B0EA17C30EA06D58001DFFF4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0EA17BB0EA06D58001DFFF4 /* CrissCross.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B0BD2C480BE26BDC00F71A26;
+			remoteInfo = "CrissCross Static";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -403,13 +403,12 @@
 		B0B8E9180BDB4E49007C1576 /* universal_include.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = universal_include.h; path = ../../source/universal_include.h; sourceTree = "<group>"; };
 		B0B8E9190BDB4E51007C1576 /* arc.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = arc.cpp; path = ../../source/arc.cpp; sourceTree = "<group>"; };
 		B0B8E91F0BDB4E71007C1576 /* ARC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARC.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0B8E9220BDB4E71007C1576 /* ARC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "ARC-Info.plist"; sourceTree = "<group>"; };
+		B0B8E9220BDB4E71007C1576 /* ARC-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ARC-Info.plist"; sourceTree = "<group>"; };
 		B0B8E9560BDB4FE5007C1576 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = ../../contrib/SDL.framework; sourceTree = "<group>"; };
 		B0B8E9790BDB5253007C1576 /* SDL_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_image.framework; path = ../../contrib/SDL_image.framework; sourceTree = "<group>"; };
 		B0B8E98B0BDB52A9007C1576 /* macosx.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = macosx.pch; path = ../../source/macosx.pch; sourceTree = "<group>"; };
 		B0B8EB9A0BDB6227007C1576 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		B0B8ECF90BDB6337007C1576 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = /usr/lib/libz.dylib; sourceTree = "<absolute>"; };
-		B0BD2D6E0BE26D2F00F71A26 /* CrissCross.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CrissCross.xcodeproj; path = ../../contrib/CrissCross/xcode/CrissCross.xcodeproj; sourceTree = SOURCE_ROOT; };
 		B0BD2D9E0BE26FBD00F71A26 /* GenerateBuildNumber */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GenerateBuildNumber; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0BD2DA40BE26FE800F71A26 /* crc.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = crc.cpp; path = ../../source/Build/crc.cpp; sourceTree = "<group>"; };
 		B0BD2DA50BE26FE800F71A26 /* crc.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = crc.h; path = ../../source/Build/crc.h; sourceTree = "<group>"; };
@@ -420,6 +419,7 @@
 		B0BD2E140BE2745E00F71A26 /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = SDLMain.m; path = ../../source/SDLMain.m; sourceTree = "<group>"; };
 		B0CFCA690DAD61E500D1ABF1 /* text_input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = text_input.cpp; path = ../../source/Interface/text_input.cpp; sourceTree = "<group>"; };
 		B0CFCA6A0DAD61E500D1ABF1 /* text_input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = text_input.h; path = ../../source/Interface/text_input.h; sourceTree = "<group>"; };
+		B0EA17BB0EA06D58001DFFF4 /* CrissCross.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CrissCross.xcodeproj; path = ../../../CrissCross/xcode/CrissCross.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -427,7 +427,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0BD2DBB0BE2713000F71A26 /* libCrissCross Static.a in Frameworks */,
+				B03D6B790EA06E8000C9ADD9 /* libCrissCross Static.a in Frameworks */,
 				B0B8E9570BDB4FE5007C1576 /* SDL.framework in Frameworks */,
 				B0B8E97A0BDB5253007C1576 /* SDL_image.framework in Frameworks */,
 				B0B8EB9B0BDB6227007C1576 /* OpenGL.framework in Frameworks */,
@@ -558,7 +558,7 @@
 		B0B8E8B50BDB4D36007C1576 = {
 			isa = PBXGroup;
 			children = (
-				B0BD2D6E0BE26D2F00F71A26 /* CrissCross.xcodeproj */,
+				B0EA17BB0EA06D58001DFFF4 /* CrissCross.xcodeproj */,
 				B0B8ECF90BDB6337007C1576 /* libz.dylib */,
 				B0426EAB0DA96BBB005A0E89 /* AppKit.framework */,
 				B0426EAC0DA96BBB005A0E89 /* Carbon.framework */,
@@ -770,14 +770,6 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		B0BD2D6F0BE26D2F00F71A26 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B0BD2D760BE26D2F00F71A26 /* libCrissCross Static.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		B0BD2DA00BE26FD000F71A26 /* Build */ = {
 			isa = PBXGroup;
 			children = (
@@ -786,6 +778,14 @@
 				B0BD2DA60BE26FE800F71A26 /* GenerateBuildNumber.cpp */,
 			);
 			name = Build;
+			sourceTree = "<group>";
+		};
+		B0EA17BC0EA06D58001DFFF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0EA17C40EA06D58001DFFF4 /* libCrissCross Static.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -803,8 +803,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				B0BD2D870BE26EDD00F71A26 /* PBXTargetDependency */,
 				B0BD2DB70BE270D200F71A26 /* PBXTargetDependency */,
+				B03D6B6C0EA06D9100C9ADD9 /* PBXTargetDependency */,
 			);
 			name = ARC;
 			productName = ARC;
@@ -824,8 +824,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = B0BD2D6F0BE26D2F00F71A26 /* Products */;
-					ProjectRef = B0BD2D6E0BE26D2F00F71A26 /* CrissCross.xcodeproj */;
+					ProductGroup = B0EA17BC0EA06D58001DFFF4 /* Products */;
+					ProjectRef = B0EA17BB0EA06D58001DFFF4 /* CrissCross.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -837,11 +837,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		B0BD2D760BE26D2F00F71A26 /* libCrissCross Static.a */ = {
+		B0EA17C40EA06D58001DFFF4 /* libCrissCross Static.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libCrissCross Static.a";
-			remoteRef = B0BD2D750BE26D2F00F71A26 /* PBXContainerItemProxy */;
+			remoteRef = B0EA17C30EA06D58001DFFF4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1009,10 +1009,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B0BD2D870BE26EDD00F71A26 /* PBXTargetDependency */ = {
+		B03D6B6C0EA06D9100C9ADD9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "CrissCross Static";
-			targetProxy = B0BD2D860BE26EDD00F71A26 /* PBXContainerItemProxy */;
+			targetProxy = B03D6B6B0EA06D9100C9ADD9 /* PBXContainerItemProxy */;
 		};
 		B0BD2DB70BE270D200F71A26 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1055,7 +1055,7 @@
 					"$(HEADER_SEARCH_PATHS_QUOTED_3)",
 				);
 				HEADER_SEARCH_PATHS_QUOTED_1 = "\"$(PROJECT_DIR)/../../source\"";
-				HEADER_SEARCH_PATHS_QUOTED_2 = "\"$(PROJECT_DIR)/../../contrib/CrissCross/source\"";
+				HEADER_SEARCH_PATHS_QUOTED_2 = "\"$(PROJECT_DIR)/../../contrib/crisscross/source\"";
 				HEADER_SEARCH_PATHS_QUOTED_3 = "\"$(PROJECT_DIR)/../../contrib/unrar\"";
 				HEADER_SEARCH_PATHS_QUOTED_FOR_PROJECT_1 = "\"$(PROJECT_DIR)/../../contrib/OpenGL/include/\"";
 			};
@@ -1078,7 +1078,7 @@
 					"$(HEADER_SEARCH_PATHS_QUOTED_3)",
 				);
 				HEADER_SEARCH_PATHS_QUOTED_1 = "\"$(PROJECT_DIR)/../../source\"";
-				HEADER_SEARCH_PATHS_QUOTED_2 = "\"$(PROJECT_DIR)/../../contrib/CrissCross/source\"";
+				HEADER_SEARCH_PATHS_QUOTED_2 = "\"$(PROJECT_DIR)/../../contrib/crisscross/source\"";
 				HEADER_SEARCH_PATHS_QUOTED_3 = "\"$(PROJECT_DIR)/../../contrib/unrar\"";
 				HEADER_SEARCH_PATHS_QUOTED_FOR_PROJECT_1 = "\"$(PROJECT_DIR)/../.../contrib/OpenGL/include/\"";
 			};
