@@ -61,7 +61,7 @@ ShipExplosion::ShipExplosion ( float _x, float _y )
  : Widget(0, 0, 61, 61), m_damaged(true), m_popFrame(0), m_x(_x), m_y(_y)
 {
     SetWidgetClass ( "ShipExplosion" );
-    m_cachedSurfaceID = g_graphics->CreateSurface ( 61, 61, false );
+	Initialise();
 }
 
 ShipExplosion::~ShipExplosion()
@@ -76,6 +76,14 @@ int ShipExplosion::SendEnterKey ()
 int ShipExplosion::MouseDown ( bool _mouseDown, Sint32 _x, Sint32 _y )
 {
     return 0;
+}
+
+void ShipExplosion::Initialise()
+{
+	g_graphics->DeleteSurface ( m_cachedSurfaceID );
+    m_cachedSurfaceID = g_graphics->CreateSurface ( 61, 61, false );
+
+	Widget::Initialise();
 }
 
 void ShipExplosion::Update()

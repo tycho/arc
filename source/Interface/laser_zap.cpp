@@ -44,7 +44,7 @@ LaserZap::LaserZap ( Sint32 _x, Sint32 _y )
  : Widget(0, 0, 61, 61), m_damaged(true), m_zapFrame(0), m_x(_x), m_y(_y)
 {
     SetWidgetClass ( "LaserZap" );
-    m_cachedSurfaceID = g_graphics->CreateSurface ( 13, 13, false );
+	Initialise();
 }
 
 LaserZap::~LaserZap()
@@ -59,6 +59,13 @@ int LaserZap::SendEnterKey ()
 int LaserZap::MouseDown ( bool _mouseDown, Sint32 _x, Sint32 _y )
 {
     return 0;
+}
+
+void LaserZap::Initialise()
+{
+	g_graphics->DeleteSurface(m_cachedSurfaceID);
+    m_cachedSurfaceID = g_graphics->CreateSurface ( 13, 13, false );
+	Widget::Initialise();
 }
 
 void LaserZap::Update()

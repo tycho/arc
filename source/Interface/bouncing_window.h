@@ -38,6 +38,7 @@ public:
 
     //virtual void PlayBounceNoise ();
     virtual void SetVelocity ( Sint16 xvel, Sint16 yvel );
+
     virtual void Update ();
 };
 

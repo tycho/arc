@@ -1079,6 +1079,14 @@ void Interface::RenderFarplane ( short _meX, short _meY )
 	m_farplane->Render ( &SrcRect, g_graphics->GetScreen(), &DstRect );
 }
 
+void Interface::InitWidgets ()
+{
+    for ( size_t i = 0; i < m_widgetList.size(); i++ )
+    {
+		m_widgetList[i]->Initialise();
+    }
+}
+
 int Interface::InitSurfaces ()
 {
     SDL_Rect SrcRect, DstRect;
@@ -1089,6 +1097,7 @@ int Interface::InitSurfaces ()
 
     //load farplane (no colour keys or anything)
     tmp = g_graphics->LoadImage ( "graphics/Farplane.png" );
+	delete m_farplane;
 	m_farplane = new Surface ( g_graphics->GetSurfaceWidth(tmp),
 		g_graphics->GetSurfaceHeight(tmp),
 		g_prefsManager->GetInt ( "SurfaceSplitFactor", 32 ) );
@@ -1098,12 +1107,14 @@ int Interface::InitSurfaces ()
 	tmp = 0;
 
     //load tuna
+	g_graphics->DeleteSurface ( m_tunaID );
     m_tunaID = g_graphics->LoadImage ( "graphics/tuna.png" );
     ARCReleaseAssert ( (int)m_tunaID != -1 );
     g_graphics->SetColorKey ( g_graphics->GetPixel ( m_tunaID, 0, 0 ) );
 	g_graphics->ApplyColorKey ( m_tunaID );
 
     //load the text block
+	g_graphics->DeleteSurface ( m_rawTextID );
     m_rawTextID = g_graphics->CreateSurface ( 584, 20, false );
     ARCReleaseAssert ( (int)m_rawTextID != -1 );
     SrcRect.x = 0; SrcRect.y = 1201; SrcRect.h = 20; SrcRect.w = 584;
@@ -1114,12 +1125,15 @@ int Interface::InitSurfaces ()
     SetupText();
 
     //load tiles
+	g_graphics->DeleteSurface ( m_tilesID );
     m_tilesID = g_graphics->LoadImage ( "graphics/Tiles.png", true );
     ARCReleaseAssert ( (int)m_tilesID != -1 );
     
     //create the ships
     SrcRect.x = 0; SrcRect.y = 292; SrcRect.w = 288; 
     SrcRect.h = 128; DstRect.x = 0; DstRect.y = 0;
+
+	g_graphics->DeleteSurface ( m_shipsID );
     m_shipsID = g_graphics->CreateSurface ( 290, 165, false );
     ARCReleaseAssert ( (int)m_shipsID != -1 );
     g_graphics->Blit ( m_tunaID, &SrcRect, m_shipsID, &DstRect );
@@ -1220,6 +1234,7 @@ int Interface::InitSurfaces ()
 
     //radar objects *** EXTRAS ***
 
+	g_graphics->DeleteSurface ( m_extrasID );
     m_extrasID = g_graphics->LoadImage ( "graphics/extras.png" );
     ARCReleaseAssert ( (int)m_extrasID != -1 );
     SrcRect.x = 0; SrcRect.y = 0; SrcRect.w = 80;
@@ -1295,6 +1310,8 @@ int Interface::InitSurfaces ()
     g_graphics->DeleteSurface ( m_tunaID );
     m_tunaID = -1;
 
+	g_graphics->DeleteSurface ( m_animsID[0] );
+	g_graphics->DeleteSurface ( m_animsID[1] );
     m_animsID[0] = g_graphics->CreateSurface ( 640, 480, true );
     m_animsID[1] = g_graphics->CreateSurface ( 640, 480, false );
     for ( i = 0; i < 256; i++ )

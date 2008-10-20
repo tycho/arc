@@ -56,6 +56,7 @@ public:
     virtual void Flush ();
     virtual void FlushText ();
 
+	virtual void Initialise();
     virtual void Update();
     virtual void Render();
 

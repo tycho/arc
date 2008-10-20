@@ -46,6 +46,7 @@ public:
     virtual ~Button();
 
     virtual ButtonType GetButtonType();
+
     virtual void Update();
 };
 

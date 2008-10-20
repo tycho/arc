@@ -126,11 +126,11 @@ protected:
     virtual int LoadRough ( const char *_file );
     virtual int LoadAttribs ( const char *_file );
     virtual int DecompressMap ( unsigned char *_data, int _origSize );
-    virtual void BlitEntireMap ();
 
 public:
     Map();
     virtual ~Map();
+    virtual void BlitEntireMap ();
     virtual void Render ( short _x, short _y );
     virtual int Load ( const char *_file );
     virtual short GetAnimation ( int _index0, int _index1 );

@@ -85,6 +85,17 @@ bool Widget::IsInsideWidget ( int _mouseX, int _mouseY )
     return ( SDL_CollideBoundingBox ( mousePos, m_position ) != 0 );
 }
 
+void Widget::Initialise()
+{
+	g_graphics->DeleteSurface ( m_cachedSurfaceID );
+	m_cachedSurfaceID = -1;
+    for ( size_t i = 0; i < m_widgets.size(); i++ )
+    {
+		Widget *widget = m_widgets[i];
+		widget->Initialise();
+	}
+}
+
 void Widget::Render ()
 {
     if ( (int)m_cachedSurfaceID != -1 )

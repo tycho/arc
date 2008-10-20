@@ -599,6 +599,7 @@ void Map::BlitEntireMap()
     // Allocate our map surface
     g_console->Write ( "Creating map surface... " );
     sw.Start();
+	delete m_mapSurface;
     m_mapSurface = new Surface ( 4096, 4096, g_prefsManager->GetInt ( "SurfaceSplitFactor", 32 ) );
     sw.Stop();
     g_console->WriteLine ( "%0.3lfs", sw.Elapsed() );

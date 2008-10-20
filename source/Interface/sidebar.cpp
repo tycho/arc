@@ -33,9 +33,21 @@ Sidebar::Sidebar()
  : Widget()
 {
     SetWidgetClass ( "Sidebar" );
-    
+    Initialise();
+}
+
+Sidebar::~Sidebar()
+{
+    g_graphics->DeleteSurface ( m_healthBarSurfaceID );
+    g_graphics->DeleteSurface ( m_chargeBarSurfaceID );
+}
+
+void Sidebar::Initialise()
+{
+    g_graphics->DeleteSurface ( m_healthBarSurfaceID );
+    g_graphics->DeleteSurface ( m_chargeBarSurfaceID );
+
     SDL_PixelFormat *format;
-    
     m_healthBarSurfaceID = g_graphics->CreateSurface ( 60, 15, false );
     format = g_graphics->GetPixelFormat ( m_healthBarSurfaceID );
     g_graphics->FillRect ( m_healthBarSurfaceID, NULL, SDL_MapRGBA ( format, 128, 0, 0, 255 ) );
@@ -50,12 +62,8 @@ Sidebar::Sidebar()
     format = g_graphics->GetPixelFormat ( m_radarBackgroundSurfaceID );
     g_graphics->FillRect ( m_radarBackgroundSurfaceID, NULL, SDL_MapRGBA ( format, 0, 0, 0, 255 ) );
     g_graphics->SetSurfaceAlpha ( m_radarBackgroundSurfaceID, 128 );
-}
 
-Sidebar::~Sidebar()
-{
-    g_graphics->DeleteSurface ( m_healthBarSurfaceID );
-    g_graphics->DeleteSurface ( m_chargeBarSurfaceID );
+	Widget::Initialise();
 }
 
 int Sidebar::SendEnterKey ()

@@ -166,6 +166,7 @@ public:
 
     virtual void SetupText                 ();
     virtual int  InitSurfaces              ();
+	virtual void InitWidgets               ();
     virtual void UpdateFPS                 ( unsigned int _fps );
     virtual void UpdateRendererWidget      ();
     virtual void RenderBouncies            ();

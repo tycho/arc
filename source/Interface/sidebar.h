@@ -40,6 +40,7 @@ public:
     virtual int MouseDown ( bool _mouseDown, Sint32 _x, Sint32 _y );
     virtual int SendEnterKey ();
 
+	virtual void Initialise();
     virtual void Render();
     virtual void Update();
 };

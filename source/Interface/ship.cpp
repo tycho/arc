@@ -40,6 +40,7 @@ Ship::Ship ( Player *_player )
     sprintf ( temp, "\3%s\1 [%d]", m_player->m_nick, m_player->m_score ); 
     m_label = new TextUI ( temp, true, 0 - ((int)strlen(m_player->m_nick) / 2), 35, 50, 7 );
     AddWidget ( m_label );
+	Initialise();
 }
 
 Ship::~Ship()
@@ -54,6 +55,12 @@ int Ship::SendEnterKey ()
 int Ship::MouseDown ( bool _mouseDown, Sint32 _x, Sint32 _y )
 {
     return 0;
+}
+
+void Ship::Initialise()
+{
+	m_damaged = true;
+	Widget::Initialise();
 }
 
 void Ship::Update()

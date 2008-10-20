@@ -39,11 +39,7 @@ TextUI::~TextUI ()
 {
     delete [] m_text;
     m_text = NULL;
-    if ( (int)m_cachedSurfaceID != -1 )
-    {
-        g_graphics->DeleteSurface ( m_cachedSurfaceID );
-        m_cachedSurfaceID = -1;
-    }
+    g_graphics->DeleteSurface ( m_cachedSurfaceID );
 }
 
 void TextUI::Update ()
