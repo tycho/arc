@@ -31,7 +31,10 @@
 DirectXGraphics::DirectXGraphics()
  : Graphics(),
    m_deviceLost(false),
-   m_sdlScreen(NULL)
+   m_sdlScreen(NULL),
+   m_d3d(NULL),
+   m_device(NULL),
+   m_vertexBuffer(NULL)
 {
     int retval = SDL_Init ( SDL_INIT_VIDEO );
     ARCReleaseAssert ( retval == 0 );
@@ -617,8 +620,8 @@ int DirectXGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heig
 
 	HWND hWnd = GetActiveWindow();
 
-	if (FAILED(m_d3d->GetDeviceCaps ( D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, &m_caps)))
-		return -1;
+	ZeroMemory ( &m_caps, sizeof ( D3DCAPS9 ) );
+	m_d3d->GetDeviceCaps ( D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, &m_caps);
 
 	ZeroMemory ( &m_presentParams, sizeof ( D3DPRESENT_PARAMETERS ) );
 
