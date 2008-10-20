@@ -47,6 +47,8 @@ protected:
 	static const int                     m_rendererVersionMajor = 1;
 	static const int                     m_rendererVersionMinor = 0;
 
+	bool								 m_deviceLost;
+
     SDL_Surface                         *m_sdlScreen;
     Data::DArray<DirectXTexture *>       m_textures;
 

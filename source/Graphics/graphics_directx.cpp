@@ -30,6 +30,7 @@
 
 DirectXGraphics::DirectXGraphics()
  : Graphics(),
+   m_deviceLost(false),
    m_sdlScreen(NULL)
 {
     int retval = SDL_Init ( SDL_INIT_VIDEO );
@@ -38,13 +39,6 @@ DirectXGraphics::DirectXGraphics()
 
 DirectXGraphics::~DirectXGraphics()
 {
-	if ( m_vertexBuffer )
-		m_vertexBuffer->Release();
-	if ( m_device )
-		m_device->Release();
-	if ( m_d3d )
-		m_d3d->Release();
-
 	size_t i;
     for ( i = 0; i < m_textures.size(); i++ )
     {
@@ -55,8 +49,16 @@ DirectXGraphics::~DirectXGraphics()
             delete tex;
         }
     }
+	if ( m_vertexBuffer )
+		m_vertexBuffer->Release();
+	if ( m_device )
+		m_device->Release();
+	if ( m_d3d )
+		m_d3d->Release();
+
     delete g_openGL;
     g_openGL = NULL;
+
     SDL_Quit ();
 }
 
@@ -90,6 +92,9 @@ void DirectXGraphics::DrawLine ( Uint32 _surfaceID, Uint32 _color, int _startX, 
 {
     CoreAssert ( _surfaceID == SCREEN_SURFACE_ID );
 	DXVertex *vertices;
+
+	if ( m_deviceLost)
+		return;
 
 	D3DCOLOR vertexColour = _color | FULL_ALPHA;
 
@@ -149,7 +154,9 @@ void DirectXGraphics::SetPixel ( Uint32 _surfaceID, int x, int y, Uint32 _color 
 {
     if ( _surfaceID == SCREEN_SURFACE_ID )
     {
-		CoreAssert ( _surfaceID == SCREEN_SURFACE_ID );
+		if ( m_deviceLost)
+			return;
+
 		DXVertex *vertices;
 
 		D3DCOLOR vertexColour = _color | FULL_ALPHA;
@@ -210,7 +217,7 @@ Uint32 DirectXGraphics::LoadImage ( const char *_filename, bool _isColorKeyed )
 
 int DirectXGraphics::DeleteSurface ( Uint32 _surfaceID )
 {
-    ARCReleaseAssert ( m_textures.valid ( _surfaceID ) );
+    if ( !m_textures.valid ( _surfaceID ) ) return -1;
     
     DirectXTexture *tex = m_textures.get ( _surfaceID );
     ARCReleaseAssert ( tex != NULL );
@@ -264,8 +271,11 @@ int DirectXGraphics::FillRect ( Uint32 _surfaceID, SDL_Rect *_destRect, Uint32 _
     if ( _color == m_colorKey )
         _color = m_colorKey & ZERO_ALPHA;
     
-    if (_surfaceID == SCREEN_SURFACE_ID)
+    if ( _surfaceID == SCREEN_SURFACE_ID )
 	{
+		if ( m_deviceLost)
+			return -1;
+
 		RECT rect;
 		if ( _destRect )
 		{
@@ -277,6 +287,7 @@ int DirectXGraphics::FillRect ( Uint32 _surfaceID, SDL_Rect *_destRect, Uint32 _
 		IDirect3DSurface9 *surf;
 		m_device->GetBackBuffer ( 0, 0, D3DBACKBUFFER_TYPE_MONO, &surf );
 		m_device->ColorFill ( surf, _destRect ? &rect : NULL, _color );
+		surf->Release();
         return 0;
     }
     else
@@ -310,6 +321,13 @@ int DirectXGraphics::Blit ( Uint32 _sourceSurfaceID, SDL_Rect const *_sourceRect
         // not at the moment, sadly
         return -1;
     }
+
+	if ( _destSurfaceID == SCREEN_SURFACE_ID )
+	{
+		// Our device is toasted.
+		if ( m_deviceLost )
+			return -1;
+	}
 
     // Get the SDL surface for the source surface.
     ARCReleaseAssert ( m_textures.valid ( _sourceSurfaceID ) );
@@ -675,28 +693,56 @@ int DirectXGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heig
 
 bool DirectXGraphics::Flip()
 {
-	static bool deviceLost = false;
+	HRESULT hr;
 	bool retval = true;
-	m_device->EndScene();
-	HRESULT hr = m_device->Present(NULL,NULL,NULL,NULL);
-	if ( hr == D3DERR_DEVICELOST )
+	if ( !m_deviceLost )
 	{
-		retval = false;
-		deviceLost = true;
+		m_device->EndScene();
+		hr = m_device->Present(NULL,NULL,NULL,NULL);
+		if ( FAILED(hr) )
+		{
+			retval = false;
+			m_deviceLost = true;
+		}
 	}
-	if ( deviceLost )
+	if ( m_deviceLost )
 	{
 		retval = false;
-		hr = m_device->Reset ( &m_presentParams );
+		hr = m_device->TestCooperativeLevel();
+		if ( hr == D3DERR_DEVICENOTRESET )
+		{
+			hr = m_device->Reset ( &m_presentParams );
+			ARCDebugAssert ( hr == D3D_OK );
+		}
 		if ( hr == D3D_OK )
 		{
-			deviceLost = false;
+			const DWORD D3DFVF_TLVERTEX = D3DFVF_XYZRHW | D3DFVF_DIFFUSE | D3DFVF_TEX1;
+
+			m_device->SetVertexShader ( NULL );
+			m_device->SetFVF ( D3DFVF_TLVERTEX );
+
+			m_device->SetStreamSource ( 0, m_vertexBuffer, 0, sizeof(DXVertex) );
+
+			m_device->SetRenderState ( D3DRS_LIGHTING, FALSE );
+			m_device->SetRenderState ( D3DRS_ALPHABLENDENABLE, TRUE );
+			m_device->SetRenderState ( D3DRS_SRCBLEND, D3DBLEND_SRCALPHA );
+			m_device->SetRenderState ( D3DRS_DESTBLEND, D3DBLEND_INVSRCALPHA );
+			m_device->SetRenderState ( D3DRS_CULLMODE, D3DCULL_NONE );
+			m_device->SetRenderState ( D3DRS_ZENABLE, D3DZB_FALSE );
+			m_device->SetTextureStageState ( 0, D3DTSS_ALPHAOP, D3DTOP_MODULATE );
+
+			m_deviceLost = false;
 			retval = true;
 		}
 	}
-	m_device->BeginScene();
-	m_device->Clear(0, NULL, D3DCLEAR_TARGET, 0, 0.0f, 0);
-	return retval && !deviceLost;
+	if ( !m_deviceLost)
+	{
+		hr = m_device->Clear(0, NULL, D3DCLEAR_TARGET, D3DCOLOR_XRGB(0,0,0), 1.0f, 0);
+		ARCDebugAssert ( hr == D3D_OK );
+		hr = m_device->BeginScene();
+		ARCDebugAssert ( hr == D3D_OK );
+	}
+	return retval;
 }
 
 #endif
