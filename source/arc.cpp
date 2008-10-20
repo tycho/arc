@@ -224,11 +224,6 @@ void Init_Graphics()
 			g_console->WriteLine ( "Wrong platform. Attempting to use OpenGL..." );
 #endif
 		}
-		else
-		{
-			// Uh oh...
-			break;
-		}
 
 		// Try and set the window mode.
 		if ( g_graphics )
@@ -254,6 +249,15 @@ void Init_Graphics()
 			else if ( Data::Compare<const char *> ( graphicsDriver, "direct3d" ) == 0  )
 			{
 				// Direct3D may not be available on this platform.
+				graphicsDriver = "opengl";
+			}
+			else if ( Data::Compare<const char *> ( graphicsDriver, "sdl" ) == 0  )
+			{
+				// You're screwed.
+			}
+			else
+			{
+				// Er, what the hell -did- they put in preferences?
 				graphicsDriver = "opengl";
 			}
 		} else {
