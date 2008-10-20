@@ -60,7 +60,7 @@ int Connection::Connect ( const char *_host, unsigned short _port )
     {
         sw.Stop();
         if ( sw.Elapsed() > 10.0 )
-            return ETIMEDOUT;
+            return CC_ERR_TIMED_OUT;
         else
             return retval;
     }
