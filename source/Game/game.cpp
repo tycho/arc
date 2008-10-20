@@ -934,7 +934,11 @@ void Game::Run ( const char *_hostname, unsigned short _port, const char *_nickn
 				g_console->SetColour ( IO::Console::FG_YELLOW | IO::Console::FG_INTENSITY );
 				g_console->WriteLine ( "WARNING: Device recaptured. Recreating textures." );
 				g_console->SetColour ();
+				/*
 				g_interface->InitSurfaces();
+				if (m_map) m_map->BlitEntireMap();
+				g_interface->InitWidgets();
+				*/
 				deviceLost = false;
 			}
 		}
