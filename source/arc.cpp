@@ -231,12 +231,15 @@ void Init_Graphics()
 		}
 
 		// Try and set the window mode.
-		ret = g_graphics->SetWindowMode (
-			g_prefsManager->GetInt ( "ScreenWindowed", 0 ) == 1,
-			g_prefsManager->GetInt ( "ScreenWidth", 800 ), 
-			g_prefsManager->GetInt ( "ScreenHeight", 600 ),
-			g_prefsManager->GetInt ( "ScreenColourDepth", 32 )
-		);
+		if ( g_graphics )
+		{
+			ret = g_graphics->SetWindowMode (
+				g_prefsManager->GetInt ( "ScreenWindowed", 0 ) == 1,
+				g_prefsManager->GetInt ( "ScreenWidth", 800 ),
+				g_prefsManager->GetInt ( "ScreenHeight", 600 ),
+				g_prefsManager->GetInt ( "ScreenColourDepth", 32 )
+			);
+		}
 
 		// Something went wrong.
 		if ( ret )
