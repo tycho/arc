@@ -41,11 +41,15 @@ DirectXTexture::DirectXTexture ()
 
 DirectXTexture::~DirectXTexture()
 {
+	Dispose();
 }
 
 void DirectXTexture::Dispose()
 {
-	delete m_texture; m_texture = NULL;
+	if (m_texture) {
+		m_texture->Release();
+		m_texture = NULL;
+	}
 	Texture::Dispose();
 }
 
@@ -156,9 +160,33 @@ bool DirectXTexture::Create ( Uint16 _width, Uint16 _height, bool _isColorKeyed 
     return true;
 }
 
+bool DirectXTexture::Reset()
+{
+	if (m_texture) {
+		m_texture->Release();
+		m_texture = NULL;
+	}
+	if (FAILED(D3DXCreateTexture(
+		graphics->m_device,
+		m_originalWidth,
+		m_originalHeight,
+		1,
+		0,
+		D3DFMT_A8R8G8B8,
+		D3DPOOL_MANAGED,
+		&m_texture)))
+		return false;
+	Damage();
+	return true;
+}
+
 void DirectXTexture::Bind()
 {
-	graphics->m_device->SetTexture ( 0, m_texture );
+	if ( !graphics->m_deviceLost )
+	{
+		HRESULT hr = graphics->m_device->SetTexture ( 0, m_texture );
+		ARCDebugAssert ( hr == D3D_OK );
+	}
 }
 
 bool DirectXTexture::Upload()

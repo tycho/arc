@@ -42,7 +42,7 @@ public:
     void Dispose ();
 
     void Bind ();
-
+	bool Reset ();
     bool Upload ();
 
     friend class DirectXGraphics;
