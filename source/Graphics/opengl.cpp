@@ -351,7 +351,7 @@ void OpenGL::SetSetting ( openglSetting _setting, bool _value )
 bool OpenGL::GetSetting ( openglSetting _setting ) const
 {
 	ARCDebugAssert ( this );
-    bool exists = m_settings.exists ( _setting );
+    bool item, exists = m_settings.find ( _setting, item );
     ARCDebugAssert ( exists );
-    return exists ? m_settings.find ( _setting ) : false;
+    return exists ? item : false;
 }

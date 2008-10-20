@@ -349,7 +349,9 @@ void Preferences::Save()
             int keyLen = keyEnd - keyStart;
             strncpy(key, keyStart, keyLen);
             key[keyLen] = '\0';
-            PrefsItem *item = m_items.find(key);
+            PrefsItem *item;
+			bool exists = m_items.find(key, item);
+			ARCReleaseAssert ( exists );
             SaveItem(out, item);
         }
     }
@@ -389,38 +391,42 @@ void Preferences::Clear()
 
 float Preferences::GetFloat(char const *_key, float _default) const
 {
-    if ( !m_items.exists ( _key ) ) return _default;
-    PrefsItem *item = m_items.find ( _key );
+	PrefsItem *item;
+	bool exists = m_items.find ( _key, item );
+    if ( !exists ) return _default;
     if (item->m_type != PrefsItem::TypeFloat) return _default;
     return item->m_float;
 }
 
 int Preferences::GetInt(char const *_key, int _default) const
 {
-    if ( !m_items.exists ( _key ) ) return _default;
-    PrefsItem *item = m_items.find ( _key );
+	PrefsItem *item;
+	bool exists = m_items.find ( _key, item );
+    if ( !exists ) return _default;
     if (item->m_type != PrefsItem::TypeInt) return _default;
     return item->m_int;
 }
 
 const char *Preferences::GetString(char const *_key, const char *_default) const
 {
-    if ( !m_items.exists ( _key ) ) return _default;
-    PrefsItem *item = m_items.find ( _key );
+	PrefsItem *item;
+	bool exists = m_items.find ( _key, item );
+    if ( !exists ) return _default;
     if (item->m_type != PrefsItem::TypeString) return _default;
     return item->m_str;
 }
 
 void Preferences::SetString(char const *_key, char const *_string)
 {
-    if ( !m_items.exists ( _key ) )
+	PrefsItem *item;
+	bool exists = m_items.find ( _key, item );
+    if ( !exists )
     {
-        PrefsItem *item = new PrefsItem(_key, _string);
+        item = new PrefsItem(_key, _string);
         m_items.insert ( item->m_key, item );
     }
     else
     {
-        PrefsItem *item = m_items.find ( _key );
         ARCDebugAssert ( item->m_type == PrefsItem::TypeString );
         char *newString = newStr(_string);
         delete [] item->m_str; item->m_str = NULL;
@@ -433,14 +439,15 @@ void Preferences::SetString(char const *_key, char const *_string)
 
 void Preferences::SetFloat(char const *_key, float _float)
 {
-    if ( !m_items.exists ( _key ) )
+	PrefsItem *item;
+	bool exists = m_items.find ( _key, item );
+    if ( !exists )
     {
-        PrefsItem *item = new PrefsItem ( _key, _float );
+        item = new PrefsItem ( _key, _float );
         m_items.insert ( item->m_key, item );
     }
     else
     {
-        PrefsItem *item = m_items.find ( _key );
         ARCDebugAssert ( item->m_type == PrefsItem::TypeFloat );
         item->m_float = _float;
     }
@@ -448,14 +455,15 @@ void Preferences::SetFloat(char const *_key, float _float)
 
 void Preferences::SetInt(char const *_key, int _int)
 {
-    if ( !m_items.exists ( _key ) )
+	PrefsItem *item;
+	bool exists = m_items.find ( _key, item );
+    if ( !exists )
     {
-        PrefsItem *item = new PrefsItem(_key, _int);
+        item = new PrefsItem(_key, _int);
         m_items.insert ( item->m_key, item );
     }
     else
     {
-        PrefsItem *item = m_items.find ( _key );
         ARCDebugAssert ( item->m_type == PrefsItem::TypeInt );
         item->m_int = _int;
     }
@@ -477,8 +485,9 @@ void Preferences::AddLine(char const*_line, bool _overwrite)
 
         PrefsItem *item = new PrefsItem(localCopy);
 
-        PrefsItem *idx = m_items.find ( item->m_key );
-        if ( _overwrite && idx ) {
+        PrefsItem *idx;
+		bool exists = m_items.find ( item->m_key, idx );
+        if ( _overwrite && exists ) {
             delete idx;
             m_items.erase ( item->m_key );
             saveLine = false;
