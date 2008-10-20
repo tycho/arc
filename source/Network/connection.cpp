@@ -53,13 +53,14 @@ Connection::~Connection()
 int Connection::Connect ( const char *_host, unsigned short _port )
 {
     static System::Stopwatch sw;
-    Errors retval;
+    int retval;
     ARCReleaseAssert ( _host != NULL ); ARCReleaseAssert ( _port > 1024 );
-    if ( ( retval = m_net->Connect ( _host, _port ) ) != CC_ERR_NONE )
+    retval = m_net->Connect ( _host, _port );
+    if ( retval != CC_ERR_NONE )
     {
         sw.Stop();
         if ( sw.Elapsed() > 10.0 )
-            return CC_ERR_ETIMEDOUT;
+            return ETIMEDOUT;
         else
             return retval;
     }

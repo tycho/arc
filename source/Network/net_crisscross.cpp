@@ -48,11 +48,11 @@ Net_CrissCross::~Net_CrissCross()
     delete m_udpSocket_out; m_udpSocket_out = NULL;
 }
 
-CrissCross::Errors
+int
 Net_CrissCross::Connect ( const char *_hostname, unsigned short _port )
 {
     ARCReleaseAssert ( _hostname != NULL );
-    Errors retval;
+    int retval;
 
     if ( !m_udpSocket_out )
     {
@@ -91,10 +91,10 @@ Net_CrissCross::Connect ( const char *_hostname, unsigned short _port )
             g_console->WriteLine ( "Connection to %s:%d established!", _hostname, _port );
             return CC_ERR_NONE;
         }
-        else if ( retval == CC_ERR_EINPROGRESS )
+        else if ( retval == CC_ERR_WOULD_BLOCK )
         {
             // We need to keep waiting.
-            return CC_ERR_EINPROGRESS;
+            return CC_ERR_WOULD_BLOCK;
         }
         else
         {
@@ -105,12 +105,11 @@ Net_CrissCross::Connect ( const char *_hostname, unsigned short _port )
     }
     else
     {
-        m_tcpSocket->UpdateState();
         switch ( m_tcpSocket->State() )
         {
         case SOCKET_STATE_CONNECTING:
             // We need to keep waiting.
-            return CC_ERR_EINPROGRESS;
+            return CC_ERR_WOULD_BLOCK;
 
         case SOCKET_STATE_CONNECTED:
             // Our work here is done.
@@ -120,7 +119,7 @@ Net_CrissCross::Connect ( const char *_hostname, unsigned short _port )
         case SOCKET_STATE_ERROR:
             // The connection failed.
             {
-            Errors err = m_tcpSocket->GetError();
+            int err = m_tcpSocket->GetError();
             if ( err != CC_ERR_NONE )
                 return err;
             else
@@ -159,7 +158,7 @@ int Net_CrissCross::ReceiveTCP ( int *_packetCount )
             retval = m_tcpSocket->Read ( bufferOffset, &length );
 
             // If we've got an error, we need to report it.
-            if ( retval != CC_ERR_NONE && retval != CC_ERR_EWOULDBLOCK )
+            if ( retval != CC_ERR_NONE && retval != CC_ERR_WOULD_BLOCK )
                 return retval;
 
             // No data received, we're breaking the loop.
@@ -184,7 +183,7 @@ int Net_CrissCross::ReceiveTCP ( int *_packetCount )
         retval = m_tcpSocket->Read ( bufferOffset, &length );
 
         // If we've got an error, we need to report it.
-        if ( retval != CC_ERR_NONE && retval != CC_ERR_EWOULDBLOCK )
+        if ( retval != CC_ERR_NONE && retval != CC_ERR_WOULD_BLOCK )
             return retval;
 
         // No data received, we're breaking the loop.
@@ -232,7 +231,7 @@ int Net_CrissCross::ReceiveUDP ( int *_packetCount )
     int retval = m_udpSocket_in->Read ( bufferOffset, &length );
 
     // If we've got an error, we need to report it.
-    if ( retval != CC_ERR_NONE && retval != CC_ERR_EWOULDBLOCK )
+    if ( retval != CC_ERR_NONE && retval != CC_ERR_WOULD_BLOCK )
     {
         return retval;
     }
@@ -338,7 +337,7 @@ int Net_CrissCross::Send ( const Packet *_buffer, bool _criticalData )
     // Handle the error cases.
     if ( dataSent == -1 )
     {
-        CrissCross::Errors err = socket->GetError();
+        int err = socket->GetError();
         g_console->WriteLine ( "Data send failure, error #%d (%s)", err, GetErrorDescription(err) );
     }
 

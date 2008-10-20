@@ -125,7 +125,7 @@ int RunApplication ( int argc, char **argv )
     Init_Game();
 
     // TODO: Implement dynamic values.
-    g_game->Run ( "5.197.181.41", 22000, "Tycho", NULL );
+    g_game->Run ( "5.132.88.92", 22000, "Tycho", NULL );
 
     // deconstruct the classes
     g_console->WriteLine ( "Destroying classes...");

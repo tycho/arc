@@ -798,7 +798,7 @@ void Game::Run ( const char *_hostname, unsigned short _port, const char *_nickn
                         err = m_connection->Connect ( _hostname, _port );
 
                         // Check for errors.
-                        if ( err == CC_ERR_EINPROGRESS )
+                        if ( err == CC_ERR_WOULD_BLOCK )
                         {
                             // We're waiting for the connection to establish.
                             m_nextLoadState = LOAD_STATE_CONNECTING;

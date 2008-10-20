@@ -39,7 +39,7 @@ public:
     Data::LList<Packet *> *GetPackets();
 
     virtual void                  DisableUDP() = 0;
-    virtual Errors                Connect ( const char *_hostname, unsigned short _port ) = 0;
+    virtual int                   Connect ( const char *_hostname, unsigned short _port ) = 0;
     virtual int                   Receive ( int *_packetCount ) = 0;
     virtual int                   Send ( const Packet *_buffer, bool _criticalData ) = 0;
     virtual Network::socketState  State () const = 0;

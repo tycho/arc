@@ -93,7 +93,7 @@
 #endif
 
 #ifndef BENCHMARK_BUILD
-//#define ENABLE_NETWORKING
+#define ENABLE_NETWORKING
 #endif
 
 /*********************** SOUND ***********************/

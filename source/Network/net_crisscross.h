@@ -45,7 +45,7 @@ public:
     virtual ~Net_CrissCross();
 
     virtual void                  DisableUDP();
-    virtual Errors                Connect ( const char *_hostname, unsigned short _port );
+    virtual int                   Connect ( const char *_hostname, unsigned short _port );
     virtual int                   Receive ( int *_packetCount );
     virtual int                   Send ( const Packet *_buffer, bool _criticalData );
     virtual Network::socketState  State () const;
