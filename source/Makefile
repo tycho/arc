@@ -116,6 +116,7 @@ source/Network/net_crisscross.cpp \
 source/Network/net_raknet.cpp \
 source/Network/packet.cpp \
 source/Sound/soundsystem.cpp \
+source/Sound/soundsystem_null.cpp \
 source/Sound/soundsystem_openal.cpp \
 source/Sound/soundsystem_sdlmixer.cpp \
 source/universal_include.cpp \

@@ -40,7 +40,9 @@ public:
     void             ParseArchive             ( char const *_dataFile, char const *_password);
     BinaryReader    *GetBinaryReader          ( char const *_filename );
     SDL_Surface     *GetImage                 ( char const *_filename );
+#ifdef USE_SDLMIXER
     Mix_Chunk       *GetSound                 ( char const *_filename );
+#endif
     TextReader      *GetTextReader            ( char const *_filename );
     MemMappedFile   *GetUncompressedFile      ( char const *_filename );
 };

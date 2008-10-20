@@ -1009,6 +1009,14 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\source\Sound\soundsystem_null.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\source\Sound\soundsystem_null.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\source\Sound\soundsystem_openal.cpp"
 				>
 			</File>

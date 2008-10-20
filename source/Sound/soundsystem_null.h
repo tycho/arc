@@ -20,26 +20,20 @@
  *
  */
 
-#ifndef __included_soundsystem_h
-#define __included_soundsystem_h
+#ifndef __included_soundsystem_null_h
+#define __included_soundsystem_null_h
 
-class SoundSystem
+class NullSoundSystem : public SoundSystem
 {
 public:
-    SoundSystem();
-    virtual ~SoundSystem();
+    NullSoundSystem();
+    virtual ~NullSoundSystem();
 
-    virtual void    AddQueue    ( Data::LList<std::string> *_queue ) = 0;
-    virtual bool    IsPlaying   ( const char *_soundName ) = 0;
-    virtual int     LoadWave    ( const char *_soundName ) = 0;
-    virtual int     PlaySound    ( const char *_soundName, short _distX, short _distY ) = 0;
-    virtual void    Update        () = 0;
+    virtual void       AddQueue    ( Data::LList<std::string> *_queue );
+    virtual bool       IsPlaying   ( const char *_soundName );
+    virtual int        LoadWave    ( const char *_soundName );
+    virtual int        PlaySound   ( const char *_soundName, short _distX, short _distY );
+    virtual void       Update      ();
 };
-
-extern SoundSystem *g_soundSystem;
-
-#include "Sound/soundsystem_null.h"
-#include "Sound/soundsystem_openal.h"
-#include "Sound/soundsystem_sdlmixer.h"
 
 #endif

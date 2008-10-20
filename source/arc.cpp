@@ -277,10 +277,13 @@ void Init_Interface()
 
 void Init_Sound()
 {
+	/* TODO: Set up a fallback to NullSoundSystem */
 #if defined(USE_OPENAL)
     g_soundSystem = new OpenALSoundSystem();
 #elif defined(USE_SDLMIXER)
     g_soundSystem = new SDLMixerSoundSystem();
+#else
+	g_soundSystem = new NullSoundSystem();
 #endif
     ARCReleaseAssert ( g_soundSystem != NULL );
 }

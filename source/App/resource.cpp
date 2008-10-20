@@ -149,6 +149,7 @@ SDL_Surface *Resource::GetImage ( char const *_filename )
     return surf;
 }
 
+#ifdef USE_SDLMIXER
 Mix_Chunk *Resource::GetSound ( char const *_filename )
 {
     char buffer[2048];
@@ -170,6 +171,7 @@ Mix_Chunk *Resource::GetSound ( char const *_filename )
 
     return chunk;
 }
+#endif
 
 TextReader *Resource::GetTextReader(char const *_filename)
 {
