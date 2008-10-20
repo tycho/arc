@@ -254,7 +254,7 @@ Uint32 SDLGraphics::LoadImage ( const char *_filename, bool _isColorKeyed )
 
 int SDLGraphics::DeleteSurface ( Uint32 _surfaceID )
 {
-    ARCReleaseAssert ( m_surfaces.valid ( _surfaceID ) );
+    if ( !m_surfaces.valid ( _surfaceID ) ) return -1;
     
     SDL_Surface *surface = m_surfaces.get ( _surfaceID );
     ARCReleaseAssert ( surface != NULL );

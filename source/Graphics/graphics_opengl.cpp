@@ -200,7 +200,7 @@ Uint32 OpenGLGraphics::LoadImage ( const char *_filename, bool _isColorKeyed )
 
 int OpenGLGraphics::DeleteSurface ( Uint32 _surfaceID )
 {
-    ARCReleaseAssert ( m_textures.valid ( _surfaceID ) );
+    if ( !m_textures.valid ( _surfaceID ) ) return -1;
     
     OpenGLTexture *tex = m_textures.get ( _surfaceID );
     ARCReleaseAssert ( tex != NULL );
