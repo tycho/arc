@@ -660,9 +660,29 @@ int DirectXGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heig
 
 	bool bHwVertexProcessing = (m_caps.DevCaps & D3DDEVCAPS_HWTRANSFORMANDLIGHT) != 0;
 
+	// Set default settings
+	UINT AdapterToUse = D3DADAPTER_DEFAULT;
+	D3DDEVTYPE DeviceType = D3DDEVTYPE_HAL;
+#ifndef _DEBUG
+	// When building a shipping version, disable PerfHUD (opt-out)
+#else
+	// Look for 'NVIDIA PerfHUD' adapter
+	// If it is present, override default settings
+	for ( UINT Adapter = 0; Adapter < m_d3d->GetAdapterCount(); Adapter++ ) {
+		D3DADAPTER_IDENTIFIER9 Identifier;
+		HRESULT Res;
+		Res = m_d3d->GetAdapterIdentifier ( Adapter, 0, &Identifier );
+		if ( strstr ( Identifier.Description, "PerfHUD" ) != 0 ) {
+			AdapterToUse = Adapter; 
+			DeviceType = D3DDEVTYPE_REF;
+			break;
+		}
+	}
+#endif
+
 	if (FAILED(m_d3d->CreateDevice (
-			D3DADAPTER_DEFAULT,
-			D3DDEVTYPE_HAL,
+			AdapterToUse,
+			DeviceType,
 			hWnd,
 			bHwVertexProcessing ? D3DCREATE_HARDWARE_VERTEXPROCESSING : D3DCREATE_SOFTWARE_VERTEXPROCESSING,
 			&m_presentParams,
