@@ -19,7 +19,6 @@
 		B0150A240BE43DD900DE06BB /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0150A230BE43DD900DE06BB /* SDL_mixer.framework */; };
 		B0150A2B0BE43DEB00DE06BB /* SDL_mixer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B0150A230BE43DD900DE06BB /* SDL_mixer.framework */; };
 		B01C1DC30DAD47800049FE41 /* laser_zap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B01C1DC10DAD47800049FE41 /* laser_zap.cpp */; };
-		B03D6B790EA06E8000C9ADD9 /* libCrissCross Static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0EA17C40EA06D58001DFFF4 /* libCrissCross Static.a */; };
 		B03E23050DAAD4250038265C /* ship_explosion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B03E23030DAAD4250038265C /* ship_explosion.cpp */; };
 		B0426EAD0DA96BBB005A0E89 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0426EAB0DA96BBB005A0E89 /* AppKit.framework */; };
 		B0426EAE0DA96BBB005A0E89 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0426EAC0DA96BBB005A0E89 /* Carbon.framework */; };
@@ -46,6 +45,7 @@
 		B091BECB0DA98FF600126E34 /* collide.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B091BEC90DA98FF600126E34 /* collide.cpp */; };
 		B09336380BEAF0A300DAF22A /* loading_window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B09336360BEAF0A300DAF22A /* loading_window.cpp */; };
 		B09336390BEAF0A300DAF22A /* loading_window.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B09336370BEAF0A300DAF22A /* loading_window.h */; };
+		B09B59400EAC2F36003F4C0B /* libCrissCross Static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B09B593C0EAC2EF7003F4C0B /* libCrissCross Static.a */; };
 		B0A200000DB0B0A100C9BD5C /* match.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FFA20DB0B0A100C9BD5C /* match.cpp */; };
 		B0A200020DB0B0A100C9BD5C /* options.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FFA60DB0B0A100C9BD5C /* options.cpp */; };
 		B0A200040DB0B0A100C9BD5C /* pathfn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FFAA0DB0B0A100C9BD5C /* pathfn.cpp */; };
@@ -137,11 +137,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B03D6B6B0EA06D9100C9ADD9 /* PBXContainerItemProxy */ = {
+		B09B593B0EAC2EF7003F4C0B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = B0EA17BB0EA06D58001DFFF4 /* CrissCross.xcodeproj */;
+			containerPortal = B09B59330EAC2EF7003F4C0B /* CrissCross.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B0BD2C480BE26BDC00F71A26 /* libCrissCross Static.a */;
+			remoteInfo = "CrissCross Static";
+		};
+		B09B593D0EAC2F23003F4C0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B09B59330EAC2EF7003F4C0B /* CrissCross.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = B0BD2C470BE26BDB00F71A26;
+			remoteGlobalIDString = B0BD2C470BE26BDB00F71A26 /* CrissCross Static */;
 			remoteInfo = "CrissCross Static";
 		};
 		B0BD2DB60BE270D200F71A26 /* PBXContainerItemProxy */ = {
@@ -150,13 +157,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = B0BD2D9D0BE26FBD00F71A26;
 			remoteInfo = GenerateBuildNumber;
-		};
-		B0EA17C30EA06D58001DFFF4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B0EA17BB0EA06D58001DFFF4 /* CrissCross.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = B0BD2C480BE26BDC00F71A26;
-			remoteInfo = "CrissCross Static";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -241,6 +241,7 @@
 		B091BECA0DA98FF600126E34 /* collide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = collide.h; path = ../../source/Game/collide.h; sourceTree = "<group>"; };
 		B09336360BEAF0A300DAF22A /* loading_window.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = loading_window.cpp; path = ../../source/Interface/loading_window.cpp; sourceTree = "<group>"; };
 		B09336370BEAF0A300DAF22A /* loading_window.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = loading_window.h; path = ../../source/Interface/loading_window.h; sourceTree = "<group>"; };
+		B09B59330EAC2EF7003F4C0B /* CrissCross.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CrissCross.xcodeproj; path = ../../contrib/crisscross/targets/xcode/CrissCross.xcodeproj; sourceTree = SOURCE_ROOT; };
 		B0A200290DB0B28A00C9BD5C /* smallfn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = smallfn.cpp; path = ../../contrib/unrar/smallfn.cpp; sourceTree = "<group>"; };
 		B0A2002A0DB0B28A00C9BD5C /* smallfn.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = smallfn.hpp; path = ../../contrib/unrar/smallfn.hpp; sourceTree = "<group>"; };
 		B0A2002E0DB0B47A00C9BD5C /* arc.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = arc.icns; path = ../../source/arc.icns; sourceTree = "<group>"; };
@@ -419,7 +420,6 @@
 		B0BD2E140BE2745E00F71A26 /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = SDLMain.m; path = ../../source/SDLMain.m; sourceTree = "<group>"; };
 		B0CFCA690DAD61E500D1ABF1 /* text_input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = text_input.cpp; path = ../../source/Interface/text_input.cpp; sourceTree = "<group>"; };
 		B0CFCA6A0DAD61E500D1ABF1 /* text_input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = text_input.h; path = ../../source/Interface/text_input.h; sourceTree = "<group>"; };
-		B0EA17BB0EA06D58001DFFF4 /* CrissCross.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CrissCross.xcodeproj; path = ../../../CrissCross/xcode/CrissCross.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -427,7 +427,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B03D6B790EA06E8000C9ADD9 /* libCrissCross Static.a in Frameworks */,
+				B09B59400EAC2F36003F4C0B /* libCrissCross Static.a in Frameworks */,
 				B0B8E9570BDB4FE5007C1576 /* SDL.framework in Frameworks */,
 				B0B8E97A0BDB5253007C1576 /* SDL_image.framework in Frameworks */,
 				B0B8EB9B0BDB6227007C1576 /* OpenGL.framework in Frameworks */,
@@ -449,6 +449,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B09B59340EAC2EF7003F4C0B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B09B593C0EAC2EF7003F4C0B /* libCrissCross Static.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B0A2FF6C0DB0B05E00C9BD5C /* Unrar */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,7 +566,7 @@
 		B0B8E8B50BDB4D36007C1576 = {
 			isa = PBXGroup;
 			children = (
-				B0EA17BB0EA06D58001DFFF4 /* CrissCross.xcodeproj */,
+				B09B59330EAC2EF7003F4C0B /* CrissCross.xcodeproj */,
 				B0B8ECF90BDB6337007C1576 /* libz.dylib */,
 				B0426EAB0DA96BBB005A0E89 /* AppKit.framework */,
 				B0426EAC0DA96BBB005A0E89 /* Carbon.framework */,
@@ -780,14 +788,6 @@
 			name = Build;
 			sourceTree = "<group>";
 		};
-		B0EA17BC0EA06D58001DFFF4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				B0EA17C40EA06D58001DFFF4 /* libCrissCross Static.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -804,7 +804,7 @@
 			);
 			dependencies = (
 				B0BD2DB70BE270D200F71A26 /* PBXTargetDependency */,
-				B03D6B6C0EA06D9100C9ADD9 /* PBXTargetDependency */,
+				B09B593E0EAC2F23003F4C0B /* PBXTargetDependency */,
 			);
 			name = ARC;
 			productName = ARC;
@@ -824,8 +824,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = B0EA17BC0EA06D58001DFFF4 /* Products */;
-					ProjectRef = B0EA17BB0EA06D58001DFFF4 /* CrissCross.xcodeproj */;
+					ProductGroup = B09B59340EAC2EF7003F4C0B /* Products */;
+					ProjectRef = B09B59330EAC2EF7003F4C0B /* CrissCross.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -837,11 +837,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		B0EA17C40EA06D58001DFFF4 /* libCrissCross Static.a */ = {
+		B09B593C0EAC2EF7003F4C0B /* libCrissCross Static.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libCrissCross Static.a";
-			remoteRef = B0EA17C30EA06D58001DFFF4 /* PBXContainerItemProxy */;
+			remoteRef = B09B593B0EAC2EF7003F4C0B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1009,10 +1009,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B03D6B6C0EA06D9100C9ADD9 /* PBXTargetDependency */ = {
+		B09B593E0EAC2F23003F4C0B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "CrissCross Static";
-			targetProxy = B03D6B6B0EA06D9100C9ADD9 /* PBXContainerItemProxy */;
+			targetProxy = B09B593D0EAC2F23003F4C0B /* PBXContainerItemProxy */;
 		};
 		B0BD2DB70BE270D200F71A26 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
