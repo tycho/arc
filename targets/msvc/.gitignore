@@ -1,3 +1,5 @@
 *.vcproj.*.user
 bin
 obj
+Debug
+Release
