@@ -30,7 +30,10 @@
 const SDL_Rect rWeaponAmmo[2] = { { 465, 374, 4, 3}, {465, 380, 23, 4 } };
 
 Sidebar::Sidebar()
- : Widget()
+ : Widget(),
+   m_healthBarSurfaceID(-1),
+   m_chargeBarSurfaceID(-1),
+   m_radarBackgroundSurfaceID(-1)
 {
     SetWidgetClass ( "Sidebar" );
     Initialise();
@@ -40,12 +43,14 @@ Sidebar::~Sidebar()
 {
     g_graphics->DeleteSurface ( m_healthBarSurfaceID );
     g_graphics->DeleteSurface ( m_chargeBarSurfaceID );
+    g_graphics->DeleteSurface ( m_radarBackgroundSurfaceID );
 }
 
 void Sidebar::Initialise()
 {
     g_graphics->DeleteSurface ( m_healthBarSurfaceID );
     g_graphics->DeleteSurface ( m_chargeBarSurfaceID );
+    g_graphics->DeleteSurface ( m_radarBackgroundSurfaceID );
 
     SDL_PixelFormat *format;
     m_healthBarSurfaceID = g_graphics->CreateSurface ( 60, 15, false );
@@ -63,7 +68,7 @@ void Sidebar::Initialise()
     g_graphics->FillRect ( m_radarBackgroundSurfaceID, NULL, SDL_MapRGBA ( format, 0, 0, 0, 255 ) );
     g_graphics->SetSurfaceAlpha ( m_radarBackgroundSurfaceID, 128 );
 
-	Widget::Initialise();
+    Widget::Initialise();
 }
 
 int Sidebar::SendEnterKey ()
