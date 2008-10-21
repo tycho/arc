@@ -36,6 +36,7 @@ Interface::Interface()
    m_farplane(NULL),
    m_tunaID(-1),
    m_tuna1ID(-1),
+   m_rawTextID(-1),
    m_sidebarID(-1),
    m_extrasID(-1),
    m_textID(-1),
@@ -50,7 +51,7 @@ Interface::Interface()
    m_mouseButton(0),
    m_mouseFrame(0) 
 {
-    memset ( m_animsID, -1, sizeof(m_animsID) );
+    m_animsID[0] = m_animsID[1] = -1;
     memset ( m_frameCount, 0, sizeof(m_frameCount) );
     memset ( m_animSpeed, 0, sizeof(m_animSpeed) );
     memset ( m_animFrames, 0, sizeof(m_animFrames) );
