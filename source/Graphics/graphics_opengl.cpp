@@ -528,11 +528,13 @@ int OpenGLGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heigh
 {
     ARCReleaseAssert ( m_sdlScreen == NULL );
 
-    if ( _width > 800 ||_height > 600 )
+#ifdef ENFORCE_RESOLUTION
+    if ( _width < 640 || _width > 800 || _height < 480 || _height > 600 )
     {
         _width = 800;
         _height = 600;
     }
+#endif
 
     if ( _colorDepth < 16 || _colorDepth > 32 ) _colorDepth = 16;
 

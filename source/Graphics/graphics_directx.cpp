@@ -556,11 +556,13 @@ int DirectXGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heig
 {
     ARCReleaseAssert ( m_sdlScreen == NULL );
 
-    if ( _width > 800 ||_height > 600 )
+#ifdef ENFORCE_RESOLUTION
+    if ( _width < 640 || _width > 800 || _height < 480 || _height > 600 )
     {
         _width = 800;
         _height = 600;
     }
+#endif
 
     if ( _colorDepth < 16 || _colorDepth > 32 ) _colorDepth = 16;
 
@@ -663,7 +665,7 @@ int DirectXGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heig
 	// Set default settings
 	UINT AdapterToUse = D3DADAPTER_DEFAULT;
 	D3DDEVTYPE DeviceType = D3DDEVTYPE_HAL;
-#ifndef _DEBUG
+#ifndef USE_NVPERFHUD
 	// When building a shipping version, disable PerfHUD (opt-out)
 #else
 	// Look for 'NVIDIA PerfHUD' adapter

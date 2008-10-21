@@ -428,11 +428,13 @@ int SDLGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _height, 
 {
     ARCReleaseAssert ( (int)m_mainSurface == -1 );
 
+#ifdef ENFORCE_RESOLUTION
     if ( _width < 640 || _width > 800 || _height < 480 || _height > 600 )
     {
         _width = 800;
         _height = 600;
     }
+#endif
 
     if ( _colorDepth < 16 || _colorDepth > 32 ) _colorDepth = 16;
 
