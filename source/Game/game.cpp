@@ -298,22 +298,22 @@ void Game::Initialise()
     m_me = player;
 #endif
 
-//#ifndef RELEASE_BUILD
     TextUI *text = new TextUI (
-        "\5" APP_NAME,
+        "\2" APP_NAME,
         false, g_graphics->GetScreenWidth () - 290, g_graphics->GetScreenHeight () - 38, 270, 12 );
     g_interface->AddWidget ( text );
 
     text = new TextUI (
-        "\5For testing purposes only. v" VERSION_NUMBER " build " VERSION_BUILD,
+        "\2For testing purposes only. v" VERSION_NUMBER " build " VERSION_BUILD,
         false, g_graphics->GetScreenWidth () - 290, g_graphics->GetScreenHeight () - 25, 270, 12 );
     g_interface->AddWidget ( text );
 
+#ifndef RELEASE_BUILD
     text = new TextUI (
-        "\5NOT FOR PUBLIC INSPECTION OR REDISTRIBUTION",
+        "\2NOT FOR PUBLIC INSPECTION OR REDISTRIBUTION",
         false, g_graphics->GetScreenWidth () - 290, g_graphics->GetScreenHeight () - 12, 270, 12 );
     g_interface->AddWidget ( text );
-//#endif
+#endif
 }
 
 int Game::LoadMap ( const char *_mapFile )
