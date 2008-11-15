@@ -15,7 +15,6 @@
 		49B200280BE3946800386500 /* grenade_explosion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49B200260BE3946800386500 /* grenade_explosion.cpp */; };
 		49B2FEC50BE3928500386500 /* soundsystem_sdlmixer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49B2FEC10BE3928500386500 /* soundsystem_sdlmixer.cpp */; };
 		49B2FEC70BE3928500386500 /* soundsystem_openal.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 49B2FEC30BE3928500386500 /* soundsystem_openal.cpp */; };
-		49B2FEE60BE393F600386500 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B2FEE50BE393F600386500 /* OpenAL.framework */; };
 		B0150A240BE43DD900DE06BB /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0150A230BE43DD900DE06BB /* SDL_mixer.framework */; };
 		B0150A2B0BE43DEB00DE06BB /* SDL_mixer.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B0150A230BE43DD900DE06BB /* SDL_mixer.framework */; };
 		B01C1DC30DAD47800049FE41 /* laser_zap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B01C1DC10DAD47800049FE41 /* laser_zap.cpp */; };
@@ -46,6 +45,7 @@
 		B09336380BEAF0A300DAF22A /* loading_window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B09336360BEAF0A300DAF22A /* loading_window.cpp */; };
 		B09336390BEAF0A300DAF22A /* loading_window.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B09336370BEAF0A300DAF22A /* loading_window.h */; };
 		B09B59400EAC2F36003F4C0B /* libCrissCross Static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B09B593C0EAC2EF7003F4C0B /* libCrissCross Static.a */; };
+		B09F837F0ECE4AFF004013DA /* CHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09F837E0ECE4AFF004013DA /* CHUD.framework */; };
 		B0A200000DB0B0A100C9BD5C /* match.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FFA20DB0B0A100C9BD5C /* match.cpp */; };
 		B0A200020DB0B0A100C9BD5C /* options.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FFA60DB0B0A100C9BD5C /* options.cpp */; };
 		B0A200040DB0B0A100C9BD5C /* pathfn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FFAA0DB0B0A100C9BD5C /* pathfn.cpp */; };
@@ -199,7 +199,6 @@
 		49B2FEC10BE3928500386500 /* soundsystem_sdlmixer.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = soundsystem_sdlmixer.cpp; path = ../../source/Sound/soundsystem_sdlmixer.cpp; sourceTree = "<group>"; };
 		49B2FEC20BE3928500386500 /* soundsystem_openal.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = soundsystem_openal.h; path = ../../source/Sound/soundsystem_openal.h; sourceTree = "<group>"; };
 		49B2FEC30BE3928500386500 /* soundsystem_openal.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = soundsystem_openal.cpp; path = ../../source/Sound/soundsystem_openal.cpp; sourceTree = "<group>"; };
-		49B2FEE50BE393F600386500 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = /System/Library/Frameworks/OpenAL.framework; sourceTree = "<absolute>"; };
 		B0150A230BE43DD900DE06BB /* SDL_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_mixer.framework; path = ../../contrib/SDL_mixer.framework; sourceTree = "<group>"; };
 		B01C1DC10DAD47800049FE41 /* laser_zap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = laser_zap.cpp; path = ../../source/Interface/laser_zap.cpp; sourceTree = "<group>"; };
 		B01C1DC20DAD47800049FE41 /* laser_zap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = laser_zap.h; path = ../../source/Interface/laser_zap.h; sourceTree = "<group>"; };
@@ -242,6 +241,7 @@
 		B09336360BEAF0A300DAF22A /* loading_window.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = loading_window.cpp; path = ../../source/Interface/loading_window.cpp; sourceTree = "<group>"; };
 		B09336370BEAF0A300DAF22A /* loading_window.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = loading_window.h; path = ../../source/Interface/loading_window.h; sourceTree = "<group>"; };
 		B09B59330EAC2EF7003F4C0B /* CrissCross.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CrissCross.xcodeproj; path = ../../contrib/crisscross/targets/xcode/CrissCross.xcodeproj; sourceTree = SOURCE_ROOT; };
+		B09F837E0ECE4AFF004013DA /* CHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CHUD.framework; path = /System/Library/PrivateFrameworks/CHUD.framework; sourceTree = "<absolute>"; };
 		B0A200290DB0B28A00C9BD5C /* smallfn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = smallfn.cpp; path = ../../contrib/unrar/smallfn.cpp; sourceTree = "<group>"; };
 		B0A2002A0DB0B28A00C9BD5C /* smallfn.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = smallfn.hpp; path = ../../contrib/unrar/smallfn.hpp; sourceTree = "<group>"; };
 		B0A2002E0DB0B47A00C9BD5C /* arc.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = arc.icns; path = ../../source/arc.icns; sourceTree = "<group>"; };
@@ -427,12 +427,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B09F837F0ECE4AFF004013DA /* CHUD.framework in Frameworks */,
 				B09B59400EAC2F36003F4C0B /* libCrissCross Static.a in Frameworks */,
 				B0B8E9570BDB4FE5007C1576 /* SDL.framework in Frameworks */,
 				B0B8E97A0BDB5253007C1576 /* SDL_image.framework in Frameworks */,
 				B0B8EB9B0BDB6227007C1576 /* OpenGL.framework in Frameworks */,
 				B0B8ECFA0BDB6337007C1576 /* libz.dylib in Frameworks */,
-				49B2FEE60BE393F600386500 /* OpenAL.framework in Frameworks */,
 				B0150A240BE43DD900DE06BB /* SDL_mixer.framework in Frameworks */,
 				B0426EAD0DA96BBB005A0E89 /* AppKit.framework in Frameworks */,
 				B0426EAE0DA96BBB005A0E89 /* Carbon.framework in Frameworks */,
@@ -570,7 +570,7 @@
 				B0B8ECF90BDB6337007C1576 /* libz.dylib */,
 				B0426EAB0DA96BBB005A0E89 /* AppKit.framework */,
 				B0426EAC0DA96BBB005A0E89 /* Carbon.framework */,
-				49B2FEE50BE393F600386500 /* OpenAL.framework */,
+				B09F837E0ECE4AFF004013DA /* CHUD.framework */,
 				B0B8EB9A0BDB6227007C1576 /* OpenGL.framework */,
 				B0B8E9790BDB5253007C1576 /* SDL_image.framework */,
 				B0150A230BE43DD900DE06BB /* SDL_mixer.framework */,
@@ -1058,6 +1058,15 @@
 				HEADER_SEARCH_PATHS_QUOTED_2 = "\"$(PROJECT_DIR)/../../contrib/crisscross/source\"";
 				HEADER_SEARCH_PATHS_QUOTED_3 = "\"$(PROJECT_DIR)/../../contrib/unrar\"";
 				HEADER_SEARCH_PATHS_QUOTED_FOR_PROJECT_1 = "\"$(PROJECT_DIR)/../../contrib/OpenGL/include/\"";
+				MACOSX_DEPLOYMENT_TARGET_i386 = 10.4;
+				MACOSX_DEPLOYMENT_TARGET_ppc = 10.3;
+				MACOSX_DEPLOYMENT_TARGET_ppc64 = 10.4;
+				MACOSX_DEPLOYMENT_TARGET_x86_64 = 10.4;
+				SDKROOT = /Developer/SDKs/MacOSX10.3.9.sdk;
+				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT_ppc = /Developer/SDKs/MacOSX10.3.9.sdk;
+				SDKROOT_ppc64 = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT_x86_64 = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Debug;
 		};
@@ -1080,7 +1089,16 @@
 				HEADER_SEARCH_PATHS_QUOTED_1 = "\"$(PROJECT_DIR)/../../source\"";
 				HEADER_SEARCH_PATHS_QUOTED_2 = "\"$(PROJECT_DIR)/../../contrib/crisscross/source\"";
 				HEADER_SEARCH_PATHS_QUOTED_3 = "\"$(PROJECT_DIR)/../../contrib/unrar\"";
-				HEADER_SEARCH_PATHS_QUOTED_FOR_PROJECT_1 = "\"$(PROJECT_DIR)/../.../contrib/OpenGL/include/\"";
+				HEADER_SEARCH_PATHS_QUOTED_FOR_PROJECT_1 = "\"$(PROJECT_DIR)/../../contrib/OpenGL/include/\"";
+				MACOSX_DEPLOYMENT_TARGET_i386 = 10.4;
+				MACOSX_DEPLOYMENT_TARGET_ppc = 10.3;
+				MACOSX_DEPLOYMENT_TARGET_ppc64 = 10.4;
+				MACOSX_DEPLOYMENT_TARGET_x86_64 = 10.4;
+				SDKROOT = /Developer/SDKs/MacOSX10.3.9.sdk;
+				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT_ppc = /Developer/SDKs/MacOSX10.3.9.sdk;
+				SDKROOT_ppc64 = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT_x86_64 = /Developer/SDKs/MacOSX10.4u.sdk;
 			};
 			name = Release;
 		};
@@ -1088,8 +1106,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../contrib\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -1133,8 +1155,10 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../contrib\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;

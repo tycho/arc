@@ -36,7 +36,7 @@ protected:
     System::Stopwatch        m_timer;
 
 public:
-    Shrapnel ( Player *_who, int _X, int _Y, double _speed,
+    Shrapnel ( Player *_who, int _x, int _y, double _speed,
                int _shrapTick, int _explStart, int _explPower);
     virtual ~Shrapnel();
 

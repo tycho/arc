@@ -37,7 +37,7 @@ protected:
     double m_frameT;
 
 public:
-    MissileSmoke ( int _X, int _Y, int _color );
+    MissileSmoke ( int _x, int _y, int _color );
     virtual ~MissileSmoke();
 
     virtual bool Expired();

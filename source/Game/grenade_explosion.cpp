@@ -42,14 +42,14 @@ const SDL_Rect rBombExplosions[11] = {
     { 319, 40, 50, 43 }
 };
 
-GrenadeExplosion::GrenadeExplosion ( int _X, int _Y )
+GrenadeExplosion::GrenadeExplosion ( int _x, int _y )
 {
-    m_X = _X; m_Y = _Y; m_frame = 0; m_expired = false;
+    m_X = _x; m_Y = _y; m_frame = 0; m_expired = false;
     m_frameTick.Start();
 
     g_soundSystem->PlaySound ( "morthit", 
-        (Sint32)(_X - g_game->m_me->GetX() - 16),
-        (Sint32)(_Y - g_game->m_me->GetY() - 16) );
+        (Sint32)(_x - g_game->m_me->GetX() - 16),
+        (Sint32)(_y - g_game->m_me->GetY() - 16) );
 }
 
 GrenadeExplosion::~GrenadeExplosion()

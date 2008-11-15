@@ -140,7 +140,7 @@ public:
     virtual void FireMissile               ( Player *_who, int _lX, int _lY, int _cX, int _cY );
     virtual void FireBounce                ( Player *_who, int _lX, int _lY, int _cX, int _cY );
     virtual void FireGrenade               ( Player *_who, int _lX, int _lY, int _cX, int _cY );
-    virtual void ExplodeShrapnel           ( Player *_who, int _X, int _Y, double _speed, int _shrapTick, int _explStart, int _explPower);
+    virtual void ExplodeShrapnel           ( Player *_who, int _x, int _y, double _speed, int _shrapTick, int _explStart, int _explPower);
     virtual void ExplodeSpark              ( int _cX, int _cY );
     virtual void ExplodeGrenade            ( int _cX, int _cY );
     virtual void GrenadeSmokeTrail         ( int _cX, int _cY, int _color );

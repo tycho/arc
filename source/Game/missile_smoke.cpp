@@ -40,8 +40,8 @@ const SDL_Rect rMissileSmoke[9]={ //{X, Y, W, H },
                                     {459, 110, 9, 9},
                                     {471, 110, 9, 9} };
 
-MissileSmoke::MissileSmoke ( int _X, int _Y, int _color )
- : m_X(_X), m_Y(_Y), m_color(_color), m_expired(false),
+MissileSmoke::MissileSmoke ( int _x, int _y, int _color )
+ : m_X(_x), m_Y(_y), m_color(_color), m_expired(false),
    m_frameXC(0.0), m_frameT(0.0)
 {
 }

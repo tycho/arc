@@ -33,7 +33,7 @@ const SDL_Rect rShrapnel[2]={ //{X, Y, W, H },
                                 {386, 174, 5, 5},
                                 {393, 175, 3, 3} };
 
-Shrapnel::Shrapnel ( Player *_who, int _X, int _Y, double _speed,
+Shrapnel::Shrapnel ( Player *_who, int _x, int _y, double _speed,
                     int _shrapTick, int _explStart, int _explPower)
  : m_angle(30)
 {
@@ -41,8 +41,8 @@ Shrapnel::Shrapnel ( Player *_who, int _X, int _Y, double _speed,
 
     m_player = _who;
 
-    m_X = _X;
-    m_Y = _Y;
+    m_X = _x;
+    m_Y = _y;
 
     m_speed = _speed;
     m_dist = _explStart;

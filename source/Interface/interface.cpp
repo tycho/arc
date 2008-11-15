@@ -591,11 +591,11 @@ void Interface::UpdateFPS ( unsigned int _fps )
     m_fpsWidget->SetText ( fpsCaption );
 }
 
-void Interface::ExplodeShrapnel ( Player *_who, int _X, int _Y,
+void Interface::ExplodeShrapnel ( Player *_who, int _x, int _y,
                                   double _speed, int _shrapTick,
                                   int _explStart, int _explPower)
 {
-    Shrapnel *shrapnel = new Shrapnel ( _who, _X, _Y, _speed, _shrapTick, _explStart, _explPower );
+    Shrapnel *shrapnel = new Shrapnel ( _who, _x, _y, _speed, _shrapTick, _explStart, _explPower );
     m_shrapnel.insert ( shrapnel );
 }
 
