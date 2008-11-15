@@ -1,2 +1,2 @@
 #!/bin/bash
-git clean -x -f
+git clean -dfx

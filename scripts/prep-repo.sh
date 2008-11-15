@@ -1,4 +1,6 @@
 #!/bin/bash
 
-echo Doing checkout of CrissCross...
-svn co https://crisscross.googlecode.com/svn/trunk contrib/CrissCross
+git submodule init contrib/crisscross
+git submodule update contrib/crisscross
+cd contrib/crisscross
+git checkout master
