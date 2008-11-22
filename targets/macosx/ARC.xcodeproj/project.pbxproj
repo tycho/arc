@@ -1046,18 +1046,16 @@
 			buildSettings = {
 				ARCHS = "$(NATIVE_ARCH)";
 				COPY_PHASE_STRIP = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.framework *.gch *.xcode* (*) CVS .svn .git";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../contrib";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ../../source/macosx.pch;
 				HEADER_SEARCH_PATHS = (
-					"$(HEADER_SEARCH_PATHS_QUOTED_FOR_PROJECT_1)",
-					"$(HEADER_SEARCH_PATHS_QUOTED_1)",
-					"$(HEADER_SEARCH_PATHS_QUOTED_2)",
-					"$(HEADER_SEARCH_PATHS_QUOTED_3)",
+					"$(PROJECT_DIR)/../../source",
+					"$(PROJECT_DIR)/../../contrib/crisscross/source",
+					"$(PROJECT_DIR)/../../contrib/unrar",
+					"$(PROJECT_DIR)/../../contrib/OpenGL/include/",
 				);
-				HEADER_SEARCH_PATHS_QUOTED_1 = "\"$(PROJECT_DIR)/../../source\"";
-				HEADER_SEARCH_PATHS_QUOTED_2 = "\"$(PROJECT_DIR)/../../contrib/crisscross/source\"";
-				HEADER_SEARCH_PATHS_QUOTED_3 = "\"$(PROJECT_DIR)/../../contrib/unrar\"";
-				HEADER_SEARCH_PATHS_QUOTED_FOR_PROJECT_1 = "\"$(PROJECT_DIR)/../../contrib/OpenGL/include/\"";
 				MACOSX_DEPLOYMENT_TARGET_i386 = 10.4;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.3;
 				MACOSX_DEPLOYMENT_TARGET_ppc64 = 10.4;
@@ -1078,18 +1076,16 @@
 					ppc,
 				);
 				COPY_PHASE_STRIP = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.framework *.gch *.xcode* (*) CVS .svn .git";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../contrib";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ../../source/macosx.pch;
 				HEADER_SEARCH_PATHS = (
-					"$(HEADER_SEARCH_PATHS_QUOTED_FOR_PROJECT_1)",
-					"$(HEADER_SEARCH_PATHS_QUOTED_1)",
-					"$(HEADER_SEARCH_PATHS_QUOTED_2)",
-					"$(HEADER_SEARCH_PATHS_QUOTED_3)",
+					"$(PROJECT_DIR)/../../source",
+					"$(PROJECT_DIR)/../../contrib/crisscross/source",
+					"$(PROJECT_DIR)/../../contrib/unrar",
+					"$(PROJECT_DIR)/../../contrib/OpenGL/include/",
 				);
-				HEADER_SEARCH_PATHS_QUOTED_1 = "\"$(PROJECT_DIR)/../../source\"";
-				HEADER_SEARCH_PATHS_QUOTED_2 = "\"$(PROJECT_DIR)/../../contrib/crisscross/source\"";
-				HEADER_SEARCH_PATHS_QUOTED_3 = "\"$(PROJECT_DIR)/../../contrib/unrar\"";
-				HEADER_SEARCH_PATHS_QUOTED_FOR_PROJECT_1 = "\"$(PROJECT_DIR)/../../contrib/OpenGL/include/\"";
 				MACOSX_DEPLOYMENT_TARGET_i386 = 10.4;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.3;
 				MACOSX_DEPLOYMENT_TARGET_ppc64 = 10.4;
