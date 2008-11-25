@@ -497,9 +497,6 @@ Widget *Interface::GetWidgetOfType ( const char *_widgetType )
 
 void Interface::RemoveWidget ( Widget *_widget )
 {
-    // TODO: Clean this up... It seems to essentially do two find() calls
-    // because of the find() and remove().
-
     int id = m_widgetList.find ( _widget );
     if ( id == -1 )
     {
