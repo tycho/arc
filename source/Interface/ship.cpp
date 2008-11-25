@@ -584,11 +584,6 @@ bool Ship::FindRectsRet ( short _findItem )
 
 void Ship::Flush()
 {
-    //if ( (int)m_cachedSurfaceID != -1 )
-    //{
-    //    g_graphics->DeleteSurface ( m_cachedSurfaceID );
-    //    m_cachedSurfaceID = -1;
-    //}
     m_damaged = true;
 }
 
