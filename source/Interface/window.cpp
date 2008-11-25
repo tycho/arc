@@ -84,7 +84,7 @@ void Window::DrawBox ()
     SDL_Rect rBox; short x; short y; short xt; short yt;
     short xTo; short yTo; SDL_Rect rTo;
 
-    // TODO: Windows are restricted at heights/widths that are evenly divisible by 16. That's annoying. Fix it.
+    // TODO: Window widgets are restricted at heights/widths that are evenly divisible by 16. That's annoying. Fix it.
 
     m_position.w = (m_position.w - (m_position.w % 8));
     m_position.h = (m_position.h - (m_position.h % 8));
