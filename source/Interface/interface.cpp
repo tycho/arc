@@ -384,14 +384,14 @@ void Interface::RenderMapTransfer ( short _mapTransferPercentage )
     }
 }
 
-bool Interface::InsideWidget ( int _mouseX, int _mouseY )
+Widget *Interface::InsideWidget ( int _mouseX, int _mouseY )
 {
     for ( int i = m_widgetList.size() - 1; i >= 0; i-- )
     {
         if ( m_widgetList[i]->IsInsideWidget ( _mouseX, _mouseY ) )
-            return true;
+            return m_widgetList[i];
     }
-    return false;
+    return NULL;
 }
 
 void Interface::RenderMouse()

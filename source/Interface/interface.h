@@ -149,7 +149,7 @@ public:
 
     virtual void ProcessMouseEvents        ();
     virtual void SetDragWindow             ( Window *_window );
-    virtual bool InsideWidget              ( int _mouseX, int _mouseY );
+    virtual Widget *InsideWidget           ( int _mouseX, int _mouseY );
 
     virtual void SetupText                 ();
     virtual int  InitSurfaces              ();
