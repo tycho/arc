@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 42;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,21 +31,14 @@
 		B05708F40DB219FF0071B5B7 /* error_window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B05708F10DB219FF0071B5B7 /* error_window.cpp */; };
 		B072E2B80DAC3F75000B2342 /* chat_overlay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B072E2B60DAC3F75000B2342 /* chat_overlay.cpp */; };
 		B07EEE9C0BEEEA770005CD3D /* connection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B07EEE920BEEEA770005CD3D /* connection.cpp */; };
-		B07EEE9D0BEEEA770005CD3D /* connection.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B07EEE930BEEEA770005CD3D /* connection.h */; };
 		B07EEE9E0BEEEA770005CD3D /* net_crisscross.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B07EEE940BEEEA770005CD3D /* net_crisscross.cpp */; };
-		B07EEE9F0BEEEA770005CD3D /* net_crisscross.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B07EEE950BEEEA770005CD3D /* net_crisscross.h */; };
 		B07EEEA00BEEEA770005CD3D /* net_raknet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B07EEE960BEEEA770005CD3D /* net_raknet.cpp */; };
-		B07EEEA10BEEEA770005CD3D /* net_raknet.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B07EEE970BEEEA770005CD3D /* net_raknet.h */; };
 		B07EEEA20BEEEA770005CD3D /* net.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B07EEE980BEEEA770005CD3D /* net.cpp */; };
-		B07EEEA30BEEEA770005CD3D /* net.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B07EEE990BEEEA770005CD3D /* net.h */; };
 		B07EEEA40BEEEA770005CD3D /* packet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B07EEE9A0BEEEA770005CD3D /* packet.cpp */; };
-		B07EEEA50BEEEA770005CD3D /* packet.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B07EEE9B0BEEEA770005CD3D /* packet.h */; };
 		B087F3140DB98F08007568B9 /* surface.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B087F3120DB98F08007568B9 /* surface.cpp */; };
 		B091BECB0DA98FF600126E34 /* collide.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B091BEC90DA98FF600126E34 /* collide.cpp */; };
 		B09336380BEAF0A300DAF22A /* loading_window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B09336360BEAF0A300DAF22A /* loading_window.cpp */; };
-		B09336390BEAF0A300DAF22A /* loading_window.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B09336370BEAF0A300DAF22A /* loading_window.h */; };
 		B09B59400EAC2F36003F4C0B /* libCrissCross Static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B09B593C0EAC2EF7003F4C0B /* libCrissCross Static.a */; };
-		B09F837F0ECE4AFF004013DA /* CHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09F837E0ECE4AFF004013DA /* CHUD.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B0A200000DB0B0A100C9BD5C /* match.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FFA20DB0B0A100C9BD5C /* match.cpp */; };
 		B0A200020DB0B0A100C9BD5C /* options.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FFA60DB0B0A100C9BD5C /* options.cpp */; };
 		B0A200040DB0B0A100C9BD5C /* pathfn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FFAA0DB0B0A100C9BD5C /* pathfn.cpp */; };
@@ -138,7 +131,6 @@
 		B0F90D1A0F02E7BC005446D6 /* font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0F90D140F02E7BB005446D6 /* font.cpp */; };
 		B0F90D1B0F02E7BC005446D6 /* font_directx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0F90D160F02E7BB005446D6 /* font_directx.cpp */; };
 		B0F90D1C0F02E7BC005446D6 /* font_opengl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0F90D180F02E7BC005446D6 /* font_opengl.cpp */; };
-		B0F90D310F02E83B005446D6 /* CHUD.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B09F837E0ECE4AFF004013DA /* CHUD.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,16 +164,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B0F90D310F02E83B005446D6 /* CHUD.framework in Copy Frameworks */,
 				B0B8ED0A0BDB63A5007C1576 /* SDL.framework in Copy Frameworks */,
 				B0B8ED090BDB63A5007C1576 /* SDL_image.framework in Copy Frameworks */,
 				B0150A2B0BE43DEB00DE06BB /* SDL_mixer.framework in Copy Frameworks */,
-				B09336390BEAF0A300DAF22A /* loading_window.h in Copy Frameworks */,
-				B07EEE9D0BEEEA770005CD3D /* connection.h in Copy Frameworks */,
-				B07EEE9F0BEEEA770005CD3D /* net_crisscross.h in Copy Frameworks */,
-				B07EEEA10BEEEA770005CD3D /* net_raknet.h in Copy Frameworks */,
-				B07EEEA30BEEEA770005CD3D /* net.h in Copy Frameworks */,
-				B07EEEA50BEEEA770005CD3D /* packet.h in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,7 +232,6 @@
 		B09336360BEAF0A300DAF22A /* loading_window.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = loading_window.cpp; path = ../../source/Interface/loading_window.cpp; sourceTree = "<group>"; };
 		B09336370BEAF0A300DAF22A /* loading_window.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = loading_window.h; path = ../../source/Interface/loading_window.h; sourceTree = "<group>"; };
 		B09B59330EAC2EF7003F4C0B /* CrissCross.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CrissCross.xcodeproj; path = ../../contrib/crisscross/targets/xcode/CrissCross.xcodeproj; sourceTree = SOURCE_ROOT; };
-		B09F837E0ECE4AFF004013DA /* CHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CHUD.framework; path = /System/Library/PrivateFrameworks/CHUD.framework; sourceTree = "<absolute>"; };
 		B0A200290DB0B28A00C9BD5C /* smallfn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = smallfn.cpp; path = ../../contrib/unrar/smallfn.cpp; sourceTree = "<group>"; };
 		B0A2002A0DB0B28A00C9BD5C /* smallfn.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = smallfn.hpp; path = ../../contrib/unrar/smallfn.hpp; sourceTree = "<group>"; };
 		B0A2002E0DB0B47A00C9BD5C /* arc.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = arc.icns; path = ../../source/arc.icns; sourceTree = "<group>"; };
@@ -441,7 +425,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B09F837F0ECE4AFF004013DA /* CHUD.framework in Frameworks */,
 				B09B59400EAC2F36003F4C0B /* libCrissCross Static.a in Frameworks */,
 				B0B8E9570BDB4FE5007C1576 /* SDL.framework in Frameworks */,
 				B0B8E97A0BDB5253007C1576 /* SDL_image.framework in Frameworks */,
@@ -584,7 +567,6 @@
 				B0B8ECF90BDB6337007C1576 /* libz.dylib */,
 				B0426EAB0DA96BBB005A0E89 /* AppKit.framework */,
 				B0426EAC0DA96BBB005A0E89 /* Carbon.framework */,
-				B09F837E0ECE4AFF004013DA /* CHUD.framework */,
 				B0B8EB9A0BDB6227007C1576 /* OpenGL.framework */,
 				B0B8E9790BDB5253007C1576 /* SDL_image.framework */,
 				B0150A230BE43DD900DE06BB /* SDL_mixer.framework */,
@@ -1086,7 +1068,7 @@
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.3;
 				MACOSX_DEPLOYMENT_TARGET_ppc64 = 10.4;
 				MACOSX_DEPLOYMENT_TARGET_x86_64 = 10.4;
-				SDKROOT = macosx10.3.9;
+				SDKROOT = /Developer/SDKs/MacOSX10.3.9.sdk;
 				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_ppc = /Developer/SDKs/MacOSX10.3.9.sdk;
 				SDKROOT_ppc64 = /Developer/SDKs/MacOSX10.4u.sdk;
@@ -1116,7 +1098,7 @@
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.3;
 				MACOSX_DEPLOYMENT_TARGET_ppc64 = 10.4;
 				MACOSX_DEPLOYMENT_TARGET_x86_64 = 10.4;
-				SDKROOT = macosx10.3.9;
+				SDKROOT = /Developer/SDKs/MacOSX10.3.9.sdk;
 				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_ppc = /Developer/SDKs/MacOSX10.3.9.sdk;
 				SDKROOT_ppc64 = /Developer/SDKs/MacOSX10.4u.sdk;
@@ -1131,9 +1113,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../contrib\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -1178,9 +1162,11 @@
 					"$(inherited)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_1)",
 					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+					"$(FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2)",
 				);
 				FRAMEWORK_SEARCH_PATHS_QUOTED_1 = "\"$(SRCROOT)/../../contrib\"";
 				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"";
+				FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks\"";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
