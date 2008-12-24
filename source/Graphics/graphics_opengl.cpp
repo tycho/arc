@@ -9,8 +9,11 @@
 
 #include "universal_include.h"
 
+#ifdef ENABLE_OPENGL
+
 #include "App/app.h"
 #include "App/preferences.h"
+#include "Graphics/font_opengl.h"
 #include "Graphics/graphics_opengl.h"
 #include "Graphics/opengl.h"
 
@@ -51,6 +54,68 @@ const char *OpenGLGraphics::RendererName()
 	return renderer;
 }
 
+Uint32 OpenGLGraphics::CreateFont(const char *_fontFace, int _height, bool _bold, bool _italic)
+{
+	char fontpath[512];
+	MemMappedFile *file = NULL;
+
+	sprintf(fontpath, "fonts/%s.ttf", _fontFace);
+	file = g_app->m_resource->GetUncompressedFile(fontpath);
+
+	if ( !file ) {
+#ifdef TARGET_OS_WINDOWS
+		char windir[128];
+		GetWindowsDirectory(windir, 128);
+		sprintf(fontpath, "%s/fonts/%s.ttf", windir, _fontFace);
+#elif defined(TARGET_OS_MACOSX)
+		sprintf(fontpath, "/Library/Fonts/%s.ttf", windir, _fontFace);
+#endif
+		file = g_app->m_resource->GetUncompressedFile(fontpath);
+	}
+
+	CoreAssert(file);
+
+	OpenGLFont *font = new OpenGLFont(file->m_data, file->m_size);
+	CoreAssert(font);
+
+	font->SetFontSize(_height);
+	font->SetBold(_italic);
+	font->SetItalic(_italic);
+
+	return m_fonts.insert(font);
+}
+
+void OpenGLGraphics::DrawText ( Uint32 _font, Uint16 _x, Uint16 _y, const char *_text, Uint32 _color, bool _center )
+{
+	OpenGLFont *font = m_fonts[_font];
+	CoreAssert ( font );
+
+	font->Draw(_x, _y, _text, _color, _center);
+}
+
+void OpenGLGraphics::DrawRect ( SDL_Rect *_destRect, Uint32 _color )
+{
+	CoreAssert ( _destRect );
+
+	g_openGL->ActivateColour ( _color );
+    g_openGL->DeactivateTextureRect ();
+    g_openGL->VertexArrayStatePrimitive ();
+    
+    m_vertexArray[0] = _destRect->x;
+    m_vertexArray[1] = _destRect->y;
+    m_vertexArray[2] = _destRect->x + _destRect->w;
+    m_vertexArray[3] = _destRect->y;
+    m_vertexArray[4] = _destRect->x + _destRect->w;
+    m_vertexArray[5] = _destRect->y + _destRect->h;
+    m_vertexArray[6] = _destRect->x;
+    m_vertexArray[7] = _destRect->y + _destRect->h;
+
+	glDisable(GL_BLEND);
+	glDisable(GL_LINE_SMOOTH);
+    glDrawArrays(GL_LINE_LOOP, 0, 4);
+	glEnable(GL_LINE_SMOOTH);
+    ASSERT_OPENGL_ERRORS;
+}
 
 void OpenGLGraphics::ShowCursor ( bool _show )
 {
@@ -810,3 +875,5 @@ bool OpenGLGraphics::Flip()
     SDL_GL_SwapBuffers ();
 	return true;
 }
+
+#endif

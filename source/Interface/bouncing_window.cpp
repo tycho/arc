@@ -11,7 +11,7 @@
 
 #include "App/app.h"
 #include "Game/game.h"
-#include "Graphics/graphics_sdl.h"
+#include "Graphics/graphics.h"
 #include "Interface/bouncing_window.h"
 #include "Sound/soundsystem.h"
 

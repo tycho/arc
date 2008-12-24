@@ -9,6 +9,8 @@
 
 #include "universal_include.h"
 
+#ifdef ENABLE_SDLGRAPHICS
+
 #if !defined ( TARGET_OS_WINDOWS )
 #    define _putenv putenv
 #endif
@@ -507,3 +509,5 @@ bool SDLGraphics::Flip()
         return SDL_Flip ( m_surfaces.get(m_mainSurface) ) == 0;
 	return true;
 }
+
+#endif

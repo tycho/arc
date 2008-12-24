@@ -10,6 +10,8 @@
 #ifndef __included_graphics_sdl_h
 #define __included_graphics_sdl_h
 
+#ifdef ENABLE_SDLGRAPHICS
+
 #include "Graphics/graphics.h"
 
 class SDLGraphics : public Graphics
@@ -59,5 +61,7 @@ public:
     virtual int     SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _height, Uint8 _colorDepth );
     virtual inline bool Flip();
 };
+
+#endif
 
 #endif

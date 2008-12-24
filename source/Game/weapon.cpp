@@ -55,7 +55,11 @@ void Weapon::LineDraw ( int _type, int _color, int _dist, int _stopMove, int _st
     // TODO: Make a better and faster way to do this.
     bool SupportsLineDraw = true;
 
+#ifdef ENABLE_SDLGRAPHICS
     SDLGraphics *graphics = dynamic_cast<SDLGraphics *>(g_graphics);
+#else
+	Graphics *graphics = NULL;
+#endif
 	if ( graphics ) SupportsLineDraw = false;
 
     int color = 0;

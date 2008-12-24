@@ -13,6 +13,7 @@
 
 #include "App/app.h"
 #include "App/preferences.h"
+#include "Graphics/font_directx.h"
 #include "Graphics/graphics_directx.h"
 
 DirectXGraphics::DirectXGraphics()
@@ -61,6 +62,96 @@ const char *DirectXGraphics::RendererName()
 			m_rendererVersionMajor, m_rendererVersionMinor );
 	}
 	return renderer;
+}
+
+Uint32 DirectXGraphics::CreateFont ( const char *_fontFace, int _height, bool _bold, bool _italic )
+{
+	return m_fonts.insert(new DirectXFont(_fontFace, _height, _bold, _italic));
+}
+
+void DirectXGraphics::DrawText ( Uint32 _font, Uint16 _x, Uint16 _y, const char *_text, Uint32 _color, bool _center )
+{
+	DirectXFont *font = m_fonts[_font];
+	CoreAssert ( font );
+
+	font->Draw(_x, _y, _text, _color, _center);
+}
+
+void DirectXGraphics::DrawRect ( SDL_Rect *_pos, Uint32 _color )
+{
+    CoreAssert ( _pos );
+	DXVertex *vertices;
+
+	if ( m_deviceLost)
+		return;
+
+	D3DCOLOR vertexColour = _color | FULL_ALPHA;
+
+	m_vertexBuffer->Lock(0, 0, (void **)&vertices, NULL);
+
+	vertices[0].x = _pos->x;
+	vertices[0].y = _pos->y;
+	vertices[0].z = 0.0f;
+	vertices[0].colour = vertexColour;
+	vertices[0].rhw = 1.0f;
+	vertices[0].v = 0.0f;
+	vertices[0].u = 0.0f;
+
+	vertices[1].x = _pos->x + _pos->w;
+	vertices[1].y = _pos->y;
+	vertices[1].z = 0.0f;
+	vertices[1].colour = vertexColour;
+	vertices[1].rhw = 1.0f;
+	vertices[1].v = 0.0f;
+	vertices[1].u = 0.0f;
+
+	vertices[2].x = _pos->x + _pos->w;
+	vertices[2].y = _pos->y + _pos->h;
+	vertices[2].z = 0.0f;
+	vertices[2].colour = vertexColour;
+	vertices[2].rhw = 1.0f;
+	vertices[2].v = 0.0f;
+	vertices[2].u = 0.0f;
+
+	vertices[3].x = _pos->x;
+	vertices[3].y = _pos->y + _pos->h;
+	vertices[3].z = 0.0f;
+	vertices[3].colour = vertexColour;
+	vertices[3].rhw = 1.0f;
+	vertices[3].v = 0.0f;
+	vertices[3].u = 0.0f;
+
+	vertices[4].x = _pos->x;
+	vertices[4].y = _pos->y;
+	vertices[4].z = 0.0f;
+	vertices[4].colour = vertexColour;
+	vertices[4].rhw = 1.0f;
+	vertices[4].v = 0.0f;
+	vertices[4].u = 0.0f;
+
+	m_vertexBuffer->Unlock();
+
+	m_device->SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_SELECTARG2);
+	m_device->SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_DIFFUSE);
+
+	m_device->SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_SELECTARG2);
+	m_device->SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE);
+ 
+	m_device->SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
+	m_device->SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
+
+	m_device->DrawPrimitive(D3DPT_LINESTRIP, 0, 4);
+
+	m_device->SetTextureStageState(0, D3DTSS_COLOROP, D3DTOP_MODULATE);
+	m_device->SetTextureStageState(0, D3DTSS_COLORARG1, D3DTA_TEXTURE);
+	m_device->SetTextureStageState(0, D3DTSS_COLORARG2, D3DTA_DIFFUSE);
+
+	m_device->SetTextureStageState(0, D3DTSS_ALPHAOP, D3DTOP_MODULATE);
+	m_device->SetTextureStageState(0, D3DTSS_ALPHAARG1, D3DTA_TEXTURE);
+	m_device->SetTextureStageState(0, D3DTSS_ALPHAARG2, D3DTA_DIFFUSE);
+
+	m_device->SetTextureStageState(1, D3DTSS_COLOROP, D3DTOP_DISABLE);
+	m_device->SetTextureStageState(1, D3DTSS_ALPHAOP, D3DTOP_DISABLE);
 }
 
 void DirectXGraphics::ShowCursor ( bool _show )
@@ -543,14 +634,6 @@ int DirectXGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heig
 {
     ARCReleaseAssert ( m_sdlScreen == NULL );
 
-#ifdef ENFORCE_RESOLUTION
-    if ( _width < 640 || _width > 800 || _height < 480 || _height > 600 )
-    {
-        _width = 800;
-        _height = 600;
-    }
-#endif
-
     if ( _colorDepth < 16 || _colorDepth > 32 ) _colorDepth = 16;
 
     m_windowed = _windowed;
@@ -586,7 +669,7 @@ int DirectXGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heig
     
     const char *windowTitle = APP_NAME " v" VERSION_NUMBER " build " VERSION_BUILD;
     SDL_WM_SetCaption ( windowTitle, NULL );
-#ifdef TARGET_OS_WINDOWS
+
     if ( _windowed )
     {
         HWND hwnd = FindWindow ( NULL, windowTitle );
@@ -597,7 +680,7 @@ int DirectXGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heig
         Uint32 top =  ( (workArea.top + workArea.bottom) - (window.bottom - window.top) ) / 2;
         SetWindowPos ( hwnd, HWND_TOP, left, top, 0, 0, SWP_NOSIZE );
     }
-#endif
+
 
     info = SDL_GetVideoInfo();
     
@@ -607,7 +690,10 @@ int DirectXGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heig
 	m_d3d = Direct3DCreate9(D3D_SDK_VERSION);
 	if ( !m_d3d ) return -1;
 
-	HWND hWnd = GetActiveWindow();
+	SDL_SysWMinfo wmInfo;
+	SDL_VERSION(&wmInfo.version);
+	SDL_GetWMInfo(&wmInfo);
+	HWND hWnd = wmInfo.window;
 
 	ZeroMemory ( &m_caps, sizeof ( D3DCAPS9 ) );
 	m_d3d->GetDeviceCaps ( D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, &m_caps);
@@ -683,7 +769,7 @@ int DirectXGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heig
 	m_device->SetVertexShader ( NULL );
 	m_device->SetFVF ( D3DFVF_TLVERTEX );
 
-	if ( FAILED(m_device->CreateVertexBuffer ( sizeof(DXVertex) * 4, NULL, D3DFVF_TLVERTEX, D3DPOOL_MANAGED, &m_vertexBuffer, NULL)) )
+	if ( FAILED(m_device->CreateVertexBuffer ( sizeof(DXVertex) * 5, NULL, D3DFVF_TLVERTEX, D3DPOOL_MANAGED, &m_vertexBuffer, NULL)) )
 		return -1;
 
 	m_device->SetStreamSource ( 0, m_vertexBuffer, 0, sizeof(DXVertex) );

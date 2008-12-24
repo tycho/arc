@@ -27,15 +27,15 @@ class Graphics
 protected:
     bool    m_windowed;
 
-    Uint16    m_screenX;
-    Uint16    m_screenY;
+    Uint16  m_screenX;
+    Uint16  m_screenY;
 
-    Uint16    m_colorDepth;
+    Uint16  m_colorDepth;
 
-    Uint16    m_centerX;
-    Uint16    m_centerY;
+    Uint16  m_centerX;
+    Uint16  m_centerY;
 
-    Uint32    m_colorKey;
+    Uint32  m_colorKey;
     bool    m_colorKeySet;
 
 public:
@@ -43,6 +43,11 @@ public:
     virtual ~Graphics();
 
 	virtual const char *RendererName() = 0;
+
+	virtual Uint32 CreateFont ( const char *_fontFace, int _height, bool _bold, bool _italic ) = 0;
+	virtual void   DrawText ( Uint32 _font, Uint16 _x, Uint16 _y, const char *_text, Uint32 _color, bool _center = false ) = 0;
+
+	virtual void   DrawRect ( SDL_Rect *_pos, Uint32 _color ) = 0;
 
     virtual Uint16 GetMaximumTextureSize() = 0;
 

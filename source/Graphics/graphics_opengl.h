@@ -12,8 +12,11 @@
 
 #include "Graphics/graphics.h"
 
+#ifdef ENABLE_OPENGL
+
 class Texture;
 class OpenGLTexture;
+class OpenGLFont;
 
 class OpenGLGraphics : public Graphics
 {
@@ -23,6 +26,7 @@ private:
 
     OpenGLTexture                       *m_sdlScreen;
     Data::DArray<OpenGLTexture *>        m_textures;
+	Data::DArray<OpenGLFont *>           m_fonts;
         
     short m_vertexArray[8];
     short m_texCoordArrayi[8];
@@ -33,6 +37,10 @@ public:
     virtual ~OpenGLGraphics();
 
 	virtual const char *RendererName();
+
+	virtual Uint32 CreateFont ( const char *_fontFace, int _height, bool _bold, bool _italic );
+	virtual void   DrawText ( Uint32 _font, Uint16 _x, Uint16 _y, const char *_text, Uint32 _color, bool _center = false );
+	virtual void   DrawRect ( SDL_Rect *_pos, Uint32 _color );
 
     virtual Uint32 CreateSurface ( Uint32 _width, Uint32 _height, bool _isColorKeyed = false );
     virtual int    DeleteSurface ( Uint32 _surfaceID );
@@ -61,6 +69,9 @@ public:
     virtual inline bool Flip();
 };
 
+#endif
+
 #include "Graphics/texture.h"
+#include "Graphics/font.h"
 
 #endif

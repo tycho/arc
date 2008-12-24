@@ -160,6 +160,8 @@ void Init_App( char *apppath )
 		char tempPath[2048];
 		sprintf ( tempPath, "%s%s", g_app->GetResourcePath(), "data.dat" );
 		g_app->m_resource->ParseArchive ( tempPath, NULL );
+		sprintf ( tempPath, "%s%s", g_app->GetResourcePath(), "font.dat" );
+		g_app->m_resource->ParseArchive ( tempPath, NULL );
 		sprintf ( tempPath, "%s%s", g_app->GetResourcePath(), "graphics.dat" );
 		g_app->m_resource->ParseArchive ( tempPath, NULL );
 		sprintf ( tempPath, "%s%s", g_app->GetResourcePath(), "sounds.dat" );
@@ -189,13 +191,21 @@ void Init_Graphics()
 		{
 			// OpenGL
 			g_console->WriteLine ( "Attempting to use OpenGLGraphics..." );
+#ifdef ENABLE_OPENGL
 			g_graphics = new OpenGLGraphics ();
+#else
+			g_console->WriteLine ( "OpenGL support not enabled." );
+#endif
 		}
 		else if ( Data::Compare<const char *> ( graphicsDriver, "sdl" ) == 0 )
 		{
 			// SDL with one of {windib, dga, directx}, etc.
 			g_console->WriteLine ( "Attempting to use SDLGraphics..." );
+#ifdef ENABLE_SDLGRAPHICS
 			g_graphics = new SDLGraphics ( g_prefsManager->GetString ( "SecondaryRenderer" ) );
+#else
+			g_console->WriteLine ( "SDL graphics support not enabled." );
+#endif
 		}
 		else if ( Data::Compare<const char *> ( graphicsDriver, "direct3d" ) == 0 )
 		{
@@ -205,7 +215,7 @@ void Init_Graphics()
 #ifdef ENABLE_DIRECT3D
 			g_graphics = new DirectXGraphics ();
 #else
-			g_console->WriteLine ( "Direct3D support not built in (ENABLE_DIRECT3D not defined)." );
+			g_console->WriteLine ( "Direct3D support not enabled." );
 #endif
 #else
 			g_console->WriteLine ( "Wrong platform. Attempting to use OpenGL..." );
@@ -241,6 +251,7 @@ void Init_Graphics()
 			else if ( Data::Compare<const char *> ( graphicsDriver, "sdl" ) == 0  )
 			{
 				// You're screwed.
+				break;
 			}
 			else
 			{

@@ -59,7 +59,7 @@
 #define APP_NAME VERSION_NAME
 
 //#define BENCHMARK_BUILD
-#define BENCHMARK_WIDGETS 2000
+#define BENCHMARK_WIDGETS 500
 
 //#define REDIRECT_STDOUT
 
@@ -73,10 +73,12 @@
 
 #include "App/debug_utils.h"
 
-#ifndef DETECT_MEMORY_LEAKS
-#	ifdef TARGET_OS_WINDOWS
-#		define ENABLE_DIRECT3D
-#	endif
+#define ENABLE_DIRECT3D
+#define ENABLE_OPENGL
+//#define ENABLE_SDLGRAPHICS
+
+#if !defined(TARGET_OS_WINDOWS) || defined(DETECT_MEMORY_LEAKS)
+#	undef ENABLE_DIRECT3D
 #endif
 
 #ifndef BENCHMARK_BUILD
@@ -129,9 +131,11 @@
 #if !defined ( TARGET_OS_WINDOWS ) && !defined ( TARGET_OS_MACOSX )
 #    include <SDL/SDL.h>
 #    include <SDL/SDL_image.h>
+#    include <SDL/SDL_syswm.h>
 #else
 #    include <SDL.h>
 #    include <SDL_image.h>
+#    include <SDL_syswm.h>
 #endif
 
 #ifdef USE_SDLMIXER
@@ -142,13 +146,19 @@
 #endif
 #endif
 
+#ifdef TARGET_OS_WINDOWS
+#  define FTGL_LIBRARY_STATIC
+#endif
+
 #ifdef TARGET_OS_MACOSX
 #  define GL_3DFX_texture_compression_FXT1 1
 #  include <OpenGL/GL.h>
 #  include <OpenGL/glext.h>
+#  include <FTGL/FTGLTextureFont.h>
 #else
 #  include <GL/gl.h>
 #  include <gl/glext.h>
+#  include <FTGLTextureFont.h>
 #endif
 
 #include <zlib.h>
@@ -181,11 +191,24 @@ __inline Uint32 nearestPowerOfTwo ( Uint32 v ) { return (Uint32)pow( 2.0, ceil( 
 #    define PI 3.1415926535
 #endif
 
+#ifdef TARGET_LITTLE_ENDIAN
+#define MASK_RED     0xFF000000
+#define MASK_GREEN   0x00FF0000
+#define MASK_BLUE    0x0000FF00
+#define MASK_ALPHA   0x000000FF
+#define GET_R(x)     ((x & MASK_RED) >> 24)
+#define GET_G(x)     ((x & MASK_GREEN) >> 16)
+#define GET_B(x)     ((x & MASK_BLUE) >> 8)
+#define GET_A(x)      (x & MASK_ALPHA)
+#endif
+
 #define DIV180BYPI 180.0 / PI
 #define TWOPI PI * 2.0
 #define DIVBY360 1.0 / 360.0
 #define DIV360MULTPI DIVBY360 * TWOPI
 
 #endif // __cplusplus
+
+extern Uint32 fontid;
 
 #endif

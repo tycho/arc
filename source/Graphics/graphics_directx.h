@@ -15,6 +15,7 @@
 #include "Graphics/graphics.h"
 
 class Texture;
+class DirectXFont;
 class DirectXTexture;
 
 struct DXVertex
@@ -38,6 +39,7 @@ protected:
 
     SDL_Surface                         *m_sdlScreen;
     Data::DArray<DirectXTexture *>       m_textures;
+	Data::DArray<DirectXFont *>          m_fonts;
 
 	D3DPRESENT_PARAMETERS                m_presentParams;
 	D3DCAPS9                             m_caps;
@@ -50,6 +52,10 @@ public:
     virtual ~DirectXGraphics();
 
 	virtual const char *RendererName();
+
+	virtual Uint32 CreateFont ( const char *_fontFace, int _height, bool _bold, bool _italic );
+	virtual void   DrawText ( Uint32 _font, Uint16 _x, Uint16 _y, const char *_text, Uint32 _color, bool _center = false );
+	virtual void   DrawRect ( SDL_Rect *_pos, Uint32 _color );
 
     virtual Uint32 CreateSurface ( Uint32 _width, Uint32 _height, bool _isColorKeyed = false );
     virtual int    DeleteSurface ( Uint32 _surfaceID );
@@ -78,9 +84,11 @@ public:
     virtual inline bool Flip();
 
 	friend class DirectXTexture;
+	friend class DirectXFont;
 };
 
 #include "Graphics/texture.h"
+#include "Graphics/font.h"
 
 #endif
 

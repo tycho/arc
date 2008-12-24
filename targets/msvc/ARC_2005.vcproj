@@ -1049,6 +1049,30 @@
 			Name="Graphics"
 			>
 			<File
+				RelativePath="..\..\source\Graphics\font.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\source\Graphics\font.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\source\Graphics\font_directx.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\source\Graphics\font_directx.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\source\Graphics\font_opengl.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\source\Graphics\font_opengl.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\source\Graphics\graphics.cpp"
 				>
 			</File>
