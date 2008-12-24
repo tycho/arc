@@ -155,7 +155,7 @@ void Preferences::CreateDefaultValues()
 	AddLine( "#   direct3d: Experimental Direct3D 9 renderer (Windows only)\n" );
 	AddLine( "#   opengl: OpenGL renderer (recommended)\n" );
 	AddLine( "#   sdl: SDL renderer\n" );
-    AddLine( "PrimaryRenderer = opengl" );
+    AddLine( "PrimaryRenderer = direct3d" );
 	AddLine( "\n" );
 	AddLine( "# SecondaryRenderer\n" );
 	AddLine( "#  The SDL rendering engine uses this as the backend renderer.\n" );
