@@ -66,15 +66,21 @@ const char *DirectXGraphics::RendererName()
 
 Uint32 DirectXGraphics::CreateFont ( const char *_fontFace, int _height, bool _bold, bool _italic )
 {
+#ifdef ENABLE_FONTS
 	return m_fonts.insert(new DirectXFont(_fontFace, _height, _bold, _italic));
+#else
+	return 0;
+#endif
 }
 
 void DirectXGraphics::DrawText ( Uint32 _font, Uint16 _x, Uint16 _y, const char *_text, Uint32 _color, bool _center )
 {
+#ifdef ENABLE_FONTS
 	DirectXFont *font = m_fonts[_font];
 	CoreAssert ( font );
 
 	font->Draw(_x, _y, _text, _color, _center);
+#endif
 }
 
 void DirectXGraphics::DrawRect ( SDL_Rect *_pos, Uint32 _color )

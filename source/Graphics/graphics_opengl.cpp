@@ -56,6 +56,7 @@ const char *OpenGLGraphics::RendererName()
 
 Uint32 OpenGLGraphics::CreateFont(const char *_fontFace, int _height, bool _bold, bool _italic)
 {
+#ifdef ENABLE_FONTS
 	char fontpath[512];
 	MemMappedFile *file = NULL;
 
@@ -83,14 +84,19 @@ Uint32 OpenGLGraphics::CreateFont(const char *_fontFace, int _height, bool _bold
 	font->SetItalic(_italic);
 
 	return m_fonts.insert(font);
+#else
+	return 0;
+#endif
 }
 
 void OpenGLGraphics::DrawText ( Uint32 _font, Uint16 _x, Uint16 _y, const char *_text, Uint32 _color, bool _center )
 {
+#ifdef ENABLE_FONTS
 	OpenGLFont *font = m_fonts[_font];
 	CoreAssert ( font );
 
 	font->Draw(_x, _y, _text, _color, _center);
+#endif
 }
 
 void OpenGLGraphics::DrawRect ( SDL_Rect *_destRect, Uint32 _color )

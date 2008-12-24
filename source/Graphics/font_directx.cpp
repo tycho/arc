@@ -10,6 +10,7 @@
 #include "universal_include.h"
 
 #ifdef ENABLE_DIRECT3D
+#ifdef ENABLE_FONTS
 
 #include "Graphics/graphics.h"
 #include "Graphics/font_directx.h"
@@ -67,4 +68,5 @@ void DirectXFont::Draw(Uint16 _x, Uint16 _y, const char *_text, Uint32 _color, b
 		m_font->DrawText(NULL, _text, -1, &rect, DT_LEFT | DT_NOCLIP, _color);
 }
 
+#endif
 #endif

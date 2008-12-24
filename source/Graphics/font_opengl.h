@@ -10,6 +10,8 @@
 #ifndef __font_opengl_h_included
 #define __font_opengl_h_included
 
+#ifdef ENABLE_FONTS
+
 #include "Graphics/font.h"
 
 #ifdef ENABLE_OPENGL
@@ -32,5 +34,5 @@ public:
 };
 
 #endif
-
+#endif
 #endif

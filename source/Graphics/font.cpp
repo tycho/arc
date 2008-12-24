@@ -9,6 +9,8 @@
 
 #include "universal_include.h"
 
+#ifdef ENABLE_FONTS
+
 #include "Graphics/font.h"
 
 Font::Font()
@@ -18,3 +20,5 @@ Font::Font()
 Font::~Font()
 {
 }
+
+#endif

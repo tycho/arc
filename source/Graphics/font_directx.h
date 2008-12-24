@@ -10,6 +10,8 @@
 #ifndef __font_directx_h_included
 #define __font_directx_h_included
 
+#ifdef ENABLE_FONTS
+
 #include "Graphics/font.h"
 
 #ifdef ENABLE_DIRECT3D
@@ -26,5 +28,5 @@ public:
 };
 
 #endif
-
+#endif
 #endif

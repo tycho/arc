@@ -10,6 +10,8 @@
 #ifndef __font_h_included
 #define __font_h_included
 
+#ifdef ENABLE_FONTS
+
 class Font
 {
 public:
@@ -19,5 +21,8 @@ public:
 };
 
 #include "Graphics/font_directx.h"
+#include "Graphics/font_opengl.h"
+
+#endif
 
 #endif

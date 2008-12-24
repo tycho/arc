@@ -39,7 +39,10 @@ protected:
 
     SDL_Surface                         *m_sdlScreen;
     Data::DArray<DirectXTexture *>       m_textures;
+
+#ifdef ENABLE_FONTS
 	Data::DArray<DirectXFont *>          m_fonts;
+#endif
 
 	D3DPRESENT_PARAMETERS                m_presentParams;
 	D3DCAPS9                             m_caps;

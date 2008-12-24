@@ -9,6 +9,8 @@
 
 #include "universal_include.h"
 
+#ifdef ENABLE_FONTS
+
 #ifdef ENABLE_OPENGL
 
 #include "Graphics/graphics.h"
@@ -75,5 +77,7 @@ void OpenGLFont::Draw(Uint16 _x, Uint16 _y, const char *_text, Uint32 _color, bo
 	m_font->Render(_text);
 	glPopMatrix();
 }
+
+#endif
 
 #endif
