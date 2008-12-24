@@ -178,8 +178,7 @@ void OpenGLGraphics::SetPixel ( Uint32 _surfaceID, int x, int y, Uint32 _color )
 #else
         glRasterPos2i ( x, y );
         ASSERT_OPENGL_ERRORS;
-		Uint32 color_fixed = (((_color & 0x00FF0000) >> 16) | ((_color & 0x000000FF) << 16) | (_color & 0x0000FF00)) | FULL_ALPHA;
-        glDrawPixels ( 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, &color_fixed );
+        glDrawPixels ( 1, 1, GL_RGBA, GL_UNSIGNED_INT, &_color );
         ASSERT_OPENGL_ERRORS;
 #endif
         glEnable ( GL_BLEND );
