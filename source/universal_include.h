@@ -77,6 +77,8 @@
 #define ENABLE_OPENGL
 //#define ENABLE_SDLGRAPHICS
 
+//#define ENABLE_FONTS
+
 #if !defined(TARGET_OS_WINDOWS) || defined(DETECT_MEMORY_LEAKS)
 #	undef ENABLE_DIRECT3D
 #endif
@@ -192,14 +194,16 @@ __inline Uint32 nearestPowerOfTwo ( Uint32 v ) { return (Uint32)pow( 2.0, ceil( 
 #endif
 
 #ifdef TARGET_LITTLE_ENDIAN
-#define MASK_RED     0xFF000000
-#define MASK_GREEN   0x00FF0000
-#define MASK_BLUE    0x0000FF00
-#define MASK_ALPHA   0x000000FF
-#define GET_R(x)     ((x & MASK_RED) >> 24)
-#define GET_G(x)     ((x & MASK_GREEN) >> 16)
-#define GET_B(x)     ((x & MASK_BLUE) >> 8)
-#define GET_A(x)      (x & MASK_ALPHA)
+#define MASK_ALPHA        0xFF000000
+#define MASK_RED          0x00FF0000
+#define MASK_GREEN        0x0000FF00
+#define MASK_BLUE         0x000000FF
+#define GET_A(x)          ((x & MASK_ALPHA) >> 24)
+#define GET_R(x)          ((x & MASK_RED) >> 16)
+#define GET_G(x)          ((x & MASK_GREEN) >> 8)
+#define GET_B(x)           (x & MASK_BLUE)
+#define MAKERGB(r,g,b)    (((0xFF) << 24) | ((r) << 16) | ((g) << 8) | (b))
+#define MAKERGBA(r,g,b,a) (((a) << 24) | ((r) << 16) | ((g) << 8) | (b))
 #endif
 
 #define DIV180BYPI 180.0 / PI
@@ -207,8 +211,8 @@ __inline Uint32 nearestPowerOfTwo ( Uint32 v ) { return (Uint32)pow( 2.0, ceil( 
 #define DIVBY360 1.0 / 360.0
 #define DIV360MULTPI DIVBY360 * TWOPI
 
-#endif // __cplusplus
-
 extern Uint32 fontid;
+
+#endif // __cplusplus
 
 #endif
