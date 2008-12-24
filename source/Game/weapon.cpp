@@ -78,16 +78,16 @@ void Weapon::LineDraw ( int _type, int _color, int _dist, int _stopMove, int _st
         switch ( color )
         {
         case 1:
-            pixelColour = SDL_MapRGB ( format, 247, 243, 148 );
+            pixelColour = MAKERGB ( 247, 243, 148 );
             break;
         case 2:
-            pixelColour = SDL_MapRGB ( format, 206, 203, 0 );
+            pixelColour = MAKERGB ( 206, 203, 0 );
             break;
         case 3:
-            pixelColour = SDL_MapRGB ( format, 222, 198, 0 );
+            pixelColour = MAKERGB ( 222, 198, 0 );
             break;
         case 4:
-            pixelColour = SDL_MapRGB ( format, 190, 190, 190 );
+            pixelColour = MAKERGB ( 190, 190, 190 );
             break;
         default:
             ARCAbort ( "Invalid spark colour." );
@@ -159,15 +159,15 @@ void Weapon::LineDraw ( int _type, int _color, int _dist, int _stopMove, int _st
             {
             case 1:
                 if ( m_hit )
-                    pixelColour = SDL_MapRGB ( format, 255, 255, 255 );
+                    pixelColour = MAKERGB ( 255, 255, 255 );
                 else
-                    pixelColour = SDL_MapRGB ( format, 0, 220, 0 );
+                    pixelColour = MAKERGB ( 0, 220, 0 );
                 break;
-            case 2: pixelColour = SDL_MapRGB ( format, 0, 200, 0 );
+            case 2: pixelColour = MAKERGB ( 0, 200, 0 );
                 break;
-            case 3: pixelColour = SDL_MapRGB ( format, 0, 180, 0 );
+            case 3: pixelColour = MAKERGB ( 0, 180, 0 );
                 break;
-            case 4: pixelColour = SDL_MapRGB ( format, 0, 140, 0 );
+            case 4: pixelColour = MAKERGB ( 0, 140, 0 );
                 break;
             }
         } else if ( color == 2 ) {
@@ -175,15 +175,15 @@ void Weapon::LineDraw ( int _type, int _color, int _dist, int _stopMove, int _st
             {
             case 1:
                 if ( m_hit )
-                    pixelColour = SDL_MapRGB ( format, 255, 255, 255 );
+                    pixelColour = MAKERGB ( 255, 255, 255 );
                 else
-                    pixelColour = SDL_MapRGB ( format, 247, 40, 41 );
+                    pixelColour = MAKERGB ( 247, 40, 41 );
                 break;
-            case 2: pixelColour = SDL_MapRGB ( format, 247, 0, 0 );
+            case 2: pixelColour = MAKERGB ( 247, 0, 0 );
                 break;
-            case 3: pixelColour = SDL_MapRGB ( format, 198, 0, 0 );
+            case 3: pixelColour = MAKERGB ( 198, 0, 0 );
                 break;
-            case 4: pixelColour = SDL_MapRGB ( format, 148, 0, 0 );
+            case 4: pixelColour = MAKERGB ( 148, 0, 0 );
                 break;
             }
         } else if ( color == 3 ) {
@@ -191,15 +191,15 @@ void Weapon::LineDraw ( int _type, int _color, int _dist, int _stopMove, int _st
             {
             case 1:
                 if ( m_hit )
-                    pixelColour = SDL_MapRGB ( format, 255, 255, 255 );
+                    pixelColour = MAKERGB ( 255, 255, 255 );
                 else
-                    pixelColour = SDL_MapRGB ( format, 0, 0, 255 );
+                    pixelColour = MAKERGB ( 0, 0, 255 );
                 break;
-            case 2: pixelColour = SDL_MapRGB ( format, 0, 0, 239 );
+            case 2: pixelColour = MAKERGB ( 0, 0, 239 );
                 break;
-            case 3: pixelColour = SDL_MapRGB ( format, 0, 0, 173 );
+            case 3: pixelColour = MAKERGB ( 0, 0, 173 );
                 break;
-            case 4: pixelColour = SDL_MapRGB ( format, 0, 0, 140 );
+            case 4: pixelColour = MAKERGB ( 0, 0, 140 );
                 break;
             }
         } else if ( color == 4 ) {
@@ -207,15 +207,15 @@ void Weapon::LineDraw ( int _type, int _color, int _dist, int _stopMove, int _st
             {
             case 1:
                 if ( m_hit )
-                    pixelColour = SDL_MapRGB ( format, 255, 255, 255 );
+                    pixelColour = MAKERGB ( 255, 255, 255 );
                 else
-                    pixelColour = SDL_MapRGB ( format, 239, 235, 0 );
+                    pixelColour = MAKERGB ( 239, 235, 0 );
                 break;
-            case 2: pixelColour = SDL_MapRGB ( format, 206, 203, 0 );
+            case 2: pixelColour = MAKERGB ( 206, 203, 0 );
                 break;
-            case 3: pixelColour = SDL_MapRGB ( format, 156, 154, 66 );
+            case 3: pixelColour = MAKERGB ( 156, 154, 66 );
                 break;
-            case 4: pixelColour = SDL_MapRGB ( format, 140, 138, 0 );
+            case 4: pixelColour = MAKERGB ( 140, 138, 0 );
                 break;
             }
         } else if ( color == 5 ) {
@@ -223,15 +223,15 @@ void Weapon::LineDraw ( int _type, int _color, int _dist, int _stopMove, int _st
             {
             case 1:
                 if ( m_hit )
-                    pixelColour = SDL_MapRGB ( format, 255, 255, 255 );
+                    pixelColour = MAKERGB ( 255, 255, 255 );
                 else
-                    pixelColour = SDL_MapRGB ( format, 214, 211, 214 );
+                    pixelColour = MAKERGB ( 214, 211, 214 );
                 break;
-            case 2: pixelColour = SDL_MapRGB ( format, 120, 120, 120 );
+            case 2: pixelColour = MAKERGB ( 120, 120, 120 );
                 break;
-            case 3: pixelColour = SDL_MapRGB ( format, 60, 60, 60 );
+            case 3: pixelColour = MAKERGB ( 60, 60, 60 );
                 break;
-            case 4: pixelColour = SDL_MapRGB ( format, 10, 10, 10 );
+            case 4: pixelColour = MAKERGB ( 10, 10, 10 );
                 break;
             }
         } else if ( color == 6 ) {
@@ -239,15 +239,15 @@ void Weapon::LineDraw ( int _type, int _color, int _dist, int _stopMove, int _st
             {
             case 1:
                 if ( m_hit )
-                    pixelColour = SDL_MapRGB ( format, 255, 255, 255 );
+                    pixelColour = MAKERGB ( 255, 255, 255 );
                 else
-                    pixelColour = SDL_MapRGB ( format, 214, 211, 214 );
+                    pixelColour = MAKERGB ( 214, 211, 214 );
                 break;
-            case 2: pixelColour = SDL_MapRGB ( format, 90, 89, 90 );
+            case 2: pixelColour = MAKERGB ( 90, 89, 90 );
                 break;
-            case 3: pixelColour = SDL_MapRGB ( format, 49, 52, 49 );
+            case 3: pixelColour = MAKERGB ( 49, 52, 49 );
                 break;
-            case 4: pixelColour = SDL_MapRGB ( format, 0, 0, 0 );
+            case 4: pixelColour = MAKERGB ( 0, 0, 0 );
                 break;
             }
         }

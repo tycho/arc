@@ -156,11 +156,15 @@
 #  define GL_3DFX_texture_compression_FXT1 1
 #  include <OpenGL/GL.h>
 #  include <OpenGL/glext.h>
-#  include <FTGL/FTGLTextureFont.h>
+#  ifdef ENABLE_FONTS
+#    include <FTGL/FTGLTextureFont.h>
+#  endif
 #else
 #  include <GL/gl.h>
 #  include <gl/glext.h>
-#  include <FTGLTextureFont.h>
+#  ifdef ENABLE_FONTS
+#    include <FTGLTextureFont.h>
+#  endif
 #endif
 
 #include <zlib.h>
@@ -204,6 +208,17 @@ __inline Uint32 nearestPowerOfTwo ( Uint32 v ) { return (Uint32)pow( 2.0, ceil( 
 #define GET_B(x)           (x & MASK_BLUE)
 #define MAKERGB(r,g,b)    (((0xFF) << 24) | ((r) << 16) | ((g) << 8) | (b))
 #define MAKERGBA(r,g,b,a) (((a) << 24) | ((r) << 16) | ((g) << 8) | (b))
+#else
+#define MASK_RED          0xFF000000
+#define MASK_GREEN        0x00FF0000
+#define MASK_BLUE         0x0000FF00
+#define MASK_ALPHA        0x000000FF
+#define GET_R(x)          ((x & MASK_RED) >> 24)
+#define GET_G(x)          ((x & MASK_GREEN) >> 16)
+#define GET_B(x)          ((x & MASK_BLUE) >> 8)
+#define GET_A(x)           (x & MASK_ALPHA)
+#define MAKERGB(r,g,b)    (((r) << 24) | ((g) << 16) | ((b) << 8) | (0xFF))
+#define MAKERGBA(r,g,b,a) (((r) << 24) | ((g) << 16) | ((b) << 8) | (a))
 #endif
 
 #define DIV180BYPI 180.0 / PI

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 42;
+	objectVersion = 45;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,7 +45,7 @@
 		B09336380BEAF0A300DAF22A /* loading_window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B09336360BEAF0A300DAF22A /* loading_window.cpp */; };
 		B09336390BEAF0A300DAF22A /* loading_window.h in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B09336370BEAF0A300DAF22A /* loading_window.h */; };
 		B09B59400EAC2F36003F4C0B /* libCrissCross Static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B09B593C0EAC2EF7003F4C0B /* libCrissCross Static.a */; };
-		B09F837F0ECE4AFF004013DA /* CHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09F837E0ECE4AFF004013DA /* CHUD.framework */; };
+		B09F837F0ECE4AFF004013DA /* CHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09F837E0ECE4AFF004013DA /* CHUD.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		B0A200000DB0B0A100C9BD5C /* match.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FFA20DB0B0A100C9BD5C /* match.cpp */; };
 		B0A200020DB0B0A100C9BD5C /* options.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FFA60DB0B0A100C9BD5C /* options.cpp */; };
 		B0A200040DB0B0A100C9BD5C /* pathfn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FFAA0DB0B0A100C9BD5C /* pathfn.cpp */; };
@@ -134,6 +134,11 @@
 		B0BD2DC70BE271DC00F71A26 /* sidebar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0BD2DC50BE271DC00F71A26 /* sidebar.cpp */; };
 		B0BD2E160BE2745E00F71A26 /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = B0BD2E140BE2745E00F71A26 /* SDLMain.m */; };
 		B0CFCA6B0DAD61E500D1ABF1 /* text_input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0CFCA690DAD61E500D1ABF1 /* text_input.cpp */; };
+		B0F90D130F02E7AA005446D6 /* soundsystem_null.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0F90D110F02E7AA005446D6 /* soundsystem_null.cpp */; };
+		B0F90D1A0F02E7BC005446D6 /* font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0F90D140F02E7BB005446D6 /* font.cpp */; };
+		B0F90D1B0F02E7BC005446D6 /* font_directx.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0F90D160F02E7BB005446D6 /* font_directx.cpp */; };
+		B0F90D1C0F02E7BC005446D6 /* font_opengl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0F90D180F02E7BC005446D6 /* font_opengl.cpp */; };
+		B0F90D310F02E83B005446D6 /* CHUD.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B09F837E0ECE4AFF004013DA /* CHUD.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +172,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				B0F90D310F02E83B005446D6 /* CHUD.framework in Copy Frameworks */,
 				B0B8ED0A0BDB63A5007C1576 /* SDL.framework in Copy Frameworks */,
 				B0B8ED090BDB63A5007C1576 /* SDL_image.framework in Copy Frameworks */,
 				B0150A2B0BE43DEB00DE06BB /* SDL_mixer.framework in Copy Frameworks */,
@@ -420,6 +426,14 @@
 		B0BD2E140BE2745E00F71A26 /* SDLMain.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; name = SDLMain.m; path = ../../source/SDLMain.m; sourceTree = "<group>"; };
 		B0CFCA690DAD61E500D1ABF1 /* text_input.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = text_input.cpp; path = ../../source/Interface/text_input.cpp; sourceTree = "<group>"; };
 		B0CFCA6A0DAD61E500D1ABF1 /* text_input.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = text_input.h; path = ../../source/Interface/text_input.h; sourceTree = "<group>"; };
+		B0F90D110F02E7AA005446D6 /* soundsystem_null.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = soundsystem_null.cpp; path = ../../source/Sound/soundsystem_null.cpp; sourceTree = SOURCE_ROOT; };
+		B0F90D120F02E7AA005446D6 /* soundsystem_null.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = soundsystem_null.h; path = ../../source/Sound/soundsystem_null.h; sourceTree = SOURCE_ROOT; };
+		B0F90D140F02E7BB005446D6 /* font.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = font.cpp; path = ../../source/Graphics/font.cpp; sourceTree = SOURCE_ROOT; };
+		B0F90D150F02E7BB005446D6 /* font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = font.h; path = ../../source/Graphics/font.h; sourceTree = SOURCE_ROOT; };
+		B0F90D160F02E7BB005446D6 /* font_directx.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = font_directx.cpp; path = ../../source/Graphics/font_directx.cpp; sourceTree = SOURCE_ROOT; };
+		B0F90D170F02E7BC005446D6 /* font_directx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = font_directx.h; path = ../../source/Graphics/font_directx.h; sourceTree = SOURCE_ROOT; };
+		B0F90D180F02E7BC005446D6 /* font_opengl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = font_opengl.cpp; path = ../../source/Graphics/font_opengl.cpp; sourceTree = SOURCE_ROOT; };
+		B0F90D190F02E7BC005446D6 /* font_opengl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = font_opengl.h; path = ../../source/Graphics/font_opengl.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -657,6 +671,12 @@
 		B0B8E8C90BDB4D64007C1576 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				B0F90D140F02E7BB005446D6 /* font.cpp */,
+				B0F90D150F02E7BB005446D6 /* font.h */,
+				B0F90D160F02E7BB005446D6 /* font_directx.cpp */,
+				B0F90D170F02E7BC005446D6 /* font_directx.h */,
+				B0F90D180F02E7BC005446D6 /* font_opengl.cpp */,
+				B0F90D190F02E7BC005446D6 /* font_opengl.h */,
 				B0AC6D190DD2EE5100976666 /* graphics_directx.cpp */,
 				B0AC6D1A0DD2EE5100976666 /* graphics_directx.h */,
 				B0AC6D1B0DD2EE5100976666 /* texture_directx.cpp */,
@@ -747,6 +767,8 @@
 		B0B8E8CD0BDB4D8A007C1576 /* Sound */ = {
 			isa = PBXGroup;
 			children = (
+				B0F90D110F02E7AA005446D6 /* soundsystem_null.cpp */,
+				B0F90D120F02E7AA005446D6 /* soundsystem_null.h */,
 				49B2FEC00BE3928500386500 /* soundsystem_sdlmixer.h */,
 				49B2FEC10BE3928500386500 /* soundsystem_sdlmixer.cpp */,
 				49B2FEC20BE3928500386500 /* soundsystem_openal.h */,
@@ -994,6 +1016,10 @@
 				B0AC6D1F0DD2EE5100976666 /* graphics_directx.cpp in Sources */,
 				B0AC6D200DD2EE5100976666 /* texture_directx.cpp in Sources */,
 				B0AC6D210DD2EE5100976666 /* texture_opengl.cpp in Sources */,
+				B0F90D130F02E7AA005446D6 /* soundsystem_null.cpp in Sources */,
+				B0F90D1A0F02E7BC005446D6 /* font.cpp in Sources */,
+				B0F90D1B0F02E7BC005446D6 /* font_directx.cpp in Sources */,
+				B0F90D1C0F02E7BC005446D6 /* font_opengl.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1060,7 +1086,7 @@
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.3;
 				MACOSX_DEPLOYMENT_TARGET_ppc64 = 10.4;
 				MACOSX_DEPLOYMENT_TARGET_x86_64 = 10.4;
-				SDKROOT = /Developer/SDKs/MacOSX10.3.9.sdk;
+				SDKROOT = macosx10.3.9;
 				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_ppc = /Developer/SDKs/MacOSX10.3.9.sdk;
 				SDKROOT_ppc64 = /Developer/SDKs/MacOSX10.4u.sdk;
@@ -1090,7 +1116,7 @@
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.3;
 				MACOSX_DEPLOYMENT_TARGET_ppc64 = 10.4;
 				MACOSX_DEPLOYMENT_TARGET_x86_64 = 10.4;
-				SDKROOT = /Developer/SDKs/MacOSX10.3.9.sdk;
+				SDKROOT = macosx10.3.9;
 				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_ppc = /Developer/SDKs/MacOSX10.3.9.sdk;
 				SDKROOT_ppc64 = /Developer/SDKs/MacOSX10.4u.sdk;

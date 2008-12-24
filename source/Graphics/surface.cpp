@@ -15,8 +15,6 @@
 /*
 
             COST-BENEFIT ANALYSIS OF N-WAY SPLITTING
-                             or
-        GOD HELP ME, I'M SPINNING MY OWN SORT OF QUADTREE
 
             LEGEND
             ---------
@@ -44,18 +42,8 @@
         CONS
             - Breaks compatibility with certain hardware.
             - Low map optimization for empty areas.
-            - High memory usage
-
-    HIGH N-VALUE
-        PROS
-            - Small textures allow compatibility with certain hardware.
-            - High map optimization for empty areas (no RAM wasted by a
-              completely empty section).
-            - Low memory usage
-        CONS
-            - Exponentially more individual blits per scene.
-            - Consumes far more memory than necessary because of duplicate
-              tiles.
+            - High memory usage.
+	    - Large textures reduce compatibility.
 
 */
 
