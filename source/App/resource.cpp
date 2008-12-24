@@ -204,9 +204,30 @@ TextReader *Resource::GetTextReader(char const *_filename)
     return reader;
 }
 
-MemMappedFile *Resource::GetUncompressedFile ( char const *_filename )
+MemMappedFile *Resource::GetUncompressedFile(char const *_filename)
 {
-	MemMappedFile *file;
-	bool exists = m_resourceFiles.find ( _filename, file );
-	return exists ? file : NULL;
+	char           fullFilename[2048];
+
+	MemMappedFile *file = NULL;
+
+	if (!file) {
+		sprintf(fullFilename, "%s%s", g_app->GetApplicationSupportPath(), _filename);
+		if (FileExists(fullFilename)) {
+			IO::FileReader *fr = new IO::FileReader();
+			fr->Open(fullFilename);
+			size_t          len = fr->Length();
+
+			file = new MemMappedFile(fullFilename, len);
+			fr->Read((char *)file->m_data, len, 0, len);
+			fr->Close();
+			delete fr;
+		}
+	}
+
+	if (!file) {
+		bool exists = m_resourceFiles.find(_filename, file);
+		if (!exists) file = NULL;
+	}
+
+	return file;
 }
