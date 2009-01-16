@@ -133,11 +133,9 @@
 #if !defined ( TARGET_OS_WINDOWS ) && !defined ( TARGET_OS_MACOSX )
 #    include <SDL/SDL.h>
 #    include <SDL/SDL_image.h>
-#    include <SDL/SDL_syswm.h>
 #else
 #    include <SDL.h>
 #    include <SDL_image.h>
-#    include <SDL_syswm.h>
 #endif
 
 #ifdef USE_SDLMIXER
