@@ -74,7 +74,6 @@ void Weapon::LineDraw ( int _type, int _color, int _dist, int _stopMove, int _st
     // Spark
     if ( _type == 4 )
     {
-        SDL_PixelFormat *format = g_graphics->GetPixelFormat ( g_graphics->GetScreen() );
         switch ( color )
         {
         case 1:
@@ -135,7 +134,6 @@ void Weapon::LineDraw ( int _type, int _color, int _dist, int _stopMove, int _st
     if ( _type == 1 || _type == 2 )
         if ( _stopMove > 0 ) e = _dist - _stopMove;
 
-    SDL_PixelFormat *format = g_graphics->GetPixelFormat ( g_graphics->GetScreen() );
     short phase = 1;
     short lineStartX = -1, lineStartY = -1, lineStopX = -1, lineStopY = -1, lastPhase = 0, lastDraw = 0;
     while ( newX != _stopX || newY != _stopY )
