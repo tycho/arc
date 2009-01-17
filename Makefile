@@ -1,6 +1,6 @@
 all:
-	$(MAKE) -C contrib/crisscross
-#	$(MAKE) -C contrib/crisscross test
+	$(MAKE) -C contrib/crisscross CrissCross
+#	$(MAKE) -C contrib/crisscross check
 	$(MAKE) -f source/Makefile
 
 clean:
