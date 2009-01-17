@@ -7,7 +7,7 @@ CXX=source/ccdv g++
 LINK=$(CXX)
 LIBS=-Wl,-Bstatic -Lcontrib/crisscross/source -lCrissCross -lSDLmain -Wl,-Bdynamic -lz -lSDL -lSDL_mixer -lSDL_image -lGL -lX11 -rdynamic
 
-CXXFLAGS=-O3 -ggdb -pipe -Wall -Wno-long-long -rdynamic -std=c++98 -pedantic
+CXXFLAGS=-O2 -ggdb -pipe -Wall -Wno-long-long -rdynamic -std=c++98 -pedantic -fno-strict-aliasing -ffast-math
 CPPFLAGS=-D_DEBUG
 
 STRIP=:strip
