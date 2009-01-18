@@ -291,7 +291,7 @@ void Game::Initialise()
     g_interface->AddWidget ( text );
 
     text = new TextUI (
-        "\2For testing purposes only. v" VERSION_NUMBER " build " VERSION_BUILD,
+        "\2For testing purposes only. v" VERSION_STRING,
         false, g_graphics->GetScreenWidth () - 290, g_graphics->GetScreenHeight () - 25, 270, 12 );
     g_interface->AddWidget ( text );
 

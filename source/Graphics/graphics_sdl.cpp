@@ -457,7 +457,7 @@ int SDLGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _height, 
     ARCReleaseAssert ( m_surfaces.get ( m_mainSurface ) != NULL );
     g_console->WriteLine ( "Display mode set successfully.");
 
-    const char *windowTitle = APP_NAME " v" VERSION_NUMBER " build " VERSION_BUILD;
+    const char *windowTitle = APP_NAME " v" VERSION_STRING;
     SDL_WM_SetCaption ( windowTitle, NULL );
 #ifdef TARGET_OS_WINDOWS
     if ( _windowed )

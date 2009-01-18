@@ -139,7 +139,6 @@ source/ccdv: source/ccdv.c
 	@strip source/ccdv
 
 clean:
-	$(MAKE) -C source/Build clean
 	rm -f $(OUTFILE)
 	rm -f $(PCH_FILE).gch
 	rm -f source/ccdv
@@ -147,8 +146,7 @@ clean:
 	rm -rf $(OBJDIR).rar
 
 $(PCH_FILE).gch: $(PCH_FILE)
-	$(MAKE) -C source/Build
-	@$(shell pwd)/source/GenerateBuildNumber $(shell pwd)/source
+	$(shell pwd)/scripts/gen_buildnum_h.sh $(shell pwd)/source/build_number.h
 	@$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(PCH_FILE) -o $(PCH_FILE).gch
 
 $(OUTFILE): $(OBJECTS)

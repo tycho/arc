@@ -20,7 +20,7 @@ void GenerateBlackBox ( const char *_msg )
     fprintf( _file, "= ARC++ BLACK BOX REPORT =\n" );
     fprintf( _file, "==========================\n\n" );
 
-    fprintf( _file, "VERSION : %s\n", APP_NAME " v" VERSION_NUMBER " build " VERSION_BUILD );
+    fprintf( _file, "VERSION : %s\n", APP_NAME " v" VERSION_STRING );
 
     if( _msg ) fprintf( _file, "ERROR   : '%s'\n", _msg );
 
