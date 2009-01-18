@@ -307,7 +307,7 @@ void Preferences::Save()
         char const *line = m_fileText[i];
         if (IsLineEmpty(line))
         {
-            fprintf(out, line);
+            fprintf(out, "%s", line);
         }
         else
         {
