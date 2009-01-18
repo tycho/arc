@@ -6,8 +6,13 @@ OUT=$1
 MAJOR=`echo $VERSTRING | cut -d'.' -f1`
 MINOR=`echo $VERSTRING | cut -d'.' -f2`
 REVIS=`echo $VERSTRING | cut -d'.' -f3 | cut -d'-' -f 1`
-BUILD=`echo $VERSTRING | cut -d'-' -f2,3,4,5`
-TINYBUILD=`echo $VERSTRING | cut -d'-' -f2`
+if [ $(echo $VERSTRING | grep "-") ]; then
+	BUILD=`echo $VERSTRING | cut -d'-' -f2,3,4,5`
+	TINYBUILD=`echo $VERSTRING | cut -d'-' -f2`
+else
+	BUILD=0
+	TINYBUILD=0
+fi
 
 rm -f $OUT
 
@@ -22,9 +27,8 @@ cat >> $OUT << __eof__
 #define VERSION_NUMBER "$MAJOR.$MINOR.$REVIS"
 #define VERSION_STRING "$VERSTRING"
 
-#define RESOURCE_VERSION $MAJOR,$MINOR,$REVISION,$TINYBUILD
-#define RESOURCE_VERSION_STRING "$MAJOR, $MINOR, $REVISION, $TINYBUILD"
-
+#define RESOURCE_VERSION $MAJOR,$MINOR,$REVIS,$TINYBUILD
+#define RESOURCE_VERSION_STRING "$MAJOR, $MINOR, $REVIS, $TINYBUILD"
 
 #endif
 
