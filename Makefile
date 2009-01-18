@@ -1,4 +1,5 @@
 all:
+	cd contrib/crisscross; cmake .; cd ../..
 	$(MAKE) -C contrib/crisscross CrissCross
 #	$(MAKE) -C contrib/crisscross check
 	$(MAKE) -f source/Makefile
