@@ -6,8 +6,17 @@ OUT=$1
 MAJOR=`echo $VERSTRING | cut -d'.' -f1`
 MINOR=`echo $VERSTRING | cut -d'.' -f2`
 REVIS=`echo $VERSTRING | cut -d'.' -f3 | cut -d'-' -f 1`
-BUILD=`echo $VERSTRING | cut -d'-' -f2,3,4,5`
 TINYBUILD=`echo $VERSTRING | cut -d'-' -f2`
+BUILD=`echo $VERSTRING | cut -d'-' -f2,3,4,5`
+RC=
+if [ $(echo $TINYBUILD | grep rc) ]; then
+	# We've got a release candidate. Reparse to get the build -number-.
+	RC=-$TINYBUILD
+	TINYBUILD=`echo $VERSTRING | cut -d'-' -f3`
+	BUILD=`echo $VERSTRING | cut -d'-' -f3,4,5,6`
+fi
+
+VERSTRING=$(git describe --tags)
 
 rm -f $OUT
 
@@ -19,7 +28,7 @@ cat >> $OUT << __eof__
 #define VERSION_MINOR $MINOR
 #define VERSION_REVISION $REVIS
 #define VERSION_BUILD "$BUILD"
-#define VERSION_NUMBER "$MAJOR.$MINOR.$REVIS"
+#define VERSION "$MAJOR.$MINOR.$REVIS$RC"
 #define VERSION_STRING "$VERSTRING"
 
 #define RESOURCE_VERSION $MAJOR,$MINOR,$REVIS,$TINYBUILD
