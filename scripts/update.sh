@@ -4,7 +4,7 @@ echo Updating primary repository...
 git pull origin master
 
 echo Updating submodules...
-MODULES="contrib/crisscross"
+MODULES="contrib contrib/crisscross"
 ORIGINAL=`pwd`
 
 for a in $MODULES; do
