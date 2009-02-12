@@ -3,3 +3,4 @@
 build
 *.ncb
 *.suo
+*.DS_Store
