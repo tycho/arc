@@ -51,7 +51,7 @@ bool OpenGLTexture::Create ( Uint16 _width, Uint16 _height, bool _isColorKeyed )
     ARCReleaseAssert ( _width > 0 ); ARCReleaseAssert ( _height > 0 );
     
     Uint32 oldWidth = _width, oldHeight = _height;
-    if ( !g_openGL->GetSetting ( OPENGL_TEX_ALLOW_NPOT ) ) {
+    if ( !g_openGL->GetSetting ( OPENGL_TEX_ALLOW_NPOT, false ) ) {
         if ( !isPowerOfTwo ( _width ) )
             _width = nearestPowerOfTwo ( _width );
         if ( !isPowerOfTwo ( _height ) )
@@ -112,7 +112,7 @@ bool OpenGLTexture::Upload()
     ARCReleaseAssert ( m_sdlSurface != NULL );
     ARCReleaseAssert ( m_textureID != 0 );
 
-	if ( !g_openGL->GetSetting ( OPENGL_TEX_ALLOW_NPOT ) )
+	if ( !g_openGL->GetSetting ( OPENGL_TEX_ALLOW_NPOT, false ) )
     {
         if ( !isPowerOfTwo ( m_sdlSurface->w ) ) {
             g_console->SetColour ( IO::Console::FG_YELLOW | IO::Console::FG_INTENSITY );

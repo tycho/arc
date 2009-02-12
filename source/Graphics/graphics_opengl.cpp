@@ -218,7 +218,7 @@ Uint32 OpenGLGraphics::LoadImage ( const char *_filename, bool _isColorKeyed )
 
     Uint32 targetW = src->w, targetH = src->h;
 
-    if ( !g_openGL->GetSetting ( OPENGL_TEX_ALLOW_NPOT ) )
+    if ( !g_openGL->GetSetting ( OPENGL_TEX_ALLOW_NPOT, false ) )
     {
         oldWidth = targetW, oldHeight = targetH;
         if ( !isPowerOfTwo ( targetW ) )
@@ -227,7 +227,7 @@ Uint32 OpenGLGraphics::LoadImage ( const char *_filename, bool _isColorKeyed )
             targetH = nearestPowerOfTwo ( targetH );
         ARCReleaseAssert ( isPowerOfTwo ( targetW * targetH ) );
     }
-    if ( g_openGL->GetSetting ( OPENGL_TEX_FORCE_SQUARE ) )
+    if ( g_openGL->GetSetting ( OPENGL_TEX_FORCE_SQUARE, false ) )
 	{
 		targetH = targetW = cc_max ( targetW, targetH );
 	}
@@ -408,7 +408,7 @@ int OpenGLGraphics::Blit ( Uint32 _sourceSurfaceID, SDL_Rect const *_sourceRect,
     if ( !_sourceRect )
     {
         nullSourceRect.x = 0; nullSourceRect.y = 0;
-        if ( g_openGL->GetSetting ( OPENGL_TEX_ALLOW_NPOT ) ) {
+        if ( g_openGL->GetSetting ( OPENGL_TEX_ALLOW_NPOT, false ) ) {
             nullSourceRect.w = fromSurface->m_sdlSurface->w;
             nullSourceRect.h = fromSurface->m_sdlSurface->h;
         } else {
@@ -464,7 +464,7 @@ int OpenGLGraphics::Blit ( Uint32 _sourceSurfaceID, SDL_Rect const *_sourceRect,
         vertexArray[6] = destRect->x + destRect->w;
         vertexArray[7] = destRect->y + destRect->h;
 
-        if ( g_openGL->GetSetting ( OPENGL_USE_TEXTURE_RECTANGLES ) )
+        if ( g_openGL->GetSetting ( OPENGL_USE_TEXTURE_RECTANGLES, false ) )
         {
             texCoordArrayi[0] = sourceRect->x;
             texCoordArrayi[1] = sourceRect->y;
@@ -866,7 +866,7 @@ int OpenGLGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heigh
     glVertexPointer ( 2, GL_SHORT, 0, (GLvoid*)m_vertexArray );
     ASSERT_OPENGL_ERRORS;
 
-    if ( g_openGL->GetSetting ( OPENGL_USE_TEXTURE_RECTANGLES ) )
+    if ( g_openGL->GetSetting ( OPENGL_USE_TEXTURE_RECTANGLES, false ) )
         glTexCoordPointer ( 2, GL_SHORT, 0, (GLvoid*)m_texCoordArrayi );
     else
         glTexCoordPointer ( 2, GL_FLOAT, 0, (GLvoid*)m_texCoordArrayf );

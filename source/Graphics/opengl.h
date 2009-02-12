@@ -99,7 +99,7 @@ public:
 
     renderPath GetRenderPath() const;
 
-    bool GetSetting ( openglSetting _setting ) const;
+    bool GetSetting ( openglSetting _setting, bool _default ) const;
     void SetSetting ( openglSetting _setting, bool _value );
 
     GLenum GetTextureTarget() const;

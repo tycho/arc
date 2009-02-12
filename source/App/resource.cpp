@@ -65,9 +65,8 @@ void Resource::ParseArchive ( const char *_dataFile, const char *_password )
             
             // Subsequent archives may override existing resources
             
-            MemMappedFile *oldFile;
-			bool exists = m_resourceFiles.find(file->m_filename, oldFile);
-            if (exists) {
+            MemMappedFile *oldFile = m_resourceFiles.find(file->m_filename, NULL);
+            if (oldFile) {
                 m_resourceFiles.erase(file->m_filename);
                 delete oldFile;
             }
@@ -225,8 +224,7 @@ MemMappedFile *Resource::GetUncompressedFile(char const *_filename)
 	}
 
 	if (!file) {
-		bool exists = m_resourceFiles.find(_filename, file);
-		if (!exists) file = NULL;
+		file = m_resourceFiles.find(_filename, NULL);
 	}
 
 	return file;

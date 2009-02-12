@@ -122,8 +122,6 @@
 		B0B8ECFA0BDB6337007C1576 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B8ECF90BDB6337007C1576 /* libz.dylib */; };
 		B0B8ED090BDB63A5007C1576 /* SDL_image.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B0B8E9790BDB5253007C1576 /* SDL_image.framework */; };
 		B0B8ED0A0BDB63A5007C1576 /* SDL.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = B0B8E9560BDB4FE5007C1576 /* SDL.framework */; };
-		B0BD2DA70BE26FE800F71A26 /* crc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0BD2DA40BE26FE800F71A26 /* crc.cpp */; };
-		B0BD2DA90BE26FE800F71A26 /* GenerateBuildNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0BD2DA60BE26FE800F71A26 /* GenerateBuildNumber.cpp */; };
 		B0BD2DC70BE271DC00F71A26 /* sidebar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0BD2DC50BE271DC00F71A26 /* sidebar.cpp */; };
 		B0BD2E160BE2745E00F71A26 /* SDLMain.m in Sources */ = {isa = PBXBuildFile; fileRef = B0BD2E140BE2745E00F71A26 /* SDLMain.m */; };
 		B0CFCA6B0DAD61E500D1ABF1 /* text_input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0CFCA690DAD61E500D1ABF1 /* text_input.cpp */; };
@@ -433,13 +431,6 @@
 				B0150A240BE43DD900DE06BB /* SDL_mixer.framework in Frameworks */,
 				B0426EAD0DA96BBB005A0E89 /* AppKit.framework in Frameworks */,
 				B0426EAE0DA96BBB005A0E89 /* Carbon.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B0BD2D9B0BE26FBD00F71A26 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -865,16 +856,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXRezBuildPhase section */
-		B0BD2D9C0BE26FBD00F71A26 /* Rez */ = {
-			isa = PBXRezBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXRezBuildPhase section */
-
 /* Begin PBXShellScriptBuildPhase section */
 		B0BD2ECA0BE2788600F71A26 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -887,7 +868,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$BUILD_DIR/$CONFIGURATION/GenerateBuildNumber $PROJECT_DIR/../../source/";
+			shellScript = "#!/bin/bash\n\nsource ~/.bashrc\n\necho \"Generating build_number.h...\";\n\ncd \"$PROJECT_DIR/../..\"\n\"scripts/gen_buildnum_h.sh\" \"source/build_number.h\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1005,15 +986,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B0BD2D9A0BE26FBD00F71A26 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B0BD2DA70BE26FE800F71A26 /* crc.cpp in Sources */,
-				B0BD2DA90BE26FE800F71A26 /* GenerateBuildNumber.cpp in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1034,9 +1006,6 @@
 			isa = PBXToolTarget;
 			buildConfigurationList = B0BD2DA10BE26FD000F71A26 /* Build configuration list for PBXToolTarget "GenerateBuildNumber" */;
 			buildPhases = (
-				B0BD2D9A0BE26FBD00F71A26 /* Sources */,
-				B0BD2D9B0BE26FBD00F71A26 /* Frameworks */,
-				B0BD2D9C0BE26FBD00F71A26 /* Rez */,
 				B0BD2ECA0BE2788600F71A26 /* ShellScript */,
 			);
 			dependencies = (

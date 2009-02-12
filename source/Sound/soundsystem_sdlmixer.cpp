@@ -90,18 +90,17 @@ int SDLMixerSoundSystem::PlaySound ( const char *_soundName, short _distX, short
     ARCReleaseAssert ( _soundName != NULL );
 
     // Let's see if it's cached.
-    Mix_Chunk *wave;
-	bool exists = m_chunks.find ( _soundName, wave );
-    if ( !exists )
+    Mix_Chunk *wave = m_chunks.find ( _soundName, NULL );
+    if ( !wave )
     {
         // Ouch. Performance hit as we load the sound.
         g_console->SetColour ( IO::Console::FG_YELLOW | IO::Console::FG_INTENSITY );
         g_console->WriteLine ( "WARNING: %s was not found in the sound cache!", _soundName );
         g_console->SetColour ();
         LoadWave ( _soundName );
-        exists = m_chunks.find ( _soundName, wave );
+        wave = m_chunks.find ( _soundName, NULL );
     }
-    if ( !exists )
+    if ( !wave )
     {
         // The sound is completely unloadable.
         g_console->SetColour ( IO::Console::FG_RED | IO::Console::FG_INTENSITY );

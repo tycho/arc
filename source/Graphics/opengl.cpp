@@ -304,7 +304,7 @@ void OpenGL::BindTexture ( GLuint _textureID )
 GLenum OpenGL::GetTextureTarget() const
 {
 	ARCDebugAssert ( this );
-    if ( GetSetting ( OPENGL_USE_TEXTURE_RECTANGLES ) )
+    if ( GetSetting ( OPENGL_USE_TEXTURE_RECTANGLES, false ) )
         return GL_TEXTURE_RECTANGLE_ARB;
     else
         return GL_TEXTURE_2D;
@@ -313,9 +313,9 @@ GLenum OpenGL::GetTextureTarget() const
 GLint OpenGL::GetInternalFormat24() const
 {
 	ARCDebugAssert ( this );
-    if ( GetSetting ( OPENGL_TEX_S3_COMPRESSION ) )
+    if ( GetSetting ( OPENGL_TEX_S3_COMPRESSION, false ) )
         return GL_COMPRESSED_RGB_S3TC_DXT1_EXT;
-    if ( GetSetting ( OPENGL_TEX_3DFX_COMPRESSION ) )
+    if ( GetSetting ( OPENGL_TEX_3DFX_COMPRESSION, false ) )
         return GL_COMPRESSED_RGB_FXT1_3DFX;
     return GL_RGB;
 }
@@ -323,9 +323,9 @@ GLint OpenGL::GetInternalFormat24() const
 GLint OpenGL::GetInternalFormat32() const
 {
 	ARCDebugAssert ( this );
-    if ( GetSetting ( OPENGL_TEX_S3_COMPRESSION ) )
+    if ( GetSetting ( OPENGL_TEX_S3_COMPRESSION, false ) )
         return GL_COMPRESSED_RGBA_S3TC_DXT5_EXT;
-    if ( GetSetting ( OPENGL_TEX_3DFX_COMPRESSION ) )
+    if ( GetSetting ( OPENGL_TEX_3DFX_COMPRESSION, false ) )
         return GL_COMPRESSED_RGBA_FXT1_3DFX;
     return GL_RGBA;
 }
@@ -339,10 +339,9 @@ void OpenGL::SetSetting ( openglSetting _setting, bool _value )
         m_settings.insert ( _setting, _value );
 }
 
-bool OpenGL::GetSetting ( openglSetting _setting ) const
+bool OpenGL::GetSetting ( openglSetting _setting, bool _default ) const
 {
 	ARCDebugAssert ( this );
-    bool item, exists = m_settings.find ( _setting, item );
-    ARCDebugAssert ( exists );
-    return exists ? item : false;
+    bool item = m_settings.find ( _setting, _default );
+    return item;
 }
