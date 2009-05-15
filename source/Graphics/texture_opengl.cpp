@@ -83,10 +83,17 @@ bool OpenGLTexture::Create ( Uint16 _width, Uint16 _height, bool _isColorKeyed )
 
     Bind();
 
+#if 0
     glTexParameteri ( g_openGL->GetTextureTarget(), GL_TEXTURE_MIN_FILTER, GL_LINEAR ); // set up for linear scaling
     ASSERT_OPENGL_ERRORS;
     glTexParameteri ( g_openGL->GetTextureTarget(), GL_TEXTURE_MAG_FILTER, GL_LINEAR );
     ASSERT_OPENGL_ERRORS;
+#else
+    glTexParameteri ( g_openGL->GetTextureTarget(), GL_TEXTURE_MIN_FILTER, GL_NEAREST );
+    ASSERT_OPENGL_ERRORS;
+    glTexParameteri ( g_openGL->GetTextureTarget(), GL_TEXTURE_MAG_FILTER, GL_NEAREST );
+    ASSERT_OPENGL_ERRORS;
+#endif
 
     g_openGL->VertexArrayStateTexture();
 
