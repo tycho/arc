@@ -10,10 +10,6 @@
 #include "universal_include.h"
 #include "collide.h"
 
-/*if this header is not supported on your system comment out
-the assert function call in SDL_TransparentPixel*/
-#include "assert.h"
-
 /*returns maximum or minimum of number*/
 #define SDL_COLLIDE_MAX(a,b)    ((a > b) ? a : b)
 #define SDL_COLLIDE_MIN(a,b)    ((a < b) ? a : b)
