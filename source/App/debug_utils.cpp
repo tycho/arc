@@ -11,6 +11,7 @@
 
 #include "App/app.h"
 #include "App/debug_utils.h"
+#include "App/version.h"
 
 void GenerateBlackBox ( const char *_msg )
 {
@@ -20,7 +21,7 @@ void GenerateBlackBox ( const char *_msg )
     fprintf( _file, "= ARC++ BLACK BOX REPORT =\n" );
     fprintf( _file, "==========================\n\n" );
 
-    fprintf( _file, "VERSION : %s\n", APP_NAME " v" VERSION_STRING );
+	fprintf( _file, "VERSION : %s v%s\n", APP_NAME, ARC::Version::LongVersion() );
 
     if( _msg ) fprintf( _file, "ERROR   : '%s'\n", _msg );
 

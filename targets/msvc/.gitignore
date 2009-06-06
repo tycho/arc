@@ -3,3 +3,5 @@ bin
 obj
 Debug
 Release
+debug
+release

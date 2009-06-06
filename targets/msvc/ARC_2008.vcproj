@@ -29,7 +29,7 @@
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Generating build number..."
-				CommandLine="&quot;$(ProjectDir)\..\..\source\GenerateBuildNumber.exe&quot; $(ProjectDir)\..\..\source\"
+				CommandLine="&quot;$(ProjectDir)\..\..\scripts\gen_buildnum_h_helper.cmd&quot; $(ProjectDir)\..\.."
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
@@ -126,7 +126,7 @@
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Generating build number..."
-				CommandLine="&quot;$(ProjectDir)\..\..\source\GenerateBuildNumber.exe&quot; $(ProjectDir)\..\..\source\"
+				CommandLine="&quot;$(ProjectDir)\..\..\scripts\gen_buildnum_h_helper.cmd&quot; $(ProjectDir)\..\.."
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
@@ -223,7 +223,7 @@
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Generating build number..."
-				CommandLine="&quot;$(ProjectDir)\..\..\source\GenerateBuildNumber.exe&quot; $(ProjectDir)\..\..\source\"
+				CommandLine="&quot;$(ProjectDir)\..\..\scripts\gen_buildnum_h_helper.cmd&quot; $(ProjectDir)\..\.."
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
@@ -318,7 +318,7 @@
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Generating build number..."
-				CommandLine="&quot;$(ProjectDir)\..\..\source\GenerateBuildNumber.exe&quot; $(ProjectDir)\..\..\source\"
+				CommandLine="&quot;$(ProjectDir)\..\..\scripts\gen_buildnum_h_helper.cmd&quot; $(ProjectDir)\..\.."
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
@@ -413,7 +413,7 @@
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Generating build number..."
-				CommandLine="&quot;$(ProjectDir)\..\..\source\GenerateBuildNumber.exe&quot; $(ProjectDir)\..\..\source\"
+				CommandLine="&quot;$(ProjectDir)\..\..\scripts\gen_buildnum_h_helper.cmd&quot; $(ProjectDir)\..\.."
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
@@ -513,7 +513,7 @@
 			<Tool
 				Name="VCPreBuildEventTool"
 				Description="Generating build number..."
-				CommandLine="&quot;$(ProjectDir)\..\..\source\GenerateBuildNumber.exe&quot; $(ProjectDir)\..\..\source\"
+				CommandLine="&quot;$(ProjectDir)\..\..\scripts\gen_buildnum_h_helper.cmd&quot; $(ProjectDir)\..\.."
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
@@ -678,6 +678,14 @@
 			</File>
 			<File
 				RelativePath="..\..\source\App\text_stream_readers.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\source\App\version.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\source\App\version.h"
 				>
 			</File>
 		</Filter>
@@ -1009,6 +1017,14 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\source\Sound\soundsystem_null.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\source\Sound\soundsystem_null.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\source\Sound\soundsystem_openal.cpp"
 				>
 			</File>
@@ -1040,6 +1056,30 @@
 		<Filter
 			Name="Graphics"
 			>
+			<File
+				RelativePath="..\..\source\Graphics\font.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\source\Graphics\font.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\source\Graphics\font_directx.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\source\Graphics\font_directx.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\source\Graphics\font_opengl.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\source\Graphics\font_opengl.h"
+				>
+			</File>
 			<File
 				RelativePath="..\..\source\Graphics\graphics.cpp"
 				>

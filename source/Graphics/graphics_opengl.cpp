@@ -13,6 +13,7 @@
 
 #include "App/app.h"
 #include "App/preferences.h"
+#include "App/version.h"
 #include "Graphics/font_opengl.h"
 #include "Graphics/graphics_opengl.h"
 #include "Graphics/opengl.h"
@@ -635,7 +636,8 @@ int OpenGLGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heigh
 
     m_sdlScreen->m_textureID = SCREEN_SURFACE_ID;
     
-    const char *windowTitle = APP_NAME " v" VERSION_STRING;
+    char windowTitle[512];
+	sprintf(windowTitle, "%s v%s", APP_NAME, ARC::Version::LongVersion());
     SDL_WM_SetCaption ( windowTitle, NULL );
 #ifdef TARGET_OS_WINDOWS
     if ( _windowed )

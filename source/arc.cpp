@@ -11,6 +11,7 @@
 
 #include "App/app.h"
 #include "App/preferences.h"
+#include "App/version.h"
 #include "Game/game.h"
 #include "Graphics/graphics.h"
 #include "Interface/interface.h"
@@ -39,7 +40,8 @@ int RunApplication ( int argc, char **argv )
     memset ( temp, 0, sizeof(temp) );
 
     g_console = new IO::Console ( true, true );
-    g_console->SetTitle ( APP_NAME " v" VERSION_STRING );
+	sprintf(temp, "%s v%s", APP_NAME, ARC::Version::LongVersion());
+    g_console->SetTitle ( temp );
     
 #ifdef TARGET_OS_MACOSX
     sprintf ( temp, "%s", "../Resources/" );
@@ -63,7 +65,7 @@ int RunApplication ( int argc, char **argv )
     g_console->WriteLine ( "=                   =" );
     g_console->WriteLine ( "=====================" );
     g_console->SetColour ();
-    g_console->WriteLine ( "Version " VERSION_STRING );
+	g_console->WriteLine ( "Version %s", ARC::Version::LongVersion() );
 
     g_console->Write ( "Built for " );
     g_console->SetColour ( IO::Console::FG_GREEN | IO::Console::FG_INTENSITY );

@@ -14,6 +14,7 @@
 #include "App/app.h"
 #include "App/file_utils.h"
 #include "App/preferences.h"
+#include "App/version.h"
 #include "Game/game.h"
 #include "Graphics/graphics.h"
 #include "Interface/bouncing_window.h"
@@ -290,8 +291,11 @@ void Game::Initialise()
         false, g_graphics->GetScreenWidth () - 290, g_graphics->GetScreenHeight () - 38, 270, 12 );
     g_interface->AddWidget ( text );
 
+	char buffer[1024];
+	sprintf(buffer, "\2For testing purposes only. v%s", ARC::Version::LongVersion());
+
     text = new TextUI (
-        "\2For testing purposes only. v" VERSION_STRING,
+        buffer,
         false, g_graphics->GetScreenWidth () - 290, g_graphics->GetScreenHeight () - 25, 270, 12 );
     g_interface->AddWidget ( text );
 

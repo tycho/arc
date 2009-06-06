@@ -37,9 +37,6 @@
 #    pragma comment ( lib, "libircmt.lib" )
 #endif
 
-#undef BUILD_NUMBER
-#include "build_number.h"
-
 #define TO_C_STRING(s) TO_STRING(s)
 #define TO_STRING(s) #s
 

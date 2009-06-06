@@ -2,7 +2,7 @@
 //
 #include "resource.h"
 
-#include "universal_include.h"
+#include "build_number.h"
 
 #define APSTUDIO_READONLY_SYMBOLS
 /////////////////////////////////////////////////////////////////////////////
@@ -29,8 +29,8 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION RESOURCE_VERSION
- PRODUCTVERSION RESOURCE_VERSION
+ FILEVERSION ARC_RESOURCE_VERSION
+ PRODUCTVERSION ARC_RESOURCE_VERSION
  FILEFLAGSMASK 0x17L
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -47,12 +47,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "Uplink Laboratories"
             VALUE "FileDescription", "Codename Valkyrie"
-            VALUE "FileVersion", RESOURCE_VERSION_STRING
+            VALUE "FileVersion", ARC_RESOURCE_VERSION_STRING
             VALUE "InternalName", "Codename Valkyrie"
             VALUE "LegalCopyright", "Copyright (c) 2008"
             VALUE "OriginalFilename", "ARC.exe"
             VALUE "ProductName", "Codename Valkyrie"
-            VALUE "ProductVersion", RESOURCE_VERSION_STRING
+            VALUE "ProductVersion", ARC_RESOURCE_VERSION_STRING
         END
     END
     BLOCK "VarFileInfo"
