@@ -16,6 +16,7 @@
 #endif
 
 #include "App/app.h"
+#include "App/version.h"
 #include "Graphics/graphics_sdl.h"
 
 SDLGraphics::SDLGraphics ( const char *_graphicsDriver )
@@ -79,6 +80,27 @@ const char *SDLGraphics::RendererName()
 	return renderer;
 }
 
+Uint32 SDLGraphics::CreateFont ( const char *_fontFace, int _height, bool _bold, bool _italic )
+{
+	g_console->SetColour ( IO::Console::FG_YELLOW | IO::Console::FG_INTENSITY );
+	g_console->WriteLine ( "WARNING: SDLGraphics::CreateFont called, but not implemented" );
+	g_console->SetColour ();
+	return -1;
+}
+
+void SDLGraphics::DrawText ( Uint32 _font, Uint16 _x, Uint16 _y, const char *_text, Uint32 _color, bool _center )
+{
+	g_console->SetColour ( IO::Console::FG_YELLOW | IO::Console::FG_INTENSITY );
+	g_console->WriteLine ( "WARNING: SDLGraphics::DrawText called, but not implemented" );
+	g_console->SetColour ();
+}
+
+void SDLGraphics::DrawRect ( SDL_Rect *_pos, Uint32 _color )
+{
+	g_console->SetColour ( IO::Console::FG_YELLOW | IO::Console::FG_INTENSITY );
+	g_console->WriteLine ( "WARNING: SDLGraphics::DrawRect called, but not implemented" );
+	g_console->SetColour ();
+}
 
 void SDLGraphics::ShowCursor ( bool _show )
 {
@@ -457,7 +479,8 @@ int SDLGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _height, 
     ARCReleaseAssert ( m_surfaces.get ( m_mainSurface ) != NULL );
     g_console->WriteLine ( "Display mode set successfully.");
 
-    const char *windowTitle = APP_NAME " v" VERSION_STRING;
+    char windowTitle[512];
+	sprintf(windowTitle, "%s v%s", APP_NAME, ARC::Version::LongVersion());
     SDL_WM_SetCaption ( windowTitle, NULL );
 #ifdef TARGET_OS_WINDOWS
     if ( _windowed )

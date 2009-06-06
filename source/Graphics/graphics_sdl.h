@@ -32,6 +32,11 @@ public:
 
 	virtual const char *RendererName();
 
+	virtual Uint32 CreateFont ( const char *_fontFace, int _height, bool _bold, bool _italic );
+	virtual void   DrawText ( Uint32 _font, Uint16 _x, Uint16 _y, const char *_text, Uint32 _color, bool _center = false );
+
+	virtual void   DrawRect ( SDL_Rect *_pos, Uint32 _color );
+
     virtual Uint16 GetMaximumTextureSize();
 
     virtual Uint32 GetScreen();

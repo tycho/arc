@@ -635,7 +635,7 @@ int OpenGLGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heigh
     }
 
     m_sdlScreen->m_textureID = SCREEN_SURFACE_ID;
-    
+
     char windowTitle[512];
 	sprintf(windowTitle, "%s v%s", APP_NAME, ARC::Version::LongVersion());
     SDL_WM_SetCaption ( windowTitle, NULL );
