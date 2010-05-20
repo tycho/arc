@@ -62,8 +62,7 @@ Map::Map()
     memset ( &m_collision, 0, sizeof ( m_collision ) );
     memset ( &m_sourceTile, 0, sizeof ( m_sourceTile ) );
 
-    sprintf ( temp, "%s%s", g_app->GetResourcePath (), "data/rough.dat" );
-    LoadRough ( temp );
+    LoadRough ( "data/rough.dat" );
 }
 
 Map::~Map()

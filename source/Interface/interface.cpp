@@ -322,10 +322,8 @@ void Interface::SetDragWindow ( Window *_window )
 int Interface::LoadAnims()
 {
     unsigned char buffer[16896]; unsigned char c;
-    char temp[255]; int i = 0; unsigned char b; int j = 0;
+    int i = 0; unsigned char b; int j = 0;
     int pos = 0;
-    sprintf ( temp, "%s%s", g_app->GetResourcePath(), "data/anims.dat" );
-    g_console->WriteLine ( "Loading anims.dat from %s", temp );
     BinaryReader *reader = g_app->m_resource->GetBinaryReader ( "data/anims.dat" );
     ARCReleaseAssert ( reader );
     ARCReleaseAssert ( reader->GetSize() <= sizeof(buffer) );

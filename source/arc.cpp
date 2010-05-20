@@ -159,17 +159,11 @@ void Init_App( char *apppath )
 
 	if ( g_prefsManager->GetInt ( "IgnoreDataFiles", 0 ) == 0 )
 	{
-		char tempPath[2048];
-		sprintf ( tempPath, "%s%s", g_app->GetResourcePath(), "data.dat" );
-		g_app->m_resource->ParseArchive ( tempPath, NULL );
-		sprintf ( tempPath, "%s%s", g_app->GetResourcePath(), "font.dat" );
-		g_app->m_resource->ParseArchive ( tempPath, NULL );
-		sprintf ( tempPath, "%s%s", g_app->GetResourcePath(), "graphics.dat" );
-		g_app->m_resource->ParseArchive ( tempPath, NULL );
-		sprintf ( tempPath, "%s%s", g_app->GetResourcePath(), "sounds.dat" );
-		g_app->m_resource->ParseArchive ( tempPath, NULL );
-		sprintf ( tempPath, "%s%s", g_app->GetResourcePath(), "maps.dat" );
-		g_app->m_resource->ParseArchive ( tempPath, NULL );
+		g_app->m_resource->ParseArchive ( "data.dat", NULL );
+		g_app->m_resource->ParseArchive ( "font.dat", NULL );
+		g_app->m_resource->ParseArchive ( "graphics.dat", NULL );
+		g_app->m_resource->ParseArchive ( "sounds.dat", NULL );
+		g_app->m_resource->ParseArchive ( "maps.dat", NULL );
 	}
 }
 

@@ -42,12 +42,21 @@ Resource::~Resource()
 
 void Resource::ParseArchive ( const char *_dataFile, const char *_password )
 {
-    if (!FileExists( _dataFile))
-        return;
+	char path[2048];
 
-    UncompressedArchive    *mainData = NULL;
+	const Data::LList<char *> *resourcePaths = g_app->GetResourcePaths();
+	for (size_t i = 0; i < resourcePaths->size(); i++) {
+		sprintf(path, "%s%s", resourcePaths->get(i), _dataFile);
+		if (FileExists(path))
+			break;
+	}
 
-    try
+	if (!FileExists(path))
+		return;
+
+	UncompressedArchive *mainData = NULL;
+
+	try
     {
         mainData = new UncompressedArchive(_dataFile, _password);
     }
@@ -118,10 +127,12 @@ SDL_Surface *Resource::GetImage ( char const *_filename )
     MemMappedFile *memmap = NULL;
     SDL_Surface *surf = NULL;
 
-    if ( !surf )
-    {
-        sprintf ( buffer, "%s%s", g_app->GetResourcePath(), _filename );
-        surf = IMG_Load ( buffer );
+    if (!surf) {
+        const Data::LList<char *> *resourcePaths = g_app->GetResourcePaths();
+        for (size_t i = 0; i < resourcePaths->size() && !surf; i++) {
+            sprintf(buffer, "%s%s", resourcePaths->get(i), _filename);
+            surf = IMG_Load(buffer);
+        }
     }
 
     memmap = GetUncompressedFile ( _filename );
@@ -142,10 +153,12 @@ Mix_Chunk *Resource::GetSound ( char const *_filename )
     MemMappedFile *memmap = NULL;
     Mix_Chunk *chunk = NULL;
 
-    if ( !chunk )
-    {
-        sprintf ( buffer, "%s%s", g_app->GetResourcePath(), _filename );
-        chunk = Mix_LoadWAV ( buffer );
+    if (!chunk) {
+        const Data::LList<char *> *resourcePaths = g_app->GetResourcePaths();
+        for (size_t i = 0; i < resourcePaths->size() && !chunk; i++) {
+            sprintf(buffer, "%s%s", resourcePaths->get(i), _filename);
+            chunk = Mix_LoadWAV(buffer);
+        }
     }
 
     memmap = GetUncompressedFile ( _filename );
@@ -161,46 +174,51 @@ Mix_Chunk *Resource::GetSound ( char const *_filename )
 
 TextReader *Resource::GetTextReader(char const *_filename)
 {
-    TextReader *reader = NULL;
-    char fullFilename[256];
+	TextReader *reader = NULL;
+	char        fullFilename[2048];
 
-    fullFilename[0] = 0;
+	fullFilename[0] = 0;
 
 #if 0
-    if( m_modName )
-    {
-        sprintf( fullFilename, "%smods/%s/%s", g_app->GetProfileDirectory(), m_modName, _filename );
-        if( DoesFileExist(fullFilename) ) 
-            reader = new TextFileReader(fullFilename);
+	if (m_modName) {
+		sprintf(fullFilename, "%smods/%s/%s", g_app->GetProfileDirectory(), m_modName, _filename);
+		if (DoesFileExist(fullFilename))
+			reader = new TextFileReader(fullFilename);
 
 #ifdef TARGET_OS_VISTA
-        // The Oberon build bundles the Perdition mod
-        if( !reader )
-        {
-            sprintf( fullFilename, "mods/%s/%s", m_modName, _filename );
-            if( DoesFileExist(fullFilename) ) 
-                reader = new TextFileReader(fullFilename);
+		// The Oberon build bundles the Perdition mod
+		if (!reader) {
+			sprintf(fullFilename, "mods/%s/%s", m_modName, _filename);
+			if (DoesFileExist(fullFilename))
+				reader = new TextFileReader(fullFilename);
+		}
+#endif
+	}
+#endif
+
+	if (!reader) {
+		sprintf(fullFilename, "%s", _filename);
+		if (FileExists(fullFilename))
+			reader = new TextFileReader(fullFilename);
+	}
+
+    if (!reader) {
+        const Data::LList<char *> *resourcePaths = g_app->GetResourcePaths();
+        for (size_t i = 0; i < resourcePaths->size() && !reader; i++) {
+            sprintf(fullFilename, "%s%s", resourcePaths->get(i), _filename);
+			if (FileExists(fullFilename))
+				reader = new TextFileReader(fullFilename);
         }
-#endif
-    }
-#endif
-
-    if( !reader )
-    {
-        sprintf( fullFilename, "data/%s", _filename );
-        if ( FileExists ( fullFilename ) ) 
-            reader = new TextFileReader(fullFilename);        
     }
 
-    if( !reader )
-    {
-        sprintf( fullFilename, "data/%s", _filename );
-        MemMappedFile *mmfile = GetUncompressedFile(fullFilename);
-        if ( mmfile ) 
-            reader = new TextDataReader((char*)mmfile->m_data, mmfile->m_size, fullFilename);        
-    }
+	if (!reader) {
+		sprintf(fullFilename, "%s", _filename);
+		MemMappedFile *mmfile = GetUncompressedFile(fullFilename);
+		if (mmfile)
+			reader = new TextDataReader((char *)mmfile->m_data, mmfile->m_size, fullFilename);
+	}
 
-    return reader;
+	return reader;
 }
 
 MemMappedFile *Resource::GetUncompressedFile(char const *_filename)

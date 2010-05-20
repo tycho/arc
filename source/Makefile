@@ -413,25 +413,25 @@ ifdef BUILD_SMPEG
 CONTRIBS += smpeg
 CONTRIB_LIBS += $(LIBSMPEG)
 else
-CONTRIB_LIBS += -lsmpeg
+EXTRA_LIBS += -lsmpeg
 endif
 ifdef BUILD_SDL
 CONTRIBS += sdl
 CONTRIB_LIBS += $(LIBSDL)
 else
-CONTRIB_LIBS += -lSDL
+EXTRA_LIBS += -lSDL
 endif
 ifdef BUILD_LIBPNG
 CONTRIBS += libpng
 CONTRIB_LIBS += $(LIBPNG)
 else
-CONTRIB_LIBS += -lpng
+EXTRA_LIBS += -lpng
 endif
 ifdef BUILD_ZLIB
 CONTRIBS += zlib
 CONTRIB_LIBS += $(LIBZ)
 else
-CONTRIB_LIBS += -lz
+EXTRA_LIBS += -lz
 endif
 ifdef BUILD_UNRAR
 CONTRIBS += unrar

@@ -10,7 +10,7 @@
 #include "universal_include.h"
 
 #ifndef TARGET_OS_WINDOWS
-#include <sys/stat.h>
+#	include <sys/stat.h>
 #endif
 
 #include "App/app.h"
@@ -23,8 +23,7 @@ extern char **NXArgv; // system variable we can exploit
 
 App::App ()
  : m_appPath ( NULL ),
-   m_appSupportPath ( NULL ),
-   m_resourcePath ( NULL )
+   m_appSupportPath ( NULL )
 {
     // TODO: Make this ALL prettier...
     // TODO: Set the appPath stuff to go to the application data folder, etc.
@@ -70,26 +69,21 @@ App::App ()
     }
     else
         strcpy ( tempPath, "./" );
-    
+
 #endif
 
     m_appPath = newStr ( tempPath );
 
     // Set up the resources directory variable
-#if defined ( TARGET_OS_WINDOWS )
-
-    m_resourcePath = newStr ( m_appPath );
-
-#elif defined ( TARGET_OS_LINUX )
-    
-    m_resourcePath = newStr ( m_appPath );
-
-#elif defined ( TARGET_OS_MACOSX )
-    
-    sprintf ( tempPath, "%s../Resources/", m_appPath );
-    m_resourcePath = newStr ( tempPath );
-
+	// Set up the resources directory variable
+#ifdef DATA_DIR_PATH
+	m_resourcePaths.insert(newStr(DATA_DIR_PATH));
 #endif
+	m_resourcePaths.insert(newStr(m_appPath));
+	sprintf(tempPath, "%s../Resources/", m_appPath);
+	m_resourcePaths.insert(newStr(tempPath));
+	sprintf(tempPath, "%s../resources/", m_appPath);
+	m_resourcePaths.insert(newStr(tempPath));
 
     // Set up the Application Support path
 #if defined ( TARGET_OS_WINDOWS )
@@ -143,8 +137,10 @@ App::~App()
     m_appPath = NULL;
     delete [] m_appSupportPath;
     m_appSupportPath = NULL;
-    delete [] m_resourcePath;
-    m_resourcePath = NULL;
+	while (m_resourcePaths.size()) {
+		free(m_resourcePaths.get(0));
+		m_resourcePaths.remove(0);
+	}
 }
 
 void App::CreateDirectory ( const char *_path )
@@ -156,9 +152,9 @@ void App::CreateDirectory ( const char *_path )
 #endif
 }
 
-const char *App::GetResourcePath ()
+const Data::LList<char *> *App::GetResourcePaths()
 {
-    return m_resourcePath;
+	return &m_resourcePaths;
 }
 
 const char *App::GetApplicationPath ()

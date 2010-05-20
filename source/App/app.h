@@ -23,7 +23,7 @@ class App {
 protected:
     char *m_appPath;
     char *m_appSupportPath;
-    char *m_resourcePath;
+    Data::LList<char *> m_resourcePaths;
 
 public:
     Resource                      *m_resource;
@@ -39,11 +39,11 @@ public:
 	 */
     virtual void                   CreateDirectory ( const char *_path );
 
-	//! Gets the application's resource directory.
-	/*!
-		\return The location where application resources are stored.
-	 */
-    virtual const char            *GetResourcePath ();
+    //! Gets the application's resource directory.
+    /*!
+     *      \return The location where application resources are stored.
+     */
+    virtual const Data::LList<char*> *GetResourcePaths ();
 
 	//! Gets the application executable's directory.
 	/*!
