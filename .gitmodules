@@ -1,3 +1,0 @@
-[submodule "contrib"]
-	path = contrib
-	url = git://github.com/tycho/arc-contrib.git
