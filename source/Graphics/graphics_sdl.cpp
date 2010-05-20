@@ -118,10 +118,10 @@ Uint16 SDLGraphics::GetMaximumTextureSize()
 void SDLGraphics::DrawLine ( Uint32 _surfaceID, Uint32 _color, int _startX, int _startY, int _stopX, int _stopY )
 {
     ARCAbort ( "SDLGraphics::DrawLine() is not implemented." );
-    float stopX = (float)cc_max(_stopX,_startX),
-          startX = (float)cc_min(_stopX,_startX),
-          stopY = (float)cc_max(_stopY,_startY),
-          startY = (float)cc_min(_stopY,_startY);
+    float stopX = (float)std::max(_stopX,_startX),
+          startX = (float)std::min(_stopX,_startX),
+          stopY = (float)std::max(_stopY,_startY),
+          startY = (float)std::min(_stopY,_startY);
     float xdistance = (stopX - startX),
           ydistance = (stopY - startY),
           distance = sqrtf((xdistance * xdistance) + (ydistance * ydistance));

@@ -32,21 +32,21 @@ void Init_Graphics();
 void Init_Interface();
 void Init_Sound();
 
-int RunApplication ( int argc, char **argv )
+int main ( int argc, char **argv )
 {
     int i = 0;
     char temp[1024];
-    
+
     memset ( temp, 0, sizeof(temp) );
 
     g_console = new IO::Console ( true, true );
 	sprintf(temp, "%s v%s", APP_NAME, ARC::Version::LongVersion());
     g_console->SetTitle ( temp );
-    
+
 #ifdef TARGET_OS_MACOSX
     sprintf ( temp, "%s", "../Resources/" );
 #endif
-    
+
     // first find the location of the EXE.
     for (i = (int)strlen(argv[0]); i > 0; i--)
     {

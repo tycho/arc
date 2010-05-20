@@ -3,4 +3,4 @@ Debug
 build_number.h
 GenerateBuildNumber
 universal_include.h.gch
-ccdv
+.cflags

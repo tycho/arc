@@ -217,7 +217,7 @@ MemMappedFile *Resource::GetUncompressedFile(char const *_filename)
 			size_t          len = fr->Length();
 
 			file = new MemMappedFile(fullFilename, len);
-			fr->Read((char *)file->m_data, len, 0, len);
+			fr->ReadBlock((char *)file->m_data, len);
 			fr->Close();
 			delete fr;
 		}

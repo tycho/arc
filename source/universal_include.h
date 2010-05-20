@@ -12,11 +12,6 @@
 
 #ifdef __cplusplus
 #  include <crisscross/crisscross.h>
-#  ifndef TARGET_OS_LINUX
-#    ifndef SDL_APPLICATION
-#      error "SDL_APPLICATION must be defined in CrissCross."
-#    endif
-#  endif
 #endif
 
 #if defined ( TARGET_COMPILER_VC ) || defined ( TARGET_COMPILER_ICC )
@@ -176,6 +171,8 @@ extern IO::Console *g_console;
 #else
 #    define stricmp _stricmp
 #endif
+
+#include <cmath>
 
 __inline bool isPowerOfTwo ( Uint32 v ) { return !(v & (v - 1)) && v; }
 __inline Uint32 nearestPowerOfTwo ( Uint32 v ) { return (Uint32)pow( 2.0, ceil( log( (double)v ) / log( 2.0 ) ) ); }

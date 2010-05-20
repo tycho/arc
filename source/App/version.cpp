@@ -20,12 +20,12 @@ namespace ARC
 	{
 		const char *ShortVersion()
 		{
-			return ARC_VERSION;
+			return ARC_VERSION_TAG;
 		}
 
 		const char *LongVersion()
 		{
-			return ARC_VERSION_STRING;
+			return ARC_VERSION_LONG;
 		}
 
 		int Major()

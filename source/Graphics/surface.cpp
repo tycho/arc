@@ -51,11 +51,11 @@ Surface::Surface ( Uint16 _sizeX, Uint16 _sizeY, Uint16 _splitSections )
 {
     if ( _splitSections > 64 ) _splitSections = 64;
 
-    m_sizeXY = cc_max ( nearestPowerOfTwo ( _sizeX ), nearestPowerOfTwo ( _sizeY ) );
+    m_sizeXY = std::max ( nearestPowerOfTwo ( _sizeX ), nearestPowerOfTwo ( _sizeY ) );
     m_sqrtN = _splitSections;
 
     ARCDebugAssert ( isPowerOfTwo ( _splitSections ) );
-    if ( !isPowerOfTwo ( _splitSections ) ) 
+    if ( !isPowerOfTwo ( _splitSections ) )
     {
         _splitSections = nearestPowerOfTwo ( _splitSections );
         m_nWays = _splitSections * _splitSections;
@@ -64,7 +64,7 @@ Surface::Surface ( Uint16 _sizeX, Uint16 _sizeY, Uint16 _splitSections )
 
     // We want to force it to use the nicest texture size possible without
     // compromising performance.
-    Uint16 maxTexSize = cc_min ( g_graphics->GetMaximumTextureSize() / 2, 1024 );
+    Uint16 maxTexSize = std::min ( g_graphics->GetMaximumTextureSize() / 2, 1024 );
 
     m_pixelWH = m_sizeXY / m_sqrtN;
     while ( m_pixelWH > maxTexSize )

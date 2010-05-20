@@ -1,6 +1,4 @@
-.linux-objs
-.linux-objs.rar
-build
+*.[oad]
 *.ncb
 *.suo
 *.DS_Store

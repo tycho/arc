@@ -9,6 +9,10 @@
 
 #include "universal_include.h"
 
+#ifndef TARGET_OS_WINDOWS
+#include <sys/stat.h>
+#endif
+
 #include "App/file_utils.h"
 
 bool FileExists ( const char *_file )
