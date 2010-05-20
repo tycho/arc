@@ -506,8 +506,8 @@ ifdef NO_INLINE_DEPGEN
 $(OBJECTS): $(OBJECTS:%.o=%.d)
 endif
 
-$(OBJECTS:%.o=%.d): | $(CONTRIB_LIBS)
-$(OBJECTS:%.o=%.cpp) app/version.cpp: | $(CONTRIB_LIBS)
+$(OBJECTS:%.o=%.d) App/version.o : | $(CONTRIB_LIBS)
+$(OBJECTS:%.o=%.cpp) App/version.cpp: | $(CONTRIB_LIBS)
 
 %.d: %.cpp .cflags $(GENERATED_FILES)
 	$(QUIET_DEPEND)$(CXX) -MM $(ALL_CFLAGS) -MT $*.o $< > $*.d
