@@ -322,20 +322,6 @@ CFOTHERS_L = $(EXTERNAL_FLAGS_L) $(EXTRA_FLAGS) $(DEFINES) $(SDL_CFLAGS)
 #
 # Figure out the build settings for this type of build
 #
-
-# Debug
-# No optimization, full debugging.
-ifneq (,$(findstring debug,$(MAKECMDGOALS)))
-	DEBUG=YesPlease
-	NO_OPTIMIZE=YesPlease
-endif
-
-# Profile
-# Optimized, with full debugging.
-ifneq (,$(findstring profile,$(MAKECMDGOALS)))
-	DEBUG=YesPlease
-endif
-
 ifdef HURRY
 	NO_OPTIMIZE=YesPlease
 endif
@@ -442,6 +428,10 @@ CONTRIBS += unrar
 CONTRIB_LIBS += $(LIBUNRAR)
 endif
 
+ifdef PROFILE
+EXTRA_LIBS += -L/opt/perftools/lib -ltcmalloc
+endif
+
 EXTRA_OBJECTS += App/version.o
 
 LIBS += $(CONTRIB_LIBS) $(EXTRA_LIBS)
@@ -451,12 +441,6 @@ CONTRIB_DIR = ../../contrib
 GAME_DEPENDS := $(OBJECTS) $(EXTRA_OBJECTS) $(CONTRIB_LIBS)
 
 VERSION := $(git describe)
-
-ifdef FULLGAME
-CPPFLAGS := -DFULLGAME=1
-else
-CPPFLAGS := -DTESTGAME=1
-endif
 
 PCH_FILE := stdafx.h
 
@@ -471,7 +455,7 @@ build_number.h:
 
 $(PCH_FILE).gch:
 	@echo Precompiling $(PCH_FILE)...
-	@$(CXX) $(TESTGAME_CPPFLAGS) $(CPPFLAGS) $(CXXFLAGS) $(PCH_FILE) -o $(PCH_FILE).gch
+	@$(CXX) $(ALL_CFLAGS) $(PCH_FILE) -o $(PCH_FILE).gch
 
 App/version.cpp: build_number.h
 
