@@ -93,7 +93,7 @@ public:
     void SendPing ();
     void SendSwitchRequest ();
     void SendUpdateRequest ();
-    
+
     void SendLaserFired ( short _lX, short _lY, short _charX, short _charY );
     void SendBouncyFired ( short _lX, short _lY, short _charX, short _charY );
     void SendMissileFired ( short _lX, short _lY, short _charX, short _charY );

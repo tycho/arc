@@ -44,12 +44,12 @@ void Sidebar::Initialise()
     format = g_graphics->GetPixelFormat ( m_healthBarSurfaceID );
     g_graphics->FillRect ( m_healthBarSurfaceID, NULL, SDL_MapRGBA ( format, 128, 0, 0, 255 ) );
     g_graphics->SetSurfaceAlpha ( m_healthBarSurfaceID, 192 );
-    
+
     m_chargeBarSurfaceID = g_graphics->CreateSurface ( 60, 15, false );
     format = g_graphics->GetPixelFormat ( m_chargeBarSurfaceID );
     g_graphics->FillRect ( m_chargeBarSurfaceID, NULL, SDL_MapRGBA ( format, 0, 0, 128, 255 ) );
     g_graphics->SetSurfaceAlpha ( m_chargeBarSurfaceID, 192 );
-    
+
     m_radarBackgroundSurfaceID = g_graphics->CreateSurface ( 100, 94, false );
     format = g_graphics->GetPixelFormat ( m_radarBackgroundSurfaceID );
     g_graphics->FillRect ( m_radarBackgroundSurfaceID, NULL, SDL_MapRGBA ( format, 0, 0, 0, 255 ) );
@@ -221,7 +221,7 @@ void Sidebar::Render()
         rBuff.x = 221; rBuff.y = 151; rBuff.h = 16; rBuff.w = 30;
         rDest.x = g_graphics->GetScreenWidth () - 30; rDest.y = 480;
         g_graphics->Blit ( g_interface->GetSidebarSurfaceID (), &rBuff, g_graphics->GetScreen(), &rDest );
-        
+
         short limit = ( ( g_graphics->GetScreenWidth() - 480 ) / 16 ) - 1;
         rBuff.x = 226; rBuff.y = 168; rBuff.h = 16; rBuff.w = 25;
         rDest.x = g_graphics->GetScreenWidth () - 25;

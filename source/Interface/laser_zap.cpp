@@ -58,7 +58,7 @@ void LaserZap::Initialise()
 void LaserZap::Update()
 {
     m_zapFrame += g_game->GetGameSpeed() * 0.5;
-    
+
     if ( (int)m_zapFrame > 6 )
         m_expired = true;
 }

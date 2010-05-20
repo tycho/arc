@@ -27,7 +27,7 @@ App::App ()
 {
     // TODO: Make this ALL prettier...
     // TODO: Set the appPath stuff to go to the application data folder, etc.
-    
+
     char tempPath[2048];
     memset ( tempPath, 0, sizeof ( tempPath ) );
 

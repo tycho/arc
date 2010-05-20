@@ -26,7 +26,7 @@ void QuitWindow_OnNoClick ( Window *_window )
 }
 
 QuitWindow::QuitWindow()
-: Window ( g_graphics->GetCenterX() - 136, g_graphics->GetCenterY() - 32, 256, 72 ) 
+: Window ( g_graphics->GetCenterX() - 136, g_graphics->GetCenterY() - 32, 256, 72 )
 {
     SetWidgetClass ( "QuitWindow" );
 

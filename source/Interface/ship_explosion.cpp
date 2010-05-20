@@ -76,7 +76,7 @@ void ShipExplosion::Initialise()
 void ShipExplosion::Update()
 {
     m_popFrame += g_game->GetGameSpeed() * 0.5;
-    
+
     if ( (int)m_popFrame > 23 )
         m_expired = true;
 }

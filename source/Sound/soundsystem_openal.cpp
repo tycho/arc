@@ -65,12 +65,12 @@ ALuint ALLoadWave ( const char* filename )
     FILE* file = fopen(filename, "rb");
     _WaveChunk chunk;
     _WaveHeader header;
-    
+
     uint32_t tempuint;
     uint16_t tempusht;
-    
+
     ARCReleaseAssert ( file != NULL);
-    
+
     int retval = fread(header.wriff, 4, 1, file);
     ARCReleaseAssert ( retval != 0 );
     fread(&tempuint, 4, 1, file);
@@ -79,7 +79,7 @@ ALuint ALLoadWave ( const char* filename )
     fread(header.wfmt, 4, 1, file);
     fread(&tempuint, 4, 1, file);
     header.wchunkheadersize = SDL_SwapLE32(tempuint);
-    
+
     if (strncmp(header.wriff, "RIFF", 4) ||
         strncmp(header.wwave, "WAVE", 4) ||
         header.wchunkheadersize != 16)
@@ -88,7 +88,7 @@ ALuint ALLoadWave ( const char* filename )
         sprintf ( buffer, "%s seems to be an invalid sound file", filename );
         ARCAbort ( buffer );
     }
-    
+
     fread(&tempusht, 2, 1, file);
     chunk.tag = SDL_SwapLE16(tempusht);
     fread(&tempusht, 2, 1, file);
@@ -104,16 +104,16 @@ ALuint ALLoadWave ( const char* filename )
     fread(chunk.data, 4, 1, file);
     fread(&tempuint, 4, 1, file);
     chunk.datasize = SDL_SwapLE32(tempuint);
-    
+
     ARCReleaseAssert(!strncmp(chunk.data, "data", 4));
-    
+
     uint32_t src_frame_size = (chunk.bps / 8) * chunk.nchannels;
     uint32_t total_size = chunk.datasize;
-    
+
     unsigned char* buf = (unsigned char*)malloc(total_size);
-    
+
     ARCReleaseAssert ( buf != NULL );
-    
+
     if (chunk.bps == 8)
     {
         int retval = fread(buf, 1, total_size, file);
@@ -128,16 +128,16 @@ ALuint ALLoadWave ( const char* filename )
             (*(uint16_t*)(buf + i)) = SDL_SwapLE16(val);
         }
     }
-    
+
     fclose(file);
-    
+
     ALuint buffer = 0;
     alGenBuffers ( 1, &buffer );
-    
+
     ARCReleaseAssert ( buffer != 0 );
-    
+
     ALenum format;
-    
+
     if (chunk.nchannels == 1)
     {
         // mono
@@ -154,11 +154,11 @@ ALuint ALLoadWave ( const char* filename )
         else
             format = AL_FORMAT_STEREO16;
     }
-    
+
     alBufferData ( buffer, format, (ALvoid*)buf, total_size, chunk.samplerate );
-    
+
     free ((void*)buf);
-    
+
     return buffer;
 }
 
@@ -189,7 +189,7 @@ OpenALSoundSystem::OpenALSoundSystem()
     m_context = alcCreateContext ( m_device, arc_openal_attributes );
     alcProcessContext ( m_context );
     alcMakeContextCurrent ( m_context );
-    
+
     for (unsigned int i = 0; i < arc_openal_num_sources; i++)
     {
         ALuint source;
@@ -203,7 +203,7 @@ OpenALSoundSystem::OpenALSoundSystem()
         delete m_queues.get ( i );
         m_queues.remove ( i );
     }
-    
+
     alDistanceModel ( AL_INVERSE_DISTANCE_CLAMPED );
 }
 
@@ -232,18 +232,18 @@ int OpenALSoundSystem::PlaySound ( const char *_soundName, short _distX, short _
         buf = m_buffers.find(_soundName);
         ARCReleaseAssert ( buf != NULL );
     }
-    
+
     ALuint src = AcquireSource ();
     ARCReleaseAssert ( src != 0 );
-    
+
     float loc[3] = { (float)_distX, (float)_distY, 0.0f };
-    
+
     alSourceStop ( src );
     alSourceRewind ( src );
     alSourcei ( src, AL_BUFFER, buf );
     alSourcefv ( src, AL_POSITION, loc );
     alSourcePlay ( src );
-    
+
     return 0;
 }
 

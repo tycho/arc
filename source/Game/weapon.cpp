@@ -349,7 +349,7 @@ int Weapon::PixelIntersect2 ( short lx, short ly, short j, short I )
     LegacyRect *lRect = map->GetRoughTile(map->GetSourceTile(j,I));
     if ( mvx > lRect->cLeft - 1 &&
          mvy > lRect->aTop - 1 &&
-         mvx < 16 - lRect->dRight && 
+         mvx < 16 - lRect->dRight &&
          mvy < 16 - lRect->bBottom )
     {
         pixel = g_graphics->GetPixel ( map->GetTileMapID(), tx + mvx, ty + mvy );

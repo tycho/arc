@@ -87,7 +87,7 @@ void Connection::SendLogin ( const char *_nickname, const char *_password )
     if ( sendCount > 3 ) m_net->DisableUDP();
     m_net->Send ( packet, false );
     sendCount++;
-    
+
     delete packet;
 }
 
@@ -99,7 +99,7 @@ void Connection::SendMapRequest ()
     packet->AddBufferData ( &messageType, sizeof(messageType) );
 
     m_net->Send ( packet, false );
-    
+
     delete packet;
 }
 
@@ -116,7 +116,7 @@ void Connection::SendGameLogin ()
     packet->AddBufferData ( &mapFileSize, sizeof(mapFileSize) );
 
     m_net->Send ( packet, true );
-    
+
     delete packet;
 }
 
@@ -129,7 +129,7 @@ void Connection::SendGameChat ( const char *_chatText )
     packet->AddBufferString ( _chatText );
 
     m_net->Send ( packet, true );
-    
+
     delete packet;
 }
 
@@ -141,7 +141,7 @@ void Connection::SendUpdateRequest()
     packet->AddBufferData ( &messageType, sizeof(messageType) );
 
     m_net->Send ( packet, true );
-    
+
     delete packet;
 }
 
@@ -153,7 +153,7 @@ void Connection::SendSwitchRequest()
     packet->AddBufferData ( &messageType, sizeof(messageType) );
 
     m_net->Send ( packet, true );
-    
+
     delete packet;
 }
 
@@ -165,7 +165,7 @@ void Connection::SendPing()
     packet->AddBufferData ( &messageType, sizeof(messageType) );
 
     m_net->Send ( packet, false );
-    
+
     delete packet;
 }
 
@@ -177,7 +177,7 @@ void Connection::SendDropFlag()
     packet->AddBufferData ( &messageType, sizeof(messageType) );
 
     m_net->Send ( packet, true );
-    
+
     delete packet;
 }
 
@@ -190,7 +190,7 @@ void Connection::SendNewKey ( char _newKey )
     packet->AddBufferData ( &_newKey, sizeof(_newKey) );
 
     m_net->Send ( packet, false );
-    
+
     delete packet;
 }
 
@@ -206,7 +206,7 @@ void Connection::SendLaserFired ( short _lX, short _lY, short _charX, short _cha
     packet->AddBufferData ( &_charY, sizeof(_charY) );
 
     m_net->Send ( packet, false );
-    
+
     delete packet;
 }
 
@@ -222,7 +222,7 @@ void Connection::SendBouncyFired ( short _lX, short _lY, short _charX, short _ch
     packet->AddBufferData ( &_charY, sizeof(_charY) );
 
     m_net->Send ( packet, true );
-    
+
     delete packet;
 }
 
@@ -238,7 +238,7 @@ void Connection::SendMissileFired ( short _lX, short _lY, short _charX, short _c
     packet->AddBufferData ( &_charY, sizeof(_charY) );
 
     m_net->Send ( packet, true );
-    
+
     delete packet;
 }
 
@@ -254,7 +254,7 @@ void Connection::SendGrenadeFired ( short _lX, short _lY, short _charX, short _c
     packet->AddBufferData ( &_charY, sizeof(_charY) );
 
     m_net->Send ( packet, true );
-    
+
     delete packet;
 }
 
@@ -266,7 +266,7 @@ void Connection::SendNull()
     packet->AddBufferData ( &messageType, sizeof(messageType) );
 
     m_net->Send ( packet, true );
-    
+
     delete packet;
 }
 
@@ -288,7 +288,7 @@ void Connection::SendUpdate()
     packet->AddBufferData ( &Y, sizeof ( Y ) );
 
     m_net->Send ( packet, false );
-    
+
     delete packet;
 }
 
@@ -473,7 +473,7 @@ void Connection::Parse ( Packet *_packet )
                         if ( p->m_lastPositionUpdate.Elapsed() > 0.25 )
                         {
                             p->SetPosition ( (int)xMoveTo, (int)yMoveTo );
-                            
+
                             g_console->WriteLine ( "Player %s moved to %6.2f, %6.2f (act: %4d, %4d) (diff: %4.2f, %4.2f)",
                                 p->m_nick, xMoveTo, yMoveTo, X, Y, xDifference, yDifference );
 
@@ -504,7 +504,7 @@ void Connection::Parse ( Packet *_packet )
 
                 player->SetDirection ( MOVE_NONE );
                 player->SetVisibility ( false );
-                
+
                 player->GetShip()->Pop();
 
                 // TODO: Destroy the weapon instance that killed this player.
@@ -638,7 +638,7 @@ void Connection::Parse ( Packet *_packet )
                 g_game->m_grenadeAmmo = c;
                 _packet->GetBufferData ( &c, sizeof(c) );
                 g_game->m_bounceAmmo = c;
-                
+
                 _packet->GetBufferData ( &c, sizeof(c) ); // TODO: Remove.
 
                 _packet->GetBufferData ( &c, sizeof(c) );
@@ -662,7 +662,7 @@ void Connection::Parse ( Packet *_packet )
                 _packet->GetBufferData ( &who, sizeof(who) );
                 _packet->GetBufferData ( &team, sizeof(team) );
                 if ( !g_game->Playing() ) break;
-                
+
                 ARCReleaseAssert ( g_game->GetPlayers()->valid ( who ) );
                 Player *player = g_game->GetPlayers()->get ( who );
                 ARCReleaseAssert ( player );
@@ -674,7 +674,7 @@ void Connection::Parse ( Packet *_packet )
                     player->GetShip()->Pop();
                 }
                 player->SetTeam ( (ShipType)team );
-                
+
             }
             break;
         case MSG_NEWKEY:
@@ -764,13 +764,13 @@ void Connection::Parse ( Packet *_packet )
                 }
                 x = newX;
                 y = newY;
-                
+
                 ARCReleaseAssert ( g_game->GetPlayers()->valid ( who ) );
                 Player *player = g_game->GetPlayers()->get ( who );
                 ARCReleaseAssert ( player );
 
                 // TODO: Verify the distance measurement here.
-                if ( dropreason != 2 ) 
+                if ( dropreason != 2 )
                     g_soundSystem->PlaySound ( "dropflag",
                     (short)g_game->m_me->m_charX - x,
                     (short)g_game->m_me->m_charY - y );

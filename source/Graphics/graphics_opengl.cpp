@@ -107,7 +107,7 @@ void OpenGLGraphics::DrawRect ( SDL_Rect *_destRect, Uint32 _color )
 	g_openGL->ActivateColour ( _color );
     g_openGL->DeactivateTextureRect ();
     g_openGL->VertexArrayStatePrimitive ();
-    
+
     m_vertexArray[0] = _destRect->x;
     m_vertexArray[1] = _destRect->y;
     m_vertexArray[2] = _destRect->x + _destRect->w;
@@ -133,9 +133,9 @@ int OpenGLGraphics::SetSurfaceAlpha ( Uint32 _surfaceID, Uint8 alpha )
 {
     ARCReleaseAssert ( m_sdlScreen != NULL );
     ARCReleaseAssert ( m_textures.valid ( _surfaceID ) );
-    
+
     m_textures.get ( _surfaceID )->SetAlpha ( alpha );
-    
+
     return 0;
 }
 
@@ -196,7 +196,7 @@ void OpenGLGraphics::SetPixel ( Uint32 _surfaceID, int x, int y, Uint32 _color )
 
 Uint32 OpenGLGraphics::LoadImage ( const char *_filename, bool _isColorKeyed )
 {
-    
+
     ARCReleaseAssert ( _filename != NULL );
 
     // Load the image from RAM.
@@ -259,7 +259,7 @@ Uint32 OpenGLGraphics::LoadImage ( const char *_filename, bool _isColorKeyed )
 int OpenGLGraphics::DeleteSurface ( Uint32 _surfaceID )
 {
     if ( !m_textures.valid ( _surfaceID ) ) return -1;
-    
+
     OpenGLTexture *tex = m_textures.get ( _surfaceID );
     ARCReleaseAssert ( tex != NULL );
     delete tex;
@@ -272,9 +272,9 @@ Uint32 OpenGLGraphics::CreateSurface ( Uint32 _width, Uint32 _height, bool _isCo
 {
     OpenGLTexture *tex = new OpenGLTexture();
     tex->Create ( _width, _height, _isColorKeyed );
-    
+
     Uint32 ret = m_textures.insert ( tex );
-    
+
     return ret;
 }
 
@@ -284,12 +284,12 @@ Uint16 OpenGLGraphics::GetMaximumTextureSize()
 }
 
 int OpenGLGraphics::SetColorKey ( Uint32 _color )
-{    
+{
     ARCReleaseAssert ( m_sdlScreen != NULL );
 
     m_colorKey = _color;
     m_colorKeySet = true;
-    
+
     return 0;
 }
 
@@ -308,14 +308,14 @@ int OpenGLGraphics::FillRect ( Uint32 _surfaceID, SDL_Rect *_destRect, Uint32 _c
 
     if ( _color == m_colorKey )
         _color = m_colorKey & ZERO_ALPHA;
-    
+
     if (_surfaceID == SCREEN_SURFACE_ID)
     {
         // fill a rectangle on screen
         g_openGL->ActivateColour ( _color );
         g_openGL->DeactivateTextureRect ();
         g_openGL->VertexArrayStatePrimitive ();
-    
+
         if ( _destRect )
         {
             m_vertexArray[0] = _destRect->x;
@@ -339,7 +339,7 @@ int OpenGLGraphics::FillRect ( Uint32 _surfaceID, SDL_Rect *_destRect, Uint32 _c
 
         glDrawArrays ( GL_TRIANGLE_STRIP, 0, 4 );
         ASSERT_OPENGL_ERRORS;
-        
+
         return 0;
     }
     else
@@ -349,7 +349,7 @@ int OpenGLGraphics::FillRect ( Uint32 _surfaceID, SDL_Rect *_destRect, Uint32 _c
         ARCReleaseAssert ( tex != NULL );
 
         int r = SDL_FillRect ( tex->m_sdlSurface, _destRect, _color );
-        
+
         tex->Damage ();
 
         return r;
@@ -360,7 +360,7 @@ int OpenGLGraphics::Blit ( Uint32 _sourceSurfaceID, SDL_Rect const *_sourceRect,
                            Uint32 _destSurfaceID,   SDL_Rect const *_destRect )
 {
     ARCReleaseAssert ( m_sdlScreen != NULL );
-        
+
     OpenGLTexture *fromSurface = NULL;
     OpenGLTexture *toSurface = NULL;
 
@@ -440,7 +440,7 @@ int OpenGLGraphics::Blit ( Uint32 _sourceSurfaceID, SDL_Rect const *_sourceRect,
     // With SDL, you don't have to specify the dest width/height. With OpenGL, we do.
     destRect->w = sourceRect->w;
     destRect->h = sourceRect->h;
-    
+
     // Now we need to do the actual blit!
     if ( _destSurfaceID == SCREEN_SURFACE_ID )
     {
@@ -491,10 +491,10 @@ int OpenGLGraphics::Blit ( Uint32 _sourceSurfaceID, SDL_Rect const *_sourceRect,
             texCoordArrayf[6] = x / w + (float)sourceRect->w / w;
             texCoordArrayf[7] = y / h + (float)sourceRect->h / h;
         }
-        
+
         glDrawArrays ( GL_TRIANGLE_STRIP, 0, 4 );
         ASSERT_OPENGL_ERRORS;
-        
+
         return 0;
     }
     else
@@ -506,18 +506,18 @@ int OpenGLGraphics::Blit ( Uint32 _sourceSurfaceID, SDL_Rect const *_sourceRect,
 
         // Fill with fully opaque colour key.
         //SDL_FillRect ( toSurface->m_sdlSurface, destRect, FULL_ALPHA | m_colorKey );
-        
+
         // Blit
         int res = SDL_BlitSurface ( fromSurface->m_sdlSurface, sourceRect, toSurface->m_sdlSurface, destRect );
 
         // Replace the fully opaque colour key with a fully transparent
         // colour key.
         //ReplaceColour ( _destSurfaceID, destRect, FULL_ALPHA | m_colorKey, ZERO_ALPHA & m_colorKey );
-        
+
         // We want to upload the textures to graphics memory
         // later in order to make things fast.
         toSurface->Damage();
-        
+
         return res;
     }
 
@@ -536,10 +536,10 @@ void OpenGLGraphics::ReplaceColour ( Uint32 _surfaceID, SDL_Rect *_destRect, Uin
 SDL_PixelFormat *OpenGLGraphics::GetPixelFormat ( Uint32 _surfaceID )
 {
     ARCReleaseAssert ( m_sdlScreen != NULL );
-    
+
     if (_surfaceID == SCREEN_SURFACE_ID)
         return m_sdlScreen->m_sdlSurface->format;
-    
+
     ARCReleaseAssert ( m_textures.valid ( _surfaceID ) );
     SDL_Surface *surface = m_textures.get ( _surfaceID )->m_sdlSurface;
     ARCReleaseAssert ( surface != NULL );
@@ -550,10 +550,10 @@ SDL_PixelFormat *OpenGLGraphics::GetPixelFormat ( Uint32 _surfaceID )
 Uint32 OpenGLGraphics::GetSurfaceHeight ( Uint32 _surfaceID )
 {
     ARCReleaseAssert ( m_sdlScreen != NULL );
-    
+
     if ( _surfaceID == SCREEN_SURFACE_ID )
         return GetScreenHeight();
-    
+
     ARCReleaseAssert ( m_textures.valid ( _surfaceID ) );
 
     SDL_Surface *surface = m_textures.get ( _surfaceID )->m_sdlSurface;
@@ -565,10 +565,10 @@ Uint32 OpenGLGraphics::GetSurfaceHeight ( Uint32 _surfaceID )
 Uint32 OpenGLGraphics::GetSurfaceWidth ( Uint32 _surfaceID )
 {
     ARCReleaseAssert ( m_sdlScreen != NULL );
-    
+
     if (_surfaceID == SCREEN_SURFACE_ID)
         return GetScreenWidth();
-    
+
     ARCReleaseAssert ( m_textures.valid ( _surfaceID ) );
 
     SDL_Surface *surface = m_textures.get ( _surfaceID )->m_sdlSurface;
@@ -610,7 +610,7 @@ int OpenGLGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heigh
     info = SDL_GetVideoInfo ();
     ARCReleaseAssert ( info != NULL );
 
-    m_colorDepth = _colorDepth; 
+    m_colorDepth = _colorDepth;
 
     g_console->WriteLine ( "The requested color depth is %d, and we're using %d.", _colorDepth, m_colorDepth );
     g_console->WriteLine ( "Setting display mode of %dx%dx%d...", _width, _height, m_colorDepth );
@@ -627,7 +627,7 @@ int OpenGLGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heigh
     SDL_GL_SetAttribute ( SDL_GL_ALPHA_SIZE, m_colorDepth / 4 );
 
     m_sdlScreen = new OpenGLTexture ( SDL_SetVideoMode ( _width, _height, m_colorDepth, flags ) );
-    
+
     if ( !m_sdlScreen || !m_sdlScreen->m_sdlSurface )
     {
         g_console->WriteLine ( "SDL couldn't initialise properly: %s", SDL_GetError() );
@@ -644,7 +644,7 @@ int OpenGLGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heigh
     {
         HWND hwnd = FindWindow ( NULL, windowTitle );
         RECT workArea, window;
-        GetWindowRect ( hwnd, &window ); 
+        GetWindowRect ( hwnd, &window );
         SystemParametersInfo ( SPI_GETWORKAREA, 0, &workArea, 0 );
         Uint32 left = workArea.right - (window.right - window.left) - 20;
         Uint32 top =  ( (workArea.top + workArea.bottom) - (window.bottom - window.top) ) / 2;
@@ -653,7 +653,7 @@ int OpenGLGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heigh
 #endif
 
     info = SDL_GetVideoInfo();
-    
+
     g_console->WriteLine ( "Display mode set successfully (%dx%dx%d).", info->current_w, info->current_h, info->vfmt->BitsPerPixel );
     g_console->WriteLine ();
 
@@ -727,7 +727,7 @@ int OpenGLGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heigh
         g_console->SetColour ();
         extensionIsSupported = false;
     }
-    
+
     if ( g_prefsManager->GetInt ( "TextureRectangles", 1 ) && extensionIsSupported )
     {
         g_openGL->SetSetting ( OPENGL_TEX_ALLOW_NPOT, true );
@@ -789,7 +789,7 @@ int OpenGLGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heigh
     } else {
         g_openGL->SetSetting ( OPENGL_TEX_3DFX_COMPRESSION, false );
     }
-	
+
     g_console->Write ( "Supports S3 texture compression? " );
     if ( g_openGL->ExtensionIsSupported ( "GL_EXT_texture_compression_s3tc" ) )
     {
@@ -840,7 +840,7 @@ int OpenGLGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heigh
     glDisable ( GL_SCISSOR_TEST );
     glDisable ( GL_TEXTURE_1D );
     glDisable ( GL_TEXTURE_2D );
-    
+
     // Alpha blending setup code
     glEnable ( GL_BLEND );
     glBlendFunc ( GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA );
@@ -855,12 +855,12 @@ int OpenGLGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heigh
     // Lasers should be smooth. Trust me. They look crap without this.
     glEnable ( GL_LINE_SMOOTH );
     glHint ( GL_LINE_SMOOTH_HINT, GL_NICEST );
-    
+
     // We need to reset the OpenGL projection matrix.
     glMatrixMode ( GL_PROJECTION );
     glLoadIdentity (); // use an identity matrix for the projection matrix
     glOrtho ( 0.0, (double)m_screenX, (double)m_screenY, 0.0, -1.0, 1.0 ); // use a 2D orthographic matrix
-    
+
     glMatrixMode ( GL_MODELVIEW );
     glLoadIdentity (); // load an identity to clear the modelview matrix
     ASSERT_OPENGL_ERRORS;

@@ -31,7 +31,7 @@ Bounce::Bounce ( Player *_player, int _lX, int _lY, int _cX, int _cY )
 
     int lasrX = _cX - (int)g_game->m_me->GetX ();
     int lasrY = _cY - (int)g_game->m_me->GetY ();
-    if ( lasrX > -100 && lasrY > -100 && 
+    if ( lasrX > -100 && lasrY > -100 &&
          lasrX < g_graphics->GetScreenWidth() + 100 &&
          lasrY < g_graphics->GetScreenHeight() + 100 )
     {
@@ -124,7 +124,7 @@ void Bounce::Update()
     short lasrX = (short)(newX - MeX),
           lasrY = (short)(newY - MeY),
           lasrX2, lasrY2;
-    if ( lasrX > -100 && 
+    if ( lasrX > -100 &&
          lasrY > -100 &&
          lasrX < g_graphics->GetScreenWidth() + 100 &&
          lasrY < g_graphics->GetScreenHeight() + 100 )

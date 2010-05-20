@@ -30,7 +30,7 @@
 #include "World/map.h"
 
 Game::Game()
- : 
+ :
 #ifdef ENABLE_NETWORKING
    m_connection(NULL),
 #endif
@@ -427,7 +427,7 @@ void Game::RenderFlag ( short _team, short _index )
     {
         short x = xt / 16,
               y = yt / 16;
-        
+
         switch ( g )
         {
         case 1:
@@ -779,7 +779,7 @@ void Game::Run ( const char *_hostname, unsigned short _port, const char *_nickn
                     {
                         int err = 0;
 
-                        
+
                         // First run through this state. Create the connection class.
                         if ( !m_connection )
                             m_connection = new Connection ();
@@ -1125,7 +1125,7 @@ void Game::ProcessEvents ()
             break;
         }
     }
-    
+
     int arraySz = 0;
     Uint8 *keyState = SDL_GetKeyState(&arraySz);
     MovementDirections keyIs = MOVE_NONE;

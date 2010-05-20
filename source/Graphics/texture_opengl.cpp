@@ -49,7 +49,7 @@ bool OpenGLTexture::Create ( Uint16 _width, Uint16 _height, bool _isColorKeyed )
 {
     ARCReleaseAssert ( m_textureID != SCREEN_SURFACE_ID );
     ARCReleaseAssert ( _width > 0 ); ARCReleaseAssert ( _height > 0 );
-    
+
     Uint32 oldWidth = _width, oldHeight = _height;
     if ( !g_openGL->GetSetting ( OPENGL_TEX_ALLOW_NPOT, false ) ) {
         if ( !isPowerOfTwo ( _width ) )
@@ -76,7 +76,7 @@ bool OpenGLTexture::Create ( Uint16 _width, Uint16 _height, bool _isColorKeyed )
     ARCReleaseAssert ( m_sdlSurface != NULL );
 
     SDL_SetAlpha ( m_sdlSurface, 0, SDL_ALPHA_OPAQUE );
-        
+
     m_textureID = g_openGL->GetFreeTexture();
     ARCReleaseAssert ( m_textureID != 0 );
     ASSERT_OPENGL_ERRORS;
@@ -132,7 +132,7 @@ bool OpenGLTexture::Upload()
             g_console->SetColour ();
         }
     }
-	
+
 #ifdef _DEBUG
 	if ( m_sdlSurface->w > g_graphics->GetMaximumTextureSize() )
 	{
@@ -152,7 +152,7 @@ bool OpenGLTexture::Upload()
     Bind();
     glPixelStorei ( GL_UNPACK_ROW_LENGTH, m_sdlSurface->pitch / m_sdlSurface->format->BytesPerPixel );
     ASSERT_OPENGL_ERRORS;
-    
+
     switch ( m_sdlSurface->format->BytesPerPixel )
     {
         case 1: // palette-based sprite!?

@@ -67,7 +67,7 @@ int SDL_CollidePixel(SDL_Surface *as , int ax , int ay ,
     /*a - bottom right co-ordinates*/
     int ax1 = ax + as->w - 1;
     int ay1 = ay + as->h - 1;
-    
+
     /*b - bottom right co-ordinates*/
     int bx1 = bx + bs->w - 1;
     int by1 = by + bs->h - 1;
@@ -169,7 +169,7 @@ int SDL_CollideBoundingBox(SDL_Rect &a , SDL_Rect &b)
 
     circle1 : centre (x1,y1) with radius r1
     circle2 : centre (x2,y2) with radius r2
-    
+
     (allow distance between circles of offset)
 */
 int SDL_CollideBoundingCircle(int x1 , int y1 , int r1 ,
@@ -177,10 +177,10 @@ int SDL_CollideBoundingCircle(int x1 , int y1 , int r1 ,
 {
     int xdiff = x2 - x1;    // x plane difference
     int ydiff = y2 - y1;    // y plane difference
-    
+
     /* distance between the circles centres squared */
     int dcentre_sq = (ydiff*ydiff) + (xdiff*xdiff);
-    
+
     /* calculate sum of radiuses squared */
     int r_sum_sq = r1 + r2;    // square on seperate line, so
     r_sum_sq *= r_sum_sq;    // dont recompute r1 + r2

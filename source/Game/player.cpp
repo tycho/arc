@@ -40,7 +40,7 @@ Player::Player ( const char *_nickname, ShipType _ship, short _score,
   m_warping(false),
   m_warped(0),
   m_tick(0),
-  m_degrees(0), 
+  m_degrees(0),
   m_mode(0),
   m_nextSync(0)
 {

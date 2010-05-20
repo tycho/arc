@@ -119,16 +119,16 @@ int main ( int argc, char **argv )
     // deconstruct the classes
     g_console->WriteLine ( "Destroying classes...");
     g_graphics->ShowCursor ( true );
-    
+
     // free up the allocated memory
     delete g_game; g_game = NULL;
     delete g_interface; g_interface = NULL;
     delete g_graphics; g_graphics = NULL;
     delete g_soundSystem; g_soundSystem = NULL;
-    
+
     // notify that the exit operations were successful
     g_console->WriteLine ( "Program is exiting cleanly.\n");
-    
+
     g_prefsManager->Save();
 
     delete g_prefsManager; g_prefsManager = NULL;
@@ -233,7 +233,7 @@ void Init_Graphics()
 		if ( ret )
 		{
 			delete g_graphics; g_graphics = NULL;
-	        
+
 			if ( Data::Compare<const char *> ( graphicsDriver, "opengl" ) == 0  )
 			{
 				// Well, OpenGL failed for some reason. Revert to SDL.
@@ -258,7 +258,7 @@ void Init_Graphics()
 			break;
 		}
 	}
-	    
+
 	// Something's terribly wrong.
 	if ( !g_graphics )
 		ARCAbort ( "Could not initialize the graphics engine." );

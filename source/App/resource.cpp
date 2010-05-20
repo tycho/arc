@@ -71,15 +71,15 @@ void Resource::ParseArchive ( const char *_dataFile, const char *_password )
         if (file->m_size > 0)
         {
             strlwr(file->m_filename);
-            
+
             // Subsequent archives may override existing resources
-            
+
             MemMappedFile *oldFile = m_resourceFiles.find(file->m_filename, NULL);
             if (oldFile) {
                 m_resourceFiles.erase(file->m_filename);
                 delete oldFile;
             }
-            
+
             m_resourceFiles.insert(file->m_filename, file);
         }
     }
@@ -115,7 +115,7 @@ BinaryReader *Resource::GetBinaryReader ( char const *_filename )
     if ( !reader )
     {
         MemMappedFile *mmfile = GetUncompressedFile(_filename);
-        if (mmfile) reader = new BinaryDataReader(mmfile->m_data, mmfile->m_size, _filename);        
+        if (mmfile) reader = new BinaryDataReader(mmfile->m_data, mmfile->m_size, _filename);
     }
 
     return reader;

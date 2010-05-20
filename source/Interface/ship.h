@@ -39,7 +39,7 @@ public:
     virtual int SendEnterKey ();
 
     virtual void Pop ();
-    
+
     virtual void Flush ();
     virtual void FlushText ();
 

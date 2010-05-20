@@ -19,7 +19,7 @@ protected:
     int m_X, m_Y;
     int m_color;
     bool m_expired;
-    
+
     double m_frameXC;
     double m_frameT;
 

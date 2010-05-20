@@ -101,7 +101,7 @@ public:
                        const char *_nickname, const char *_password );
     virtual void Quit();
     virtual void Initialise();
-    
+
     virtual void SetMapName ( const char *_mapfile );
     virtual const char *GetMapName ();
 

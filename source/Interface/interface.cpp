@@ -36,7 +36,7 @@ Interface::Interface()
    m_mouseX(0),
    m_mouseY(0),
    m_mouseButton(0),
-   m_mouseFrame(0) 
+   m_mouseFrame(0)
 {
     m_animsID[0] = m_animsID[1] = -1;
     memset ( m_frameCount, 0, sizeof(m_frameCount) );
@@ -253,7 +253,7 @@ void Interface::FireSecondaryWeapon ( int _mouseX, int _mouseY )
 {
     if ( !g_game->Playing() || !g_game->m_me->Visible() || g_game->m_me->GetMode() == 1 )
         return;
-    Player *me = g_game->m_me; 
+    Player *me = g_game->m_me;
     switch ( g_game->GetSelectedWeapon() )
     {
     case WEAPON_TYPE_BOUNCE:
@@ -1073,7 +1073,7 @@ void Interface::InitWidgets ()
 int Interface::InitSurfaces ()
 {
     SDL_Rect SrcRect, DstRect;
-    short B = 0; short J = 0; int C = 0; int i = 0; 
+    short B = 0; short J = 0; int C = 0; int i = 0;
     int xt = 0; int yt = 0; short X = 0; short a = 0;
     Uint32 tmp = -1;
     g_console->WriteLine ( "Initializing surfaces..." );
@@ -1111,9 +1111,9 @@ int Interface::InitSurfaces ()
 	g_graphics->DeleteSurface ( m_tilesID );
     m_tilesID = g_graphics->LoadImage ( "graphics/Tiles.png", true );
     ARCReleaseAssert ( (int)m_tilesID != -1 );
-    
+
     //create the ships
-    SrcRect.x = 0; SrcRect.y = 292; SrcRect.w = 288; 
+    SrcRect.x = 0; SrcRect.y = 292; SrcRect.w = 288;
     SrcRect.h = 128; DstRect.x = 0; DstRect.y = 0;
 
 	g_graphics->DeleteSurface ( m_shipsID );
@@ -1122,7 +1122,7 @@ int Interface::InitSurfaces ()
     g_graphics->Blit ( m_tunaID, &SrcRect, m_shipsID, &DstRect );
 
     //create the nav bar
-    SrcRect.x = 493; SrcRect.y = 260; SrcRect.w = 147; 
+    SrcRect.x = 493; SrcRect.y = 260; SrcRect.w = 147;
     SrcRect.h = 480; DstRect.x = 0; DstRect.y = 0;
     DstRect.w = SrcRect.w; DstRect.h = SrcRect.h;
     m_sidebarID = g_graphics->CreateSurface ( 640, 480, true );
@@ -1130,46 +1130,46 @@ int Interface::InitSurfaces ()
     g_graphics->Blit ( m_tunaID, &SrcRect, m_sidebarID, &DstRect );
 
     //selected
-    SrcRect.x = 536; SrcRect.y = 741; SrcRect.w = 104; 
+    SrcRect.x = 536; SrcRect.y = 741; SrcRect.w = 104;
     SrcRect.h = 184; DstRect.x = 147; DstRect.y = 0;
     DstRect.w = SrcRect.w; DstRect.h = SrcRect.h;
     g_graphics->Blit ( m_tunaID, &SrcRect, m_sidebarID, &DstRect );
 
     //scores
-    SrcRect.x = 120; SrcRect.y = 1189; SrcRect.w = 280; 
+    SrcRect.x = 120; SrcRect.y = 1189; SrcRect.w = 280;
     SrcRect.h = 12; DstRect.x = 251; DstRect.y = 0;
     DstRect.w = SrcRect.w; DstRect.h = SrcRect.h;
     g_graphics->Blit ( m_tunaID, &SrcRect, m_sidebarID, &DstRect );
 
     //options
-    SrcRect.x = 63; SrcRect.y = 136; SrcRect.w = 71; 
+    SrcRect.x = 63; SrcRect.y = 136; SrcRect.w = 71;
     SrcRect.h = 10; DstRect.x = 531; DstRect.y = 0;
     DstRect.w = SrcRect.w; DstRect.h = SrcRect.h;
     g_graphics->Blit ( m_tunaID, &SrcRect, m_sidebarID, &DstRect );
 
     //nav door
-    SrcRect.x = 360; SrcRect.y = 260; SrcRect.w = 100; 
+    SrcRect.x = 360; SrcRect.y = 260; SrcRect.w = 100;
     SrcRect.h = 94; DstRect.x = 147; DstRect.y = 184;
     DstRect.w = SrcRect.w; DstRect.h = SrcRect.h;
     g_graphics->Blit ( m_tunaID, &SrcRect, m_sidebarID, &DstRect );
 
-    SrcRect.x = 360; SrcRect.y = SrcRect.h + SrcRect.y + 2; SrcRect.w = 100; 
+    SrcRect.x = 360; SrcRect.y = SrcRect.h + SrcRect.y + 2; SrcRect.w = 100;
     SrcRect.h = 94; DstRect.x = 247; DstRect.y = 184;
     DstRect.w = SrcRect.w; DstRect.h = SrcRect.h;
     g_graphics->Blit ( m_tunaID, &SrcRect, m_sidebarID, &DstRect );
 
-    SrcRect.x = 360; SrcRect.y = SrcRect.h + SrcRect.y + 2; SrcRect.w = 100; 
+    SrcRect.x = 360; SrcRect.y = SrcRect.h + SrcRect.y + 2; SrcRect.w = 100;
     SrcRect.h = 94; DstRect.x = 357; DstRect.y = 184;
     DstRect.w = SrcRect.w; DstRect.h = SrcRect.h;
     g_graphics->Blit ( m_tunaID, &SrcRect, m_sidebarID, &DstRect );
 
-    SrcRect.x = 360; SrcRect.y = SrcRect.h + SrcRect.y + 2; SrcRect.w = 100; 
+    SrcRect.x = 360; SrcRect.y = SrcRect.h + SrcRect.y + 2; SrcRect.w = 100;
     SrcRect.h = 94; DstRect.x = 467; DstRect.y = 184;
     DstRect.w = SrcRect.w; DstRect.h = SrcRect.h;
     g_graphics->Blit ( m_tunaID, &SrcRect, m_sidebarID, &DstRect );
 
     //select box
-    SrcRect.x = 0; SrcRect.y = 170; SrcRect.w = 48; 
+    SrcRect.x = 0; SrcRect.y = 170; SrcRect.w = 48;
     SrcRect.h = 48; DstRect.x = 251; DstRect.y = 12;
     DstRect.w = SrcRect.w; DstRect.h = SrcRect.h;
     g_graphics->Blit ( m_tunaID, &SrcRect, m_sidebarID, &DstRect );

@@ -24,7 +24,7 @@ Missile::Missile ( Player *_player, int _lX, int _lY, int _cX, int _cY )
 
     int missX = _cX - (int)g_game->m_me->GetX ();
     int missY = _cY - (int)g_game->m_me->GetY ();
-    if ( missX > -60 && missY > -60 && 
+    if ( missX > -60 && missY > -60 &&
          missX < g_graphics->GetScreenWidth() + 60 &&
          missY < g_graphics->GetScreenHeight() + 60 )
     {
@@ -84,12 +84,12 @@ void Missile::Update()
           missY = (short)(newY - MeY),
           missX2 = (short)(newX2 - MeX),
           missY2 = (short)(newY2 - MeY);
-    if ( missX > -15 && 
+    if ( missX > -15 &&
          missY > -15 &&
          missX < g_graphics->GetScreenWidth() + 15 &&
          missY < g_graphics->GetScreenHeight() + 15 )
     {
-        LineDraw ( 3, 6, 0, 0, missX, missY, missX2, missY2 ); 
+        LineDraw ( 3, 6, 0, 0, missX, missY, missX2, missY2 );
         if ( j > 0 )
         {
             if ( j == 2 )

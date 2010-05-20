@@ -34,7 +34,7 @@ GrenadeExplosion::GrenadeExplosion ( int _x, int _y )
     m_X = _x; m_Y = _y; m_frame = 0; m_expired = false;
     m_frameTick.Start();
 
-    g_soundSystem->PlaySound ( "morthit", 
+    g_soundSystem->PlaySound ( "morthit",
         (Sint32)(_x - g_game->m_me->GetX() - 16),
         (Sint32)(_y - g_game->m_me->GetY() - 16) );
 }

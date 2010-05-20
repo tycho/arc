@@ -24,7 +24,7 @@ Ship::Ship ( Player *_player )
     SetWidgetClass ( "Ship" );
     char temp[64];
     m_player = _player;
-    sprintf ( temp, "\3%s\1 [%d]", m_player->m_nick, m_player->m_score ); 
+    sprintf ( temp, "\3%s\1 [%d]", m_player->m_nick, m_player->m_score );
     m_label = new TextUI ( temp, true, 0 - ((int)strlen(m_player->m_nick) / 2), 35, 50, 7 );
     AddWidget ( m_label );
 	Initialise();
@@ -57,7 +57,7 @@ void Ship::Update()
     m_label->SetText ( temp );
 
     float MoveSpeed = (float)g_game->GetGameSpeed() * 1.1f;
-    
+
     if ( m_player->m_flagWho > 0 ) MoveSpeed *= 0.75f;
     if ( m_player->m_cheat > 2 ) MoveSpeed *= 3.0f;
     if ( m_player->m_mode == 1 ) MoveSpeed *= 6.0f;
@@ -256,7 +256,7 @@ void Ship::Update()
         {
             m_player->m_charX = lastX;
             m_player->m_charY = lastY;
-            if ( (FindRectsRet(104) && FindRectsRet(105)) || 
+            if ( (FindRectsRet(104) && FindRectsRet(105)) ||
                  (FindRectsRet(112) && FindRectsRet(113)) )
             {
                 m_player->m_charY = sy;
@@ -265,12 +265,12 @@ void Ship::Update()
                     m_player->m_charY = lastY;
                 continue;
             }
-            if ( (FindRectsRet(101) && FindRectsRet(109)) || 
+            if ( (FindRectsRet(101) && FindRectsRet(109)) ||
                  (FindRectsRet(108) && FindRectsRet(116)) )
             {
                 m_player->m_charX = sx;
                 CollisionDetect();
-                if ( m_rectsRet.used() > 0 ) 
+                if ( m_rectsRet.used() > 0 )
                     m_player->m_charX = lastX;
                 continue;
             }
@@ -639,7 +639,7 @@ void Ship::Render()
         } else {
             // TODO: Warping anim.
         }
-        
+
         if ( (int)m_cachedSurfaceID == -1 )
             m_cachedSurfaceID = g_graphics->CreateSurface ( 32, 32, true );
         else
@@ -652,7 +652,7 @@ void Ship::Render()
 
     m_position.x = m_player->m_moveX;
     m_position.y = m_player->m_moveY;
-    
+
     m_position.w = 32; m_position.h = 32;
 
     // Render.

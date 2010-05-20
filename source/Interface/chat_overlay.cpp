@@ -74,7 +74,7 @@ void ChatOverlay::AddLine ( const char *_text )
     free ( temp );
 
     UpdatePositions();
-    
+
     m_lastModification.Start();
 }
 

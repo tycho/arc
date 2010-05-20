@@ -71,7 +71,7 @@ void Spark::Render()
             if ( m_dist[j] > 3 ) r = 2;
             if ( m_dist[j] > 6 ) r = 3;
             if ( m_dist[j] > 11 ) r = 4;
-            Weapon::LineDraw ( 4, r, 0, 0, xt, yt, m_X, m_Y ); 
+            Weapon::LineDraw ( 4, r, 0, 0, xt, yt, m_X, m_Y );
         }
     }
 }

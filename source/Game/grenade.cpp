@@ -31,7 +31,7 @@ Grenade::Grenade ( Player *_player, int _lX, int _lY, int _cX, int _cY )
 
     int grenX = _cX - (int)g_game->m_me->GetX ();
     int grenY = _cY - (int)g_game->m_me->GetY ();
-    if ( grenX > -60 && grenY > -60 && 
+    if ( grenX > -60 && grenY > -60 &&
          grenX < g_graphics->GetScreenWidth() + 60 &&
          grenY < g_graphics->GetScreenHeight() + 60 )
     {

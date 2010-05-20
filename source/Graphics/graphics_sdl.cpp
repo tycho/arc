@@ -266,7 +266,7 @@ Uint32 SDLGraphics::LoadImage ( const char *_filename, bool _isColorKeyed )
 int SDLGraphics::DeleteSurface ( Uint32 _surfaceID )
 {
     if ( !m_surfaces.valid ( _surfaceID ) ) return -1;
-    
+
     SDL_Surface *surface = m_surfaces.get ( _surfaceID );
     ARCReleaseAssert ( surface != NULL );
 
@@ -301,7 +301,7 @@ Uint32 SDLGraphics::CreateSurface ( Uint32 _width, Uint32 _height, bool _isColor
 
     SDL_Surface *newSurface, *compatibleSurface;
 
-    newSurface = SDL_CreateRGBSurface ( flags, _width, _height, 
+    newSurface = SDL_CreateRGBSurface ( flags, _width, _height,
         m_surfaces.get(m_mainSurface)->format->BitsPerPixel, rmask, gmask, bmask, amask );
     ARCReleaseAssert ( newSurface != NULL );
 
@@ -323,7 +323,7 @@ Uint32 SDLGraphics::CreateSurface ( Uint32 _width, Uint32 _height, bool _isColor
 }
 
 int SDLGraphics::SetColorKey ( Uint32 _colour )
-{    
+{
     m_colorKey = _colour;
     m_colorKeySet = true;
 
@@ -487,7 +487,7 @@ int SDLGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _height, 
     {
         HWND hwnd = FindWindow ( NULL, windowTitle );
         RECT workArea, window;
-        GetWindowRect ( hwnd, &window ); 
+        GetWindowRect ( hwnd, &window );
         SystemParametersInfo ( SPI_GETWORKAREA, 0, &workArea, 0 );
         Uint32 left = workArea.right - (window.right - window.left) - 20;
         Uint32 top =  ( (workArea.top + workArea.bottom) - (window.bottom - window.top) ) / 2;

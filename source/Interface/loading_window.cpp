@@ -16,7 +16,7 @@
 #include "Interface/text.h"
 
 LoadingWindow::LoadingWindow()
-: Window ( g_graphics->GetCenterX() - 150, g_graphics->GetCenterY() - 40, 300, 80 ) 
+: Window ( g_graphics->GetCenterX() - 150, g_graphics->GetCenterY() - 40, 300, 80 )
 {
     SetWidgetClass ( "LoadingWindow" );
 

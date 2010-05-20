@@ -287,7 +287,7 @@ Uint32 Surface::GetPixel ( int _x, int _y )
 	destRect.x = _x;
 	destRect.y = _y;
 	destRect.w = destRect.h = 1;
-	
+
 	memset ( m_destRects, 0, sizeof(SDL_Rect) * m_nWays );
 
 	CalculateDestinationRectangles ( m_destRects, &destRect );
@@ -307,7 +307,7 @@ void Surface::SetPixel ( int _x, int _y, Uint32 _colour )
 	destRect.x = _x;
 	destRect.y = _y;
 	destRect.w = destRect.h = 1;
-	
+
 	memset ( m_destRects, 0, sizeof(SDL_Rect) * m_nWays );
 
 	CalculateDestinationRectangles ( m_destRects, &destRect );
@@ -324,7 +324,7 @@ void Surface::SetPixel ( int _x, int _y, Uint32 _colour )
 void Surface::FillRect ( SDL_Rect *_destRect, Uint32 _colour )
 {
 	memset ( m_destRects, 0, sizeof(SDL_Rect) * m_nWays );
-	
+
 	CalculateDestinationRectangles ( m_destRects, _destRect );
 
 	SDL_Rect *dest = m_destRects;
@@ -349,7 +349,7 @@ void Surface::ReplaceColour ( SDL_Rect *_destRect, Uint32 _findColour, Uint32 _r
     }
 
 	memset ( m_destRects, 0, sizeof(SDL_Rect) * m_nWays );
-	
+
 	CalculateDestinationRectangles ( m_destRects, _destRect );
 
 	SDL_Rect *dest = m_destRects;

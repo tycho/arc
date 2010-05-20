@@ -140,7 +140,7 @@ void Map::Render ( short _x, short _y )
     renderTo.x = 0; renderTo.y = 0;
     renderTo.w = g_graphics->GetScreenWidth(); renderTo.h = g_graphics->GetScreenHeight();
 	m_mapSurface->Render ( &renderFrom, g_graphics->GetScreen(), &renderTo );
-	
+
     if ( renderFrom.w == 0 || renderFrom.h == 0 ) return;
     C = 0; d = 0;
     if ( MeY < 0 ) C = MapY;
@@ -282,7 +282,7 @@ int Map::Load ( const char *_file )
 
     BinaryReader *mapFile = g_app->m_resource->GetBinaryReader ( tempPath );
     if ( !mapFile ) return -1;
-    
+
     CoreAssert ( LoadAttribs ( "attribs.dat" ) == 0 );
     CoreAssert ( LoadRough ( "rough.dat" ) == 0 );
 
@@ -344,7 +344,7 @@ int Map::Load ( const char *_file )
     {
         m_flagPoleCounts[i] = mapFile->ReadS8();
     }
-    
+
     for ( i = 0; i < m_header.NumTeams; i++ )
     {
         char t_flagPoleBase;
@@ -444,14 +444,14 @@ void Map::CreateTileMap ()
 
     short SrcTile[65538];
     memcpy ( SrcTile, m_mapData, sizeof ( m_mapData ) );
-    
+
 #ifdef TARGET_BIG_ENDIAN
     for (unsigned i = 0; i < 65538; i++)
     {
         SrcTile[i] = SDL_SwapLE16(SrcTile[i]);
     }
 #endif
-    
+
     for ( int i = 0; i < 256; i++ )
     {
         for ( int j = 0; j < 256; j++ )
@@ -480,7 +480,7 @@ void Map::CreateTileMap ()
                 m_sourceX[i][j] = -1;
                 m_sourceY[i][j] = 0;
             }
-            
+
             if ( m_sourceX[i][j] == 0 && m_sourceY[i][j] == 112 )
             {
                 m_sourceX[i][j] = -1;
@@ -528,7 +528,7 @@ void Map::CreateTileMap ()
                 ubfp12++;
                 m_flagPole1[0][ubfp12] = j * 16;
                 m_flagPole1[1][ubfp12] = i * 16;
-                if (m_animations[i][j] == 28) 
+                if (m_animations[i][j] == 28)
                     m_animations[i][j] = 24;
             } else if ( m_animations[i][j] == 37 || m_animations[i][j] == 35 || m_animations[i][j] == 34 || m_animations[i][j] == 32 || m_animations[i][j] == 129 ) {
                 ubfp22++;
@@ -579,7 +579,7 @@ int Map::DecompressMap ( unsigned char *_data, int _origSize )
 
 void Map::BlitEntireMap()
 {
-    System::Stopwatch sw; 
+    System::Stopwatch sw;
     short x; short y;
 
     // Allocate our map surface

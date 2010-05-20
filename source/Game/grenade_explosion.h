@@ -20,7 +20,7 @@ class GrenadeExplosion
 protected:
     int m_X, m_Y;
     bool m_expired;
-    
+
     CrissCross::System::Stopwatch m_frameTick;
     int m_frame;
 
