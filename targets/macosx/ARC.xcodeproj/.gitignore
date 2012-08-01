@@ -1,3 +1,5 @@
 *.mode*v*
 *.pbxuser
 *.perspectivev*
+*.xcworkspace
+xcuserdata

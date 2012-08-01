@@ -804,7 +804,11 @@
 			isa = PBXProject;
 			buildConfigurationList = B0B8E8B80BDB4D36007C1576 /* Build configuration list for PBXProject "ARC" */;
 			compatibilityVersion = "Xcode 2.4";
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
 			mainGroup = B0B8E8B50BDB4D36007C1576;
 			productRefGroup = B0B8E9200BDB4E71007C1576 /* Products */;
 			projectDirPath = "";
@@ -859,7 +863,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "#!/bin/bash\n\nsource ~/.bashrc\n\necho \"Generating build_number.h...\";\n\ncd \"$PROJECT_DIR/../..\"\n\"scripts/gen_buildnum_h.sh\" \"source/build_number.h\"";
+			shellScript = "#!/bin/bash\n\nsource ~/.bashrc\n\necho \"Generating build_number.h...\";\n\ncd \"$PROJECT_DIR/../..\"\n\"scripts/gen_ver.pl\" \"source/build_number.h\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -991,59 +995,47 @@
 		B0B8E8B90BDB4D36007C1576 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(NATIVE_ARCH)";
+				ARCHS = "$(NATIVE_ARCH_ACTUAL)";
 				COPY_PHASE_STRIP = NO;
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.framework *.gch *.xcode* (*) CVS .svn .git";
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../contrib";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ../../source/macosx.pch;
-				GCC_VERSION = 4.0;
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/../../source",
 					"$(PROJECT_DIR)/../../contrib/crisscross/source",
 					"$(PROJECT_DIR)/../../contrib/unrar",
 					"$(PROJECT_DIR)/../../contrib/OpenGL/include/",
 				);
-				MACOSX_DEPLOYMENT_TARGET_i386 = 10.4;
-				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
-				MACOSX_DEPLOYMENT_TARGET_ppc64 = 10.4;
-				MACOSX_DEPLOYMENT_TARGET_x86_64 = 10.4;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
-				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
-				SDKROOT_ppc = /Developer/SDKs/MacOSX10.4u.sdk;
-				SDKROOT_ppc64 = /Developer/SDKs/MacOSX10.4u.sdk;
-				SDKROOT_x86_64 = /Developer/SDKs/MacOSX10.4u.sdk;
+				MACOSX_DEPLOYMENT_TARGET_i386 = 10.7;
+				MACOSX_DEPLOYMENT_TARGET_x86_64 = 10.7;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.7.sdk";
+				SDKROOT_i386 = "$(DEVELOPER_SDK_DIR)/MacOSX10.7.sdk";
+				SDKROOT_x86_64 = "$(DEVELOPER_SDK_DIR)/MacOSX10.7.sdk";
 			};
 			name = Debug;
 		};
 		B0B8E8BA0BDB4D36007C1576 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					i386,
-					ppc,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				COPY_PHASE_STRIP = YES;
 				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.framework *.gch *.xcode* (*) CVS .svn .git";
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../contrib";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ../../source/macosx.pch;
-				GCC_VERSION = 4.0;
 				HEADER_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/../../source",
 					"$(PROJECT_DIR)/../../contrib/crisscross/source",
 					"$(PROJECT_DIR)/../../contrib/unrar",
 					"$(PROJECT_DIR)/../../contrib/OpenGL/include/",
 				);
-				MACOSX_DEPLOYMENT_TARGET_i386 = 10.4;
-				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
-				MACOSX_DEPLOYMENT_TARGET_ppc64 = 10.4;
-				MACOSX_DEPLOYMENT_TARGET_x86_64 = 10.4;
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
-				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
-				SDKROOT_ppc = /Developer/SDKs/MacOSX10.4u.sdk;
-				SDKROOT_ppc64 = /Developer/SDKs/MacOSX10.4u.sdk;
-				SDKROOT_x86_64 = /Developer/SDKs/MacOSX10.4u.sdk;
+				MACOSX_DEPLOYMENT_TARGET_i386 = 10.7;
+				MACOSX_DEPLOYMENT_TARGET_x86_64 = 10.7;
+				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.7.sdk";
+				SDKROOT_i386 = "$(DEVELOPER_SDK_DIR)/MacOSX10.7.sdk";
+				SDKROOT_x86_64 = "$(DEVELOPER_SDK_DIR)/MacOSX10.7.sdk";
 			};
 			name = Release;
 		};
