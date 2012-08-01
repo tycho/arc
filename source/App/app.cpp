@@ -74,7 +74,6 @@ App::App ()
 
     m_appPath = newStr ( tempPath );
 
-    // Set up the resources directory variable
 	// Set up the resources directory variable
 #ifdef DATA_DIR_PATH
 	m_resourcePaths.insert(newStr(DATA_DIR_PATH));

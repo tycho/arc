@@ -58,7 +58,7 @@ void Resource::ParseArchive ( const char *_dataFile, const char *_password )
 
 	try
     {
-        mainData = new UncompressedArchive(_dataFile, _password);
+        mainData = new UncompressedArchive(path, _password);
     }
     catch( ... )
     {
