@@ -126,6 +126,9 @@ ifeq ($(uname_S),FreeBSD)
 	INCLUDES += -I/usr/local/include
 	LIBS += -L/usr/local/lib
 endif
+ifeq ($(uname_S),Linux)
+	EXTRA_LIBS += -ldl
+endif
 ifeq ($(uname_S),Darwin)
 	EXTRA_LIBS += -framework AppKit -framework AudioUnit -framework Carbon -framework IOKit -framework OpenGL $(CONTRIB)/install/lib/libSDLmain.a
 	ifndef NO_APPLE_GCC
