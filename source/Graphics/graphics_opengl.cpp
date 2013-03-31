@@ -118,9 +118,7 @@ void OpenGLGraphics::DrawRect ( SDL_Rect *_destRect, Uint32 _color )
     m_vertexArray[7] = _destRect->y + _destRect->h;
 
 	glDisable(GL_BLEND);
-	glDisable(GL_LINE_SMOOTH);
     glDrawArrays(GL_LINE_LOOP, 0, 4);
-	glEnable(GL_LINE_SMOOTH);
     ASSERT_OPENGL_ERRORS;
 }
 
@@ -851,10 +849,6 @@ int OpenGLGraphics::SetWindowMode ( bool _windowed, Sint16 _width, Sint16 _heigh
     // We set this to GL_MODULATE to make the alpha blended textures render properly
     glTexEnvi ( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE );
     ASSERT_OPENGL_ERRORS;
-
-    // Lasers should be smooth. Trust me. They look crap without this.
-    glEnable ( GL_LINE_SMOOTH );
-    glHint ( GL_LINE_SMOOTH_HINT, GL_NICEST );
 
     // We need to reset the OpenGL projection matrix.
     glMatrixMode ( GL_PROJECTION );
